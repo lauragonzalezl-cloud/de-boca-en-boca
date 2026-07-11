@@ -145,12 +145,12 @@ const datasetDisenadoras = [
             eje4: "videos/vico-eje4.mp4"
         }, 
         obras: [
-            { img: "imagenes/vico1.jpg", desc: "01. Ganador Chile Diseño 2024" },
-            { img: "imagenes/vico2.jpg", desc: "02. Diseño de portada" },
-            { img: "imagenes/vico3.jpg", desc: "03. Diseño de portada" },
-            { img: "imagenes/vico4.jpg", desc: "04. Diseño de portada" },
-            { img: "imagenes/vico5.jpg", desc: "05. Diseño de portada" },
-            { img: "imagenes/vico6.jpg", desc: "06. Diseño de portada" }
+            { img: ["imagenes/vico1.jpg", "imagenes/vico1.1.jpg", "imagenes/vico1.2.jpg"], desc: "01. Cocino con Plantas" },
+            { img: ["imagenes/vico2.jpg", "imagenes/vico2.1.jpg"], desc: "02. Si lo puedes sentir, lo puedes sanar" },
+            { img: ["imagenes/vico3.jpg"], desc: "03. Slow life" },
+            { img: ["imagenes/vico4.jpg", "imagenes/vico4.1.jpg", "imagenes/vico4.2.jpg"], desc: "04. Épicas" },
+            { img: ["imagenes/vico5.jpg"], desc: "05. Fragata Cochrane" },
+            { img: ["imagenes/vico6.jpg"], desc: "06. La Ciencia Oscura" },
         ] 
     },
 
