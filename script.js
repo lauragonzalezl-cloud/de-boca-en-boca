@@ -115,12 +115,12 @@ const datasetDisenadoras = [
             eje4: "videos/perla-eje4.mp4"
         }, 
         obras: [
-            { img: "imagenes/perla-obra1.jpg", desc: "01. Espécimen Tipográfico" },
-            { img: "imagenes/perla-obra2.jpg", desc: "02. Sistema de Identidad" },
-            { img: "imagenes/perla-obra3.jpg", desc: "03. Cartel / Comunicación Visual" },
-            { img: "imagenes/perla-obra4.jpg", desc: "04. Desarrollo de Fuente Local" },
-            { img: "imagenes/perla-obra5.jpg", desc: "05. Proyecto Gráfico Usach" },
-            { img: "imagenes/perla-obra6.jpg", desc: "06. Experimentación Editorial" }
+            { img: "imagenes/perla1.jpg", desc: "01. Resistencia Textil" },
+            { img: "imagenes/perla2.jpeg", desc: "02. Marcas, logotipos y símbolos de Julián Naranjo" },
+            { img: "imagenes/perla3.jpg", desc: "03. Libro Oficina Larrea" },
+            { img: "imagenes/perla4.png", desc: "04. Catálogo ODA" },
+            { img: "imagenes/perla5.png", desc: "05. Carmela y La Alborada" },
+            { img: "imagenes/perla6.png", desc: "06. Revista Grifo #45" }
         ] 
     },
     // 4. VICO GALLARDO
