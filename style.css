@@ -1,0 +1,235 @@
+/* ==========================================================================
+   REGISTRO DE FUENTES LOCALES (MONTSERRAT DESDE CARPETA FUENTES)
+   ========================================================================== */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fuentes/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fuentes/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fuentes/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ==========================================================================
+   RESET GENERAL Y TIPOGRAFÍA BASE
+   ========================================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body, html, button, select, input {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000000; 
+    color: #ffffff;
+    overflow: hidden; 
+    -webkit-font-smoothing: antialiased;
+}
+
+.oculto { display: none !important; }
+
+/* BRANDING FIJO */
+.marca-fija { position: absolute; top: 40px; left: 40px; z-index: 5; pointer-events: none; }
+.marca-fija h1 { font-size: 1.35rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; margin-bottom: 5px; }
+.marca-fija h2 { font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 2px; }
+
+/* BOTÓN FILTRAR RED */
+.btn-restaurar {
+    position: absolute; top: 40px; right: 40px; z-index: 10;
+    background: #ffffff; color: #000000; border: none;
+    padding: 10px 20px; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-restaurar:hover { background: #F05982; color: #ffffff; }
+
+/* PANTALLA DE INICIO (MANIFIESTO) */
+.intro-screen {
+    height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center;
+    background: #F05982; padding: 40px; z-index: 10; position: relative;
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.intro-content { text-align: center; max-width: 800px; width: 100%; }
+
+.titulo-manifiesto { 
+    font-size: 2.2rem; 
+    font-weight: 300; 
+    line-height: 1.4; 
+    margin-bottom: 35px; 
+    color: #ffffff;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: -0.5px;
+}
+.autora-homenaje { 
+    font-size: 1rem; 
+    font-weight: 700; 
+    color: rgba(255, 255, 255, 0.9); 
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+    margin-bottom: 60px; 
+}
+.btn-minimal { 
+    background: transparent; 
+    border: 1px solid rgba(255, 255, 255, 0.35); 
+    color: #ffffff; 
+    padding: 18px 45px; 
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+    cursor: pointer; 
+    font-weight: 700;
+    transition: all 0.4s; 
+}
+.btn-minimal:hover { border-color: #ffffff; background-color: #ffffff; color: #000000; }
+
+/* CANVAS RED */
+.main-universe { width: 100vw; height: 100vh; position: relative; background-color: #030303; }
+#canvas-constelacion { position: absolute; width: 100%; height: 100%; z-index: 1; outline: none; }
+
+/* PANEL LATERAL MODULAR */
+.panel-container { 
+    position: absolute; top: 0; right: 0; width: 42%; height: 100vh; z-index: 6; 
+    background-color: #0c0c0c; border-left: 1px solid rgba(255,255,255,0.08);
+    display: flex; flex-direction: column; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.panel-oculto { transform: translateX(100%); opacity: 0; pointer-events: none; }
+.panel-content { width: 100%; height: 100%; padding: 45px; display: flex; flex-direction: column; }
+.close-uid { position: absolute; top: 35px; right: 35px; background: none; border: none; color: rgba(255,255,255,0.4); font-size: 1.8rem; cursor: pointer; z-index: 7; }
+
+.info-wrapper { display: flex; flex-direction: column; height: 100%; justify-content: space-between; }
+
+/* SCROLL INTERNO */
+.scrollable-tab { max-height: 80vh; overflow-y: auto; padding-right: 10px; }
+.scrollable-tab::-webkit-scrollbar { width: 4px; }
+.scrollable-tab::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+.tab-oculto { display: none !important; }
+
+/* FOTO CABECERA */
+.contenedor-foto-cabecera { width: 100%; position: relative; margin-bottom: 20px; cursor: zoom-in; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+.foto-horizontal-clickeable { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; filter: brightness(90%); transition: filter 0.3s; }
+.foto-horizontal-clickeable:hover { filter: brightness(100%); }
+.hint-expandir { position: absolute; bottom: 8px; right: 8px; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1px; background: rgba(0,0,0,0.75); padding: 2px 6px; color: rgba(255,255,255,0.6); pointer-events: none; font-weight: 300; }
+
+/* NOMBRE FICHAS */
+.name-layout { display: flex; flex-direction: column; line-height: 0.9; margin-bottom: 15px; }
+.first-name { font-size: 2.2rem; font-weight: 300; letter-spacing: -0.5px; text-transform: uppercase; color: #ffffff; }
+.last-name { font-size: 2.8rem; font-weight: 700; letter-spacing: -1px; text-transform: uppercase; color: #ffffff; }
+
+/* FRASE MANIFIESTO INTERNA */
+.bloque-frase-destacada { margin-bottom: 20px; padding-left: 15px; border-left: 2px solid #ffffff; }
+#frase-dinamica { font-size: 1.1rem; font-weight: 300; line-height: 1.4; color: rgba(255,255,255,0.9); }
+
+/* FICHA TÉCNICA */
+.metadata-ficha {
+    display: flex; flex-direction: column; gap: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 0; margin-bottom: 15px; font-size: 0.8rem; color: #999999;
+}
+.meta-item { display: flex; align-items: baseline; gap: 8px; font-weight: 300; }
+.meta-item strong { color: #ffffff; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 1px; min-width: 120px; font-weight: 700; }
+
+.tags-container { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag-area-link { background: rgba(255,255,255,0.05); color: #ffffff; padding: 2px 6px; border-radius: 2px; font-size: 0.65rem; cursor: pointer; border: 1px solid rgba(255,255,255,0.08); font-weight: 400; transition: all 0.2s; }
+.tag-area-link:hover { background: #ffffff; color: #000000; border-color: #ffffff; }
+
+.recomendadas-links-container { display: flex; flex-wrap: wrap; gap: 6px; }
+.recomendada-node-link { color: #4aff7a; font-weight: 700; text-decoration: underline; cursor: pointer; font-size: 0.75rem; }
+
+.texto-biografia { font-size: 0.9rem; font-weight: 300; line-height: 1.5; color: #b3b3b3; text-align: left; }
+
+/* PESTAÑAS ADICIONALES */
+.seccion-titulo { font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+.video-container { width: 100%; aspect-ratio: 16/9; background-color: #000; border: 1px solid rgba(255,255,255,0.1); }
+
+/* GRID DE PROYECTOS */
+.grid-portafolio { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.obra-item { display: flex; flex-direction: column; gap: 6px; cursor: zoom-in; }
+.img-obra-real { width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s; }
+.obra-item:hover .img-obra-real { border-color: #fff; }
+.pie-foto { font-size: 0.6rem; color: #666; font-weight: 300; }
+
+/* COMPONENTE NAVEGACIÓN INFERIOR (PESTAÑAS) */
+.sub-navigation { display: flex; gap: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; margin-top: 10px; }
+.nav-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
+.nav-item input { display: none; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background-color: rgba(255,255,255,0.2); display: inline-block; }
+
+/* NUEVOS ESTADOS DINÁMICOS COMPATIBLES CON SCRIPT.JS */
+.nav-item input:checked + .dot.rojo-activo { background-color: #F8470C !important; box-shadow: 0 0 8px #F8470C !important; }
+.nav-item input:checked + .dot.rosado-activo { background-color: #F05982 !important; box-shadow: 0 0 8px #F05982 !important; }
+.nav-item input:checked + .dot.verde-activo { background-color: #4aff7a !important; box-shadow: 0 0 8px #4aff7a !important; }
+
+.nav-item:hover, .nav-item input:checked ~ span { color: #ffffff; font-weight: 700; }
+
+/* LIGHTBOX INTERFAZ */
+.lightbox-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.95); z-index: 100; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.imagen-lightbox-activa { max-width: 85%; max-height: 80vh; object-fit: contain; border: 1px solid rgba(255,255,255,0.15); }
+.cerrar-lightbox { position: absolute; top: 40px; right: 50px; color: #fff; font-size: 3rem; cursor: pointer; }
+.caption-lightbox { margin-top: 15px; font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 300; }
+
+/* FLECHAS LIGHTBOX */
+.flecha-lightbox {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(12, 12, 12, 0.75); color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1.5rem; padding: 12px 20px; cursor: pointer; z-index: 110;
+    transition: all 0.3s ease; backdrop-filter: blur(5px); font-weight: 700;
+}
+.flecha-lightbox:hover { background: #ffffff; color: #000000; border-color: #ffffff; }
+#btn-lightbox-prev { left: 40px; }
+#btn-lightbox-next { right: 40px; }
+
+/* LEYENDA DE LA RED */
+.leyenda-red {
+    position: absolute; bottom: 40px; left: 40px; z-index: 5;
+    background: rgba(12, 12, 12, 0.85); padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.08); display: flex;
+    flex-direction: column; gap: 10px; pointer-events: none;
+    backdrop-filter: blur(5px);
+}
+.leyenda-item { display: flex; align-items: center; gap: 10px; }
+.leyenda-color { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.color-naranjo { background-color: #F8470C; }
+.color-rosado { background-color: #F05982; }
+.color-verde { background-color: #4aff7a; }
+.leyenda-texto { font-size: 0.7rem; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; font-weight: 400; }
+
+/* NAVEGACIÓN DE EJES EN ENTREVISTAS */
+.ejes-video-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.btn-eje {
+    background: rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1); padding: 6px 12px;
+    font-size: 0.7rem; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s ease; flex-grow: 1; text-align: center; font-weight: 400;
+}
+.btn-eje:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
+.btn-eje.active { background: #ffffff; color: #000000; border-color: #ffffff; font-weight: 700; }
+
+/* PANEL FILTROS */
+.panel-filtros {
+    position: absolute; left: 40px; bottom: 190px; z-index: 6; width: 240px;
+    background: rgba(12, 12, 12, .88); border: 1px solid rgba(255, 255, 255, .08);
+    backdrop-filter: blur(6px); padding: 16px; display: flex; flex-direction: column; gap: 10px;
+}
+.panel-filtros h3 { font-size: .75rem; color: white; letter-spacing: 2px; margin-bottom: 5px; }
+.panel-filtros label { font-size: .65rem; text-transform: uppercase; color: #888; }
+.panel-filtros select { background: #111; color: white; border: 1px solid rgba(255, 255, 255, .12); padding: 8px; outline: none; }
+
+#btn-limpiar-filtros {
+    margin-top: 10px; background: white; color: black; border: none; padding: 10px; cursor: pointer; font-size: .7rem; text-transform: uppercase; font-weight: 700; transition: background 0.2s;
+}
+#btn-limpiar-filtros:hover { background: #ff4a5b; color: white; }

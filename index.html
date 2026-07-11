@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De boca en boca — Archivo de Diseñadoras Chilenas</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="marca-fija">
+        <h1>De boca en boca</h1>
+        <h2>Archivo de diseñadoras chilenas</h2>
+    </div>
+
+    <button id="btn-restaurar-red" class="btn-restaurar oculto">Mostrar toda la red</button>
+
+    <div id="pantalla-inicio" class="intro-screen">
+        <div class="intro-content">
+            <h1 class="titulo-manifiesto">"Las mujeres también hacemos historia, no solo los hombres"</h1>
+            <p class="autora-homenaje">— María Angélica Pizarro</p>
+            <button id="btn-descubrir" class="btn-minimal">Descubrir la Red</button>
+        </div>
+    </div>
+
+    <div id="pantalla-red" class="main-universe oculto">
+        <div id="canvas-constelacion"></div>
+        <!-- SIMBOLOGÍA DE LA RED (AGREGADO) -->
+       <div class="panel-filtros">
+
+    <h3>EXPLORAR LA RED</h3>
+
+    <label>Universidad</label>
+    <select id="filtro-universidad">
+        <option value="">Todas</option>
+    </select>
+
+    <label>Década</label>
+    <select id="filtro-decada">
+        <option value="">Todas</option>
+    </select>
+
+    <label>Área</label>
+    <select id="filtro-area">
+        <option value="">Todas</option>
+    </select>
+
+    <button id="btn-limpiar-filtros">
+        Restablecer filtros
+    </button>
+
+</div>
+        <div class="leyenda-red">
+            <div class="leyenda-item">
+                <span class="leyenda-color color-naranjo"></span>
+                <span class="leyenda-texto">9 Diseñadoras (Índice Libro 2004, P. Álvarez)</span>
+            </div>
+            <div class="leyenda-item">
+                <span class="leyenda-color color-rosado"></span>
+                <span class="leyenda-texto">66 Diseñadoras (Índice Libro 2025, P. Álvarez)</span>
+            </div>
+            <div class="leyenda-item">
+    <span class="leyenda-color color-verde"></span>
+    <span class="leyenda-texto"><span id="contador-recomendadas" style="font-weight:700;">0</span> Diseñadoras Recomendadas (Boca en Boca)</span>
+</div>
+        </div>
+
+        <div id="panel-disenadora" class="panel-container panel-oculto">
+            <button id="btn-cerrar" class="close-uid">&times;</button>
+
+            <div class="panel-content">
+                <div class="info-wrapper">
+                    
+                    <div id="contenido-biografia" class="tab-content scrollable-tab">
+                        
+                        <div class="contenedor-foto-cabecera">
+                            <img id="foto-horizontal-perfil" src="" alt="Registro de espacio/taller" class="foto-horizontal-clickeable">
+                            <span class="hint-expandir">Click para expandir</span>
+                        </div>
+
+                        <div class="name-layout">
+                            <span class="first-name">Nombre</span>
+                            <span class="last-name">Apellido</span>
+                        </div>
+
+            
+
+                        <div class="metadata-ficha">
+                            <div class="meta-item"><strong>Universidad:</strong> <span id="meta-universidad">—</span></div>
+                            <div class="meta-item"><strong>Año de egreso:</strong> <span id="meta-egreso">—</span></div>
+                            <div class="meta-item"><strong>Reside en:</strong> <span id="meta-residencia">—</span></div>
+                            <div class="meta-item"><strong>Áreas de trabajo:</strong> <div id="meta-areas" class="tags-container"></div></div>
+                            <div class="meta-item recomendacion-box"><strong>Recomienda a:</strong> <div id="meta-recomienda" class="recomendadas-links-container"></div></div>
+                        </div>
+
+                        <p id="biografia-dinamica" class="texto-biografia">Cargando registro histórico...</p>
+                    </div>
+
+                    <div id="contenido-taller" class="tab-content tab-oculto">
+                        <h3 class="seccion-titulo">CÁPSULAS</h3>
+                        
+                        <!-- Selectores de Ejes agregados -->
+                        <div class="ejes-video-nav">
+                            <button class="btn-eje active" data-eje="eje1">Orígenes</button>
+                            <button class="btn-eje" data-eje="eje2">Trayectoria</button>
+                            <button class="btn-eje" data-eje="eje3">Espacio</button>
+                            <button class="btn-eje" data-eje="eje4">Legado</button>
+                        </div>
+
+                        <div class="video-container">
+                            <video id="video-dinamico" autoplay muted loop playsinline controls width="100%" height="100%">
+                                <source src="" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="bloque-frase-destacada">
+                            <p id="frase-dinamica"></p>
+                        </div>
+                    </div>
+
+                    <div id="contenido-portafolio" class="tab-content tab-oculto scrollable-tab">
+                        <h3 class="seccion-titulo">PROYECTOS SELECCIONADOS</h3>
+                        <div id="galeria-dinamica-obras" class="grid-portafolio"></div>
+                    </div>
+
+                    <div class="sub-navigation">
+                        <label class="nav-item">
+                            <input type="radio" name="menu-disenadora" value="biografia" id="menu-biografia" checked>
+                            <span id="indicador-color" class="dot"></span>
+                            <span>Perfil</span>
+                        </label>
+                        <label class="nav-item">
+                            <input type="radio" name="menu-disenadora" value="taller">
+                            <span class="dot"></span>
+                            <span>Cápsulas</span>
+                        </label>
+                        <label class="nav-item">
+                            <input type="radio" name="menu-disenadora" value="portafolio">
+                            <span class="dot"></span>
+                            <span>Proyectos</span>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div id="lightbox-global" class="lightbox-modal oculto">
+        <span class="cerrar-lightbox">&times;</span>
+        <!-- NUEVO: Botones para avanzar y retroceder -->
+        <button id="btn-lightbox-prev" class="flecha-lightbox">&lt;</button>
+        <img class="imagen-lightbox-activa" id="img-lightbox-src" src="">
+        <button id="btn-lightbox-next" class="flecha-lightbox">&gt;</button>
+        <p id="caption-lightbox" class="caption-lightbox"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
