@@ -178,8 +178,12 @@ const datasetDisenadoras = [
             eje4: "videos/josefina-eje4.mp4"
         },
         obras: [
-            { img: "imagenes/jose1.jpg", desc: "01. Biografías de artesanías" },
-            { img: "imagenes/jose2.jpg", desc: "02. Biografías de artesanías" }
+            { img: ["imagenes/jose1.jpg", "imagenes/jose1.1.jpg", "imagenes/jose1.2.jpg"], desc: "01. Biografías de artesanías" },
+            { img: ["imagenes/jose2.png", "imagenes/jose2.1.png"], desc: "02. They Weave and I Remember" },
+            { img: ["imagenes/jose3.png", "imagenes/jose3.1.png", "imagenes/jose3.2.jpg"], desc: "03. Finding the She" },
+            { img: ["imagenes/jose4.png", "imagenes/jose4.1.png", "imagenes/jose4.2.png"], desc: "04. Tiempo sin lluvia" },
+            { img: ["imagenes/jose5.png", "imagenes/jose5.1.jpg", "imagenes/jose5.2.jpg"], desc: "05. x" },
+            { img: ["imagenes/jose6.jpg", "imagenes/jose6.1.jpg", "imagenes/jose6.2.jpg"], desc: "06. x" },
         ]
     },
     // ALEJANDRA BECKDORF
@@ -196,7 +200,7 @@ const datasetDisenadoras = [
         recomiendaA: [], 
         frase: "«Escribe aquí la frase de la entrevista de Alejandra...»",
         bio: "Biografía de Alejandra Beckdorf...",
-        fotoFondo: "imagenes/alejandrabekkdorf.jpg", 
+        fotoFondo: "imagenes/alebeckdorf.jpg", 
         descFotoPrincipal: "Alejandra Beckdorf — Registro de Espacio / Taller. 2026.",
         videos: {
             eje1: "videos/entrevistaalejandrabekkdorf-eje1.mp4",
@@ -223,7 +227,7 @@ const datasetDisenadoras = [
         recomiendaA: [], 
         frase: "«Escribe aquí la frase de la entrevista de Ari...»",
         bio: "Biografía de Ari González...",
-        fotoFondo: "imagenes/ari González.jpg", 
+        fotoFondo: "imagenes/arigonzalez.jpg", 
         descFotoPrincipal: "Ari González — Registro de Espacio / Taller. 2026.",
         videos: {
             eje1: "videos/entrevistaari González-eje1.mp4",
@@ -232,7 +236,12 @@ const datasetDisenadoras = [
             eje4: "videos/entrevistaari González-eje4.mp4"
         },
         obras: [
-            { img: "imagenes/ari González1.jpg", desc: "01. Ensayos Gráficos" }
+            { img: ["imagenes/ari1.jpg", "imagenes/ari1.1.jpg", "imagenes/ari1.2.jpg"], desc: "01. El Margen del Horizonte" },
+            { img: ["imagenes/ari2.jpg", "imagenes/ari2.1.jpg", "imagenes/ari2.2.jpg"], desc: "02. El Paisaje Mineral Tiene el Cielo Celeste y Dos Montañas Blancas" },
+            { img: ["imagenes/ari3.jpg", "imagenes/ari3.1.jpeg", "imagenes/ari3.2.jpeg"], desc: "03. Palabras Marchitas" },
+            { img: ["imagenes/ari4.jpg", "imagenes/ari4.1.jpg", "imagenes/ari4.2.jpg"], desc: "04. Fosfeno" },
+            { img: ["imagenes/ari5.png", "imagenes/ari5.1.jpg", "imagenes/ari5.2.jpg"], desc: "05. Los Nietos de Lautaro tomando el micrófono" },
+            { img: ["imagenes/ari6.jpg", "imagenes/ari6.1.jpg", "imagenes/ari6.2.jpg"], desc: "06. 18 años La Fuente" },
         ]
     },
     
