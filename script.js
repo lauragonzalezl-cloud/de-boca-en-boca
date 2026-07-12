@@ -80,7 +80,7 @@ const datasetDisenadoras = [
         descFotoPrincipal: "Nicole Cristi — Registro de espacio de trabajo, Campus Lo Contador UC. Fotografía de Laura González, 12 de junio de 2026.",
         videos: {
             eje1: "https://www.youtube.com/embed/SfJX4pik1Sw?si=6WJq5FgqhpytafdG",
-            eje2: "videos/nicole-eje2.mp4",
+            eje2: "https://www.youtube.com/embed/lIMZuJKF6nU?si=1L4ZyVuQBMTcBBsW",
             eje3: "videos/nicole-eje3.mp4",
             eje4: "videos/nicole-eje4.mp4"
         },
