@@ -79,7 +79,7 @@ const datasetDisenadoras = [
         fotoFondo: "imagenes/nicolecristi.jpg", 
         descFotoPrincipal: "Nicole Cristi — Registro de espacio de trabajo, Campus Lo Contador UC. Fotografía de Laura González, 12 de junio de 2026.",
         videos: {
-            eje1: "videos/nicole-eje1.mp4",
+            eje1: "https://www.youtube.com/embed/SfJX4pik1Sw?si=6WJq5FgqhpytafdG",
             eje2: "videos/nicole-eje2.mp4",
             eje3: "videos/nicole-eje3.mp4",
             eje4: "videos/nicole-eje4.mp4"
@@ -391,29 +391,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Controlador Unificado de Pestañas de Ficha Lateral (Perfil / Cápsulas / Proyectos)
-    document.querySelectorAll('input[name="menu-disenadora"]').forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            const pestañaSeleccionada = e.target.value; 
-            const videoDinamico = document.getElementById('video-dinamico');
+document.querySelectorAll('input[name="menu-disenadora"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+        const pestañaSeleccionada = e.target.value; 
+        const videoDinamico = document.getElementById('video-dinamico');
 
-            document.querySelectorAll('.tab-content').forEach(bloque => {
-                bloque.classList.add('tab-oculto');
-            });
-
-            if (pestañaSeleccionada === 'biografia') {
-                document.getElementById('contenido-biografia')?.classList.remove('tab-oculto');
-                if (videoDinamico) videoDinamico.pause();
-            } else if (pestañaSeleccionada === 'taller') {
-                document.getElementById('contenido-taller')?.classList.remove('tab-oculto');
-                if (videoDinamico && videoDinamico.src) {
-                    videoDinamico.play().catch(err => console.log("Auto-play diferido:", err));
-                }
-            } else if (pestañaSeleccionada === 'portafolio') {
-                document.getElementById('contenido-portafolio')?.classList.remove('tab-oculto');
-                if (videoDinamico) videoDinamico.pause();
-            }
+        document.querySelectorAll('.tab-content').forEach(bloque => {
+            bloque.classList.add('tab-oculto');
         });
+
+        if (pestañaSeleccionada === 'biografia') {
+            document.getElementById('contenido-biografia')?.classList.remove('tab-oculto');
+            // EL TIP: Al salir de la pestaña, guardamos el link actual y lo volvemos a poner limpio. 
+            // Esto corta el video de YouTube de raíz para que no siga sonando de fondo.
+            if (videoDinamico) { const currentSrc = videoDinamico.src; videoDinamico.src = ""; videoDinamico.src = currentSrc; }
+        } else if (pestañaSeleccionada === 'taller') {
+            document.getElementById('contenido-taller')?.classList.remove('tab-oculto');
+            // Con YouTube, el video parte automáticamente si tu link de YouTube tiene habilitado el autoplay, 
+            // ya no necesitamos usar videoDinamico.play()
+        } else if (pestañaSeleccionada === 'portafolio') {
+            document.getElementById('contenido-portafolio')?.classList.remove('tab-oculto');
+            // EL TIP: Corta el sonido de YouTube al cambiar a portafolio
+            if (videoDinamico) { const currentSrc = videoDinamico.src; videoDinamico.src = ""; videoDinamico.src = currentSrc; }
+        }
     });
+});
 
     // Acción para el botón de cierre "X" del panel de la diseñadora
     const botonCerrar = document.getElementById("btn-cerrar");
@@ -422,36 +424,30 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("panel-disenadora").classList.add("panel-oculto");
             const video = document.getElementById("video-dinamico");
             if (video) {
-                video.pause();
-                video.src = "";
+                video.src = ""; // Apaga YouTube por completo al vaciar el src
             }
         });
     }
 
     // Escuchar clicks en los ejes multimedia de videos (Eje 1, Eje 2, etc)
-    document.querySelectorAll('.btn-eje').forEach(boton => {
-        boton.addEventListener('click', (e) => {
-            const elBoton = e.target;
-            const ejeSeleccionado = elBoton.getAttribute('data-eje');
-            const videoDinamico = document.getElementById('video-dinamico');
-            
-            document.querySelectorAll('.btn-eje').forEach(b => b.classList.remove('active'));
-            elBoton.classList.add('active');
+document.querySelectorAll('.btn-eje').forEach(boton => {
+    boton.addEventListener('click', (e) => {
+        const elBoton = e.target;
+        const ejeSeleccionado = elBoton.getAttribute('data-eje');
+        const videoDinamico = document.getElementById('video-dinamico');
+        
+        document.querySelectorAll('.btn-eje').forEach(b => b.classList.remove('active'));
+        elBoton.classList.add('active');
 
-            if (videoDinamico && videoDinamico.dataset.videos) {
-                const todosLosVideos = JSON.parse(videoDinamico.dataset.videos);
-                if (todosLosVideos[ejeSeleccionado]) {
-                    videoDinamico.src = todosLosVideos[ejeSeleccionado];
-                    videoDinamico.load();
-                    
-                    const contenidoTaller = document.getElementById('contenido-taller');
-                    if (contenidoTaller && !contenidoTaller.classList.contains('tab-oculto')) {
-                        videoDinamico.play().catch(err => console.log("Video bloqueado por navegador:", err));
-                    }
-                }
+        if (videoDinamico && videoDinamico.dataset.videos) {
+            const todosLosVideos = JSON.parse(videoDinamico.dataset.videos);
+            if (todosLosVideos[ejeSeleccionado]) {
+                // Cambiamos el src al link embed de YouTube y listo, se carga e inicia solo
+                videoDinamico.src = todosLosVideos[ejeSeleccionado];
             }
-        });
+        }
     });
+});
 });
 
 // =========================================================================
@@ -772,7 +768,7 @@ function abrirPanelDisenadora(disenadora) {
 
         if (disenadora.videos && disenadora.videos.eje1) {
             videoDinamico.src = disenadora.videos.eje1;
-            videoDinamico.load();
+            // Se eliminó videoDinamico.load(); para evitar el error en el iframe
         } else {
             videoDinamico.src = "";
         }
