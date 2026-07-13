@@ -73,7 +73,7 @@ const datasetDisenadoras = [
         egreso: "2011", 
         residencia: "Santiago, Chile", 
         areas: ["Investigación", "Antropología del Diseño", "Historia del Diseño"], 
-        recomiendaA: ["Josefina Vidal"],
+        recomiendaA: ["Simoné Malacchini", "Rita Torres", "Camila Rios", "Josefina Vidal", "Katherine Mollenhauer", "Magdalena Cattan"],
         frase: "«Escribe aquí la frase destacada de Nicole...»", 
         bio: "Mamá, diseñadora de formación e investigadora especializada en teoría, estética y pensamiento crítico en torno al diseño, la cultura material y la antropología. Prontamente en su formación universitaria cruzó el diseño con los estudios de estética para profundizar en el mundo sensible, enlazando miradas desde el arte contemporanéo y la arqueología. Su trayectoria se ha construido de manera serpenteante y en espiral, consolidando un camino dedicado a la docencia universitaria y a la investigación con enfoque social. Su trabajo se articula desde una dimensión afectiva y política, donde busca comprender cómo las materialidades y los objetos median nuestras relaciones humanas y nos constituyen como sociedad, tanto en la intimidad del cuarto propio como en la construcción de los espacios públicos.",
         fotoFondo: "imagenes/nicolecristi.jpg", 
@@ -82,7 +82,7 @@ const datasetDisenadoras = [
             eje1: "https://www.youtube.com/embed/SfJX4pik1Sw?si=6WJq5FgqhpytafdG",
             eje2: "https://www.youtube.com/embed/lIMZuJKF6nU?si=1L4ZyVuQBMTcBBsW",
             eje3: "https://www.youtube.com/embed/I-76ezJksrQ?si=uudLo9ML2LF1A6FZ",
-            eje4: "videos/nicole-eje4.mp4"
+            eje4: "https://www.youtube.com/embed/dzPIPrnrZFY?si=bGtIq8oVhfa3koq8"
         },
         obras: [
             { img: "imagenes/nicole-obra1.jpg", desc: "01. Publicación de Investigación" },
@@ -208,7 +208,8 @@ const datasetDisenadoras = [
             eje3: "videos/entrevistaalejandrabekkdorf-eje3.mp4",
             eje4: "videos/entrevistaalejandrabekkdorf-eje4.mp4"
         },
-        obras: [
+        obras: 
+        [
             { img: "imagenes/alejandrabekkdorf1.jpg", desc: "01. Finding the She" },
             { img: "imagenes/alejandrabekkdorf2.jpg", desc: "02. Muestras Editoriales" }
         ]
@@ -313,7 +314,9 @@ const datasetDisenadoras = [
     { id: "Camila González", name: "Camila González", edicion: 'verde', recomendadaPor: "Vico Gallardo"},
     { id: "Valeria Montt", name: "Valeria Montt", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
     { id: "Renata Tesser", name: "Renata Tesser", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
-    { id: "Constanza Diez", name: "Constanza Diez", edicion: 'verde', recomendadaPor: "Vico Gallardo" }
+    { id: "Constanza Diez", name: "Constanza Diez", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
+    { id: "Katherine Mollenhauer", name: "Katherine Mollenhauer", edicion: 'verde', recomendadaPor: "Nicole Cristi" },
+    { id: "Magdalena Cattan", name: "Magdalena Cattan", edicion: 'verde', recomendadaPor: "Nicole Cristi" }
 ];
 
 // =========================================================================
