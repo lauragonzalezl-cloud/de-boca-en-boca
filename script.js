@@ -81,7 +81,7 @@ const datasetDisenadoras = [
         videos: {
             eje1: "https://www.youtube.com/embed/SfJX4pik1Sw?si=6WJq5FgqhpytafdG",
             eje2: "https://www.youtube.com/embed/lIMZuJKF6nU?si=1L4ZyVuQBMTcBBsW",
-            eje3: "videos/nicole-eje3.mp4",
+            eje3: "https://www.youtube.com/embed/I-76ezJksrQ?si=uudLo9ML2LF1A6FZ",
             eje4: "videos/nicole-eje4.mp4"
         },
         obras: [
