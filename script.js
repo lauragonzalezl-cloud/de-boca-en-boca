@@ -42,7 +42,7 @@ const datasetDisenadoras = [
         universidad: "Diego Portales",
         egreso: "2008",
         residencia: "Madrid,España",
-        areas: ["Diseño Gráfico", "Diseño Editorial", "Ilustración"],
+        areas: ["Diseño Gráfico", "Diseño Editorial", "Ilustración", "Docencia Universitaria"],
         recomiendaA: ["Piedad Rivadeneira", "Julie Carles", "Alejandra Beckdorf", "Catalina Cumsille"],
         frase: "«Mi estudio es un estudio móvil.»",
         bio: "Diseñadora Gráfica especializada en diseño editorial, con un Máster en Edición e Industrias Editoriales y actualmente cursando un Doctorado en Bellas Artes en España. Hace 15 años fundó su estudio de diseño (Estudio PI), un espacio con un marcado enfoque ligado a la cultura y el patrimonio, desde donde desarrolla publicaciones, diseño gráfico y proyectos museográficos. Su trabajo se articula de manera muy humana entre la práctica profesional, la investigación y la docencia universitaria entre Chile y España, consolidando un camino de más de 150 publicaciones en colaboración con museos, instituciones culturales y artistas de Latinoamérica y Europa.",
@@ -72,10 +72,10 @@ const datasetDisenadoras = [
         universidad: "Católica", 
         egreso: "2011", 
         residencia: "Santiago, Chile", 
-        areas: ["Investigación", "Antropología del Diseño", "Historia del Diseño"], 
+        areas: ["Investigación", "Docencia Universitaria", "Antropología del Diseño", "Historia del Diseño"], 
         recomiendaA: ["Simoné Malacchini", "Rita Torres", "Camila Rios", "Josefina Vidal", "Katherine Mollenhauer", "Magdalena Cattan"],
         frase: "«Escribe aquí la frase destacada de Nicole...»", 
-        bio: "Mamá, diseñadora de formación e investigadora especializada en teoría, estética y pensamiento crítico en torno al diseño, la cultura material y la antropología. Prontamente en su formación universitaria cruzó el diseño con los estudios de estética para profundizar en el mundo sensible, enlazando miradas desde el arte contemporanéo y la arqueología. Su trayectoria se ha construido de manera serpenteante y en espiral, consolidando un camino dedicado a la docencia universitaria y a la investigación con enfoque social. Su trabajo se articula desde una dimensión afectiva y política, donde busca comprender cómo las materialidades y los objetos median nuestras relaciones humanas y nos constituyen como sociedad, tanto en la intimidad del cuarto propio como en la construcción de los espacios públicos.",
+        bio: "Mamá, diseñadora de formación e investigadora especializada en teoría, estética y pensamiento crítico en torno al diseño, la cultura material y la antropología. En su formación cruzó el diseño con la estética para profundizar en el mundo sensible, enlazando miradas desde el arte contemporáneo y la arqueología. Su trayectoria, serpenteante y en espiral, se consolida en la docencia universitaria y la investigación con enfoque social. Su trabajo se articula desde una dimensión afectiva y política, buscando comprender cómo las materialidades y los objetos median nuestras relaciones humanas y nos constituyen como sociedad, tanto en la intimidad del cuarto propio como en la construcción de los espacios públicos.",
         fotoFondo: "imagenes/nicolecristi.jpg", 
         descFotoPrincipal: "Nicole Cristi — Registro de espacio de trabajo, Campus Lo Contador UC. Fotografía de Laura González, 12 de junio de 2026.",
         videos: {
@@ -101,11 +101,11 @@ const datasetDisenadoras = [
         hasEntrevista: true, 
         universidad: "Diego Portales",
         egreso: "2022", 
-        residencia: "Santiago, Chile", 
-        areas: ["Diseño Gráfico"],
+        residencia: "Santiago, Chile (pero la raíz siempre en Marchigüe, Sexta Región)", 
+        areas: ["Diseño Editorial", "Diseño Gráfico", "Docencia Universitaria"],
         recomiendaA: [], 
         frase: "«Escribe aquí la frase destacada de Perla...»", 
-        bio: "Diseñadora en Comunicación Visual por la Universidad de Santiago de Chile...", 
+        bio: "Diseñadora de formación y creadora visual guiada por la íntima convicción de que dar forma a un libro es un privilegio que conecta con el lector. Su práctica se despliega entre el diseño editorial, de información, visualización de datos y tipografía, colaborando con Latinotype, Estudio Vicencio y Ediciones Fulgor. Concibe la diagramación como un puente para transmitir conocimientos y emociones, visión que traslada a las aulas de la Universidad Diego Portales y la Universidad de Chile. Su portafolio destaca por proyectos como Carmela y La Alborada y la publicación Oficina Larrea (Premio Amster-Coré 2024), trayectoria docente que respalda con un diplomado con enfoque de género.", 
         fotoFondo: "imagenes/perlaarrue.jpg", 
         descFotoPrincipal: "Perla Arrué — Registro de espacio de trabajo en estudio personal. Fotografía de Laura González, 18 de junio de 2026.",
         videos: {
@@ -115,12 +115,12 @@ const datasetDisenadoras = [
             eje4: "videos/perla-eje4.mp4"
         }, 
         obras: [
-            { img: "imagenes/perla1.jpg", desc: "01. Resistencia Textil" },
-            { img: "imagenes/perla2.jpeg", desc: "02. Marcas, logotipos y símbolos de Julián Naranjo" },
-            { img: "imagenes/perla3.jpg", desc: "03. Libro Oficina Larrea" },
-            { img: "imagenes/perla4.png", desc: "04. Catálogo ODA" },
-            { img: "imagenes/perla5.png", desc: "05. Carmela y La Alborada" },
-            { img: "imagenes/perla6.png", desc: "06. Revista Grifo #45" }
+            { img: ["imagenes/perla1.jpg", "imagenes/perla1.1.jpg", "imagenes/perla1.2.jpg"], desc: "01. Marcas, logotipos y símbolos de Julián Naranjo" },
+            { img: ["imagenes/perla2.jpg", "imagenes/perla2.1.jpg", "imagenes/perla2.2.jpg"], desc: "02. Libro Oficina Larrea" },
+            { img: ["imagenes/perla3.jpg", "imagenes/perla3.1.png", "imagenes/perla3.2.png"], desc: "03. Resistencia Textil" },
+            { img: ["imagenes/perla4.png", "imagenes/perla4.1.png", "imagenes/perla4.2.png"], desc: "04. Carmela y La Alborada" },
+            { img: ["imagenes/perla5.png", "imagenes/perla5.1.png", "imagenes/perla5.2.png"], desc: "05. Cringe Gothic" },
+            { img: ["imagenes/perla6.jpg", "imagenes/perla6.1.jpg", "imagenes/perla6.2.jpg"], desc: "06. Revista Grifo #45" }
         ] 
     },
     // 4. VICO GALLARDO
@@ -196,7 +196,7 @@ const datasetDisenadoras = [
         universidad: "Del Desarrollo",
         egreso: "2021", 
         residencia: "Santiago, Chile",
-        areas: ["Diseño Gráfico"],
+        areas: ["Diseño Gráfico", "Docencia Universitaria"],
         recomiendaA: [], 
         frase: "«Escribe aquí la frase de la entrevista de Alejandra...»",
         bio: "Biografía de Alejandra Beckdorf...",
@@ -224,7 +224,7 @@ const datasetDisenadoras = [
         universidad: "Católica",
         egreso: "2016", 
         residencia: "Santiago, Chile",
-        areas: ["Docencia"],
+        areas: ["Docencia Universitaria"],
         recomiendaA: [], 
         frase: "«Escribe aquí la frase de la entrevista de Ari...»",
         bio: "Biografía de Ari González...",
