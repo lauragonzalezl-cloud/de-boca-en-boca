@@ -145,12 +145,12 @@ const datasetDisenadoras = [
             eje4: "videos/vico-eje4.mp4"
         }, 
         obras: [
-            { img: ["imagenes/vico1.jpg", "imagenes/vico1.1.jpg", "imagenes/vico1.2.jpg"], desc: "01. Cocino con Plantas" },
-            { img: ["imagenes/vico2.jpg", "imagenes/vico2.1.jpg"], desc: "02. Si lo puedes sentir, lo puedes sanar" },
-            { img: ["imagenes/vico3.jpg"], desc: "03. Slow life" },
-            { img: ["imagenes/vico4.jpg", "imagenes/vico4.1.jpg", "imagenes/vico4.2.jpg"], desc: "04. Épicas" },
-            { img: ["imagenes/vico5.jpg"], desc: "05. Fragata Cochrane" },
-            { img: ["imagenes/vico6.jpg"], desc: "06. La Ciencia Oscura" },
+            { img: ["imagenes/vico1.png", "imagenes/vico1.1.png", "imagenes/vico1.2.png"], desc: "01. Cocino con plantas: Diseño editorial de cubierta e interior. Libro ganador Chile Diseño 2024." },
+            { img: ["imagenes/vico2.png", "imagenes/vico2.1.png", "imagenes/vico2.2.png"], desc: "02. 80 años de Fernando Mayer: Diseño de cubierta (que contempló la elección material) y su interior." },
+            { img: ["imagenes/vico3.png", "imagenes/vico3.1.png", "imagenes/vico3.2.png"], desc: "03. Mi hermano Arthur: Diseño editorial de cubierta, interior y desarrollo de collage ilustrativo." },
+            { img: ["imagenes/vico4.png", "imagenes/vico4.1.png", "imagenes/vico4.2.png"], desc: "04. El ABC de PF: Diseño editorial interior y producción de contenido gráfico documental." },
+            { img: ["imagenes/vico5.png", "imagenes/vico5.1.png", "imagenes/vico5.2.png"], desc: "05. Épicas: Diseño editorial de cubierta e interior, Desarrolo de iconos y Dirección de arte en Ilustraciones." },
+            { img: ["imagenes/vico6.png", "imagenes/vico6.1.png", "imagenes/vico6.2.png"], desc: "06. Vegan Neighbor: Desarrollo de identidad y dirección gráfica." },
         ] 
     },
 
