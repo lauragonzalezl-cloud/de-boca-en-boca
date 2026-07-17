@@ -103,16 +103,16 @@ const datasetDisenadoras = [
         egreso: "2022", 
         residencia: "Santiago, Chile (pero la raíz siempre en Marchigüe, Sexta Región)", 
         areas: ["Diseño Editorial", "Diseño Gráfico", "Docencia Universitaria"],
-        recomiendaA: [], 
+        recomiendaA: ["Valentina Contreras", "Antonieta Lopez", "Pía Pulgar", "Camila Jouannet" ], 
         frase: "«Escribe aquí la frase destacada de Perla...»", 
         bio: "Diseñadora de formación y creadora visual guiada por la íntima convicción de que dar forma a un libro es un privilegio que conecta con el lector. Su práctica se despliega entre el diseño editorial, de información, visualización de datos y tipografía, colaborando con Latinotype, Estudio Vicencio y Ediciones Fulgor. Concibe la diagramación como un puente para transmitir conocimientos y emociones, visión que traslada a las aulas de la Universidad Diego Portales y la Universidad de Chile. Su portafolio destaca por proyectos como Carmela y La Alborada y la publicación Oficina Larrea (Premio Amster-Coré 2024), trayectoria docente que respalda con un diplomado con enfoque de género.", 
         fotoFondo: "imagenes/perlaarrue.jpg", 
         descFotoPrincipal: "Perla Arrué — Registro de espacio de trabajo en estudio personal. Fotografía de Laura González, 18 de junio de 2026.",
         videos: {
-            eje1: "videos/perla-eje1.mp4",
-            eje2: "videos/perla-eje2.mp4",
-            eje3: "videos/perla-eje3.mp4",
-            eje4: "videos/perla-eje4.mp4"
+            eje1: "https://www.youtube.com/embed/u8rO0Hhx0rw?si=8rWzMPOrduvAaPc8",
+            eje2: "https://www.youtube.com/embed/6R8UG4_dI4A?si=R79FLXAtXKUv7YiD",
+            eje3: "https://www.youtube.com/embed/EtdvZYov80k?si=Qj70-x43MosB7-Ka",
+            eje4: "https://www.youtube.com/embed/uNERN-zC3Sw?si=tPEAbbiQmz2oVmQj"
         }, 
         obras: [
             { img: ["imagenes/perla1.jpg", "imagenes/perla1.1.jpg", "imagenes/perla1.2.jpg"], desc: "01. Marcas, logotipos y símbolos de Julián Naranjo" },
@@ -139,10 +139,10 @@ const datasetDisenadoras = [
         fotoFondo: "imagenes/victoriagallardo.jpg", 
         descFotoPrincipal: "Vico Gallardo — Registro de espacio de trabajo en estudio personal. Fotografía de Laura González, 14 de junio de 2026.",
         videos: {
-            eje1: "videos/vico-eje1.mp4",
-            eje2: "videos/vico-eje2.mp4",
-            eje3: "videos/vico-eje3.mp4",
-            eje4: "videos/vico-eje4.mp4"
+            eje1: "",
+            eje2: "",
+            eje3: "",
+            eje4: ""
         }, 
         obras: [
             { img: ["imagenes/vico1.png", "imagenes/vico1.1.png", "imagenes/vico1.2.png"], desc: "01. Cocino con plantas: Diseño editorial de cubierta e interior. Libro ganador Chile Diseño 2024." },
@@ -316,7 +316,10 @@ const datasetDisenadoras = [
     { id: "Renata Tesser", name: "Renata Tesser", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
     { id: "Constanza Diez", name: "Constanza Diez", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
     { id: "Katherine Mollenhauer", name: "Katherine Mollenhauer", edicion: 'verde', recomendadaPor: "Nicole Cristi" },
-    { id: "Magdalena Cattan", name: "Magdalena Cattan", edicion: 'verde', recomendadaPor: "Nicole Cristi" }
+    { id: "Magdalena Cattan", name: "Magdalena Cattan", edicion: 'verde', recomendadaPor: "Nicole Cristi" },
+    { id: "Valentina Contreras", name: "Valentina Contreras", edicion: 'verde', recomendadaPor: "Perla Arrué" },
+    { id: "Pía Pulgar", name: "Pía Pulgar", edicion: 'verde', recomendadaPor: "Perla Arrué" },
+    { id: "Camila Jouannet", name: "Camila Jouannet", edicion: 'verde', recomendadaPor: "Perla Arrué" }
 ];
 
 // =========================================================================
