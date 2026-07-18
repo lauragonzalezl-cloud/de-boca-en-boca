@@ -84,6 +84,12 @@ const datasetDisenadoras = [
             eje3: "https://www.youtube.com/embed/I-76ezJksrQ?si=uudLo9ML2LF1A6FZ",
             eje4: "https://www.youtube.com/embed/dzPIPrnrZFY?si=bGtIq8oVhfa3koq8"
         },
+        duraciones: {
+            eje1: "6:50 min",
+            eje2: "35:51 min",
+            eje3: "6:35 min",
+            eje4: "6:43 min"
+        },
         obras: [
             { img: "imagenes/nicole-obra1.jpg", desc: "01. Publicación de Investigación" },
             { img: "imagenes/nicole-obra2.jpg", desc: "02. Archivo Histórico Visual" },
@@ -104,7 +110,13 @@ const datasetDisenadoras = [
         residencia: "Santiago, Chile (pero la raíz siempre en Marchigüe, Sexta Región)", 
         areas: ["Diseño Editorial", "Diseño Gráfico", "Docencia Universitaria"],
         recomiendaA: ["Valentina Contreras", "Antonieta Lopez", "Pía Pulgar", "Camila Jouannet" ], 
-        frase: "«Escribe aquí la frase destacada de Perla...»", 
+        // REEMPLAZAMOS EL TEXTO ÚNICO POR ESTE OBJETO:
+        frases: {
+            eje1: "«Mi estudio comenzó como una respuesta a la necesidad de moverme libremente.»",
+            eje2: "«La docencia me permite devolver al diseño lo mucho que me ha entregado.»",
+            eje3: "«Mi estudio es un estudio móvil.»",
+            eje4: "«El patrimonio no es estático, se construye día a día con nuestro oficio.»"
+        }, 
         bio: "Diseñadora de formación y creadora visual guiada por la íntima convicción de que dar forma a un libro es un privilegio que conecta con el lector. Su práctica se despliega entre el diseño editorial, de información, visualización de datos y tipografía, colaborando con Latinotype, Estudio Vicencio y Ediciones Fulgor. Concibe la diagramación como un puente para transmitir conocimientos y emociones, visión que traslada a las aulas de la Universidad Diego Portales y la Universidad de Chile. Su portafolio destaca por proyectos como Carmela y La Alborada y la publicación Oficina Larrea (Premio Amster-Coré 2024), trayectoria docente que respalda con un diplomado con enfoque de género.", 
         fotoFondo: "imagenes/perlaarrue.jpg", 
         descFotoPrincipal: "Perla Arrué — Registro de espacio de trabajo en estudio personal. Fotografía de Laura González, 18 de junio de 2026.",
@@ -114,6 +126,13 @@ const datasetDisenadoras = [
             eje3: "https://www.youtube.com/embed/EtdvZYov80k?si=Qj70-x43MosB7-Ka",
             eje4: "https://www.youtube.com/embed/uNERN-zC3Sw?si=tPEAbbiQmz2oVmQj"
         }, 
+        // ¡NUEVO APARTADO EDITABLE!: Agrega los tiempos aquí correspondientes a cada eje
+        duraciones: {
+            eje1: "8:25 min",
+            eje2: "14:57 min",
+            eje3: "11:43 min",
+            eje4: "6:38 min"
+        },
         obras: [
             { img: ["imagenes/perla1.jpg", "imagenes/perla1.1.jpg", "imagenes/perla1.2.jpg"], desc: "01. Marcas, logotipos y símbolos de Julián Naranjo" },
             { img: ["imagenes/perla2.jpg", "imagenes/perla2.1.jpg", "imagenes/perla2.2.jpg"], desc: "02. Libro Oficina Larrea" },
@@ -355,19 +374,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Limpiador de filtros interactivo
+    // Limpiador de filtros interactivo optimizado para Proyecto de Título
     document.getElementById("btn-limpiar-filtros")?.addEventListener("click", () => {
         document.getElementById("filtro-universidad").value = "";
         document.getElementById("filtro-decada").value = "";
         document.getElementById("filtro-area").value = "";
 
-        if (nodesDataset) {
-            datasetDisenadoras.forEach(d => {
-                if (nodesDataset.get(d.id)) {
-                    nodesDataset.update({ id: d.id, hidden: false });
-                }
-            });
-        }
+        // Al usar esta función, limpias los filtros y además re-renderizas Vis.js con su estética original intacta
+        restaurarEstadoOriginalRed();
     });
 
     // Controladores del Lightbox Global
@@ -396,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Controlador Unificado de Pestañas de Ficha Lateral (Perfil / Cápsulas / Proyectos)
+    // A. Controlador de Pestañas de Ficha Lateral (Perfil / Cápsulas / Proyectos)
 document.querySelectorAll('input[name="menu-disenadora"]').forEach(radio => {
     radio.addEventListener('change', (e) => {
         const pestañaSeleccionada = e.target.value; 
@@ -408,17 +422,60 @@ document.querySelectorAll('input[name="menu-disenadora"]').forEach(radio => {
 
         if (pestañaSeleccionada === 'biografia') {
             document.getElementById('contenido-biografia')?.classList.remove('tab-oculto');
-            // EL TIP: Al salir de la pestaña, guardamos el link actual y lo volvemos a poner limpio. 
-            // Esto corta el video de YouTube de raíz para que no siga sonando de fondo.
             if (videoDinamico) { const currentSrc = videoDinamico.src; videoDinamico.src = ""; videoDinamico.src = currentSrc; }
         } else if (pestañaSeleccionada === 'taller') {
             document.getElementById('contenido-taller')?.classList.remove('tab-oculto');
-            // Con YouTube, el video parte automáticamente si tu link de YouTube tiene habilitado el autoplay, 
-            // ya no necesitamos usar videoDinamico.play()
         } else if (pestañaSeleccionada === 'portafolio') {
             document.getElementById('contenido-portafolio')?.classList.remove('tab-oculto');
-            // EL TIP: Corta el sonido de YouTube al cambiar a portafolio
             if (videoDinamico) { const currentSrc = videoDinamico.src; videoDinamico.src = ""; videoDinamico.src = currentSrc; }
+        }
+    });
+}); // <--- AQUÍ SE CIERRA CORRECTAMENTE EL EVENTO DE LAS PESTAÑAS
+
+// B. Escuchar clicks en los botones de cápsulas (ejes) de forma independiente y eficiente
+document.querySelectorAll('.btn-eje').forEach(boton => {
+    boton.addEventListener('click', (e) => {
+        const elBoton = e.target;
+        const ejeSeleccionado = elBoton.getAttribute('data-eje');
+        const videoDinamico = document.getElementById('video-dinamico');
+        const contenedorDuracion = document.getElementById('duracion-video');
+        
+        // --- NUEVO: Traemos el elemento HTML de la frase ---
+        const bloqueFrase = document.getElementById('frase-dinamica'); 
+        // --------------------------------------------------
+        
+        document.querySelectorAll('.btn-eje').forEach(b => b.classList.remove('active'));
+        elBoton.classList.add('active');
+
+        // Cambia el texto de la duración dinámicamente
+        if (contenedorDuracion && videoDinamico && videoDinamico.dataset.duraciones) {
+            const todasLasDuraciones = JSON.parse(videoDinamico.dataset.duraciones);
+            if (todasLasDuraciones[ejeSeleccionado]) {
+                contenedorDuracion.innerText = `Duración: ${todasLasDuraciones[ejeSeleccionado]}`;
+                contenedorDuracion.style.display = "block";
+            } else {
+                contenedorDuracion.style.display = "none";
+            }
+        }
+
+        // --- NUEVO: Cambia la frase según el eje seleccionado ---
+        if (bloqueFrase && videoDinamico && videoDinamico.dataset.frases) {
+            const todasLasFrases = JSON.parse(videoDinamico.dataset.frases);
+            if (todasLasFrases[ejeSeleccionado]) {
+                bloqueFrase.innerText = todasLasFrases[ejeSeleccionado];
+                bloqueFrase.style.display = "block";
+            } else {
+                bloqueFrase.innerText = ""; // Si este eje no tiene frase, se limpia
+            }
+        }
+        // --------------------------------------------------------
+
+        // Cambia el video de YouTube
+        if (videoDinamico && videoDinamico.dataset.videos) {
+            const todosLosVideos = JSON.parse(videoDinamico.dataset.videos);
+            if (todosLosVideos[ejeSeleccionado]) {
+                videoDinamico.src = todosLosVideos[ejeSeleccionado];
+            }
         }
     });
 });
@@ -435,25 +492,7 @@ document.querySelectorAll('input[name="menu-disenadora"]').forEach(radio => {
         });
     }
 
-    // Escuchar clicks en los ejes multimedia de videos (Eje 1, Eje 2, etc)
-document.querySelectorAll('.btn-eje').forEach(boton => {
-    boton.addEventListener('click', (e) => {
-        const elBoton = e.target;
-        const ejeSeleccionado = elBoton.getAttribute('data-eje');
-        const videoDinamico = document.getElementById('video-dinamico');
-        
-        document.querySelectorAll('.btn-eje').forEach(b => b.classList.remove('active'));
-        elBoton.classList.add('active');
-
-        if (videoDinamico && videoDinamico.dataset.videos) {
-            const todosLosVideos = JSON.parse(videoDinamico.dataset.videos);
-            if (todosLosVideos[ejeSeleccionado]) {
-                // Cambiamos el src al link embed de YouTube y listo, se carga e inicia solo
-                videoDinamico.src = todosLosVideos[ejeSeleccionado];
-            }
-        }
-    });
-});
+   
 });
 
 // =========================================================================
@@ -767,14 +806,43 @@ function abrirPanelDisenadora(disenadora) {
     }
 
     if (videoDinamico) {
+        // Guardamos los videos, las duraciones y NUEVO: las frases en el dataset del elemento HTML
         videoDinamico.dataset.videos = disenadora.videos ? JSON.stringify(disenadora.videos) : "";
+        videoDinamico.dataset.duraciones = disenadora.duraciones ? JSON.stringify(disenadora.duraciones) : "";
+        
+        // --- AGREGA ESTA LÍNEA (Guarda el objeto con las 4 frases) ---
+        videoDinamico.dataset.frases = disenadora.frases ? JSON.stringify(disenadora.frases) : "";
+        // ------------------------------------------------------------
+        
         document.querySelectorAll('.btn-eje').forEach(btn => btn.classList.remove('active'));
         const primerBtn = document.querySelector('.btn-eje[data-eje="eje1"]');
         if (primerBtn) primerBtn.classList.add('active');
 
+        // NUEVO: Muestra la duración inicial (Eje 1) al cargar la diseñadora
+        const contenedorDuracion = document.getElementById('duracion-video');
+        if (contenedorDuracion) {
+            if (disenadora.duraciones && disenadora.duraciones.eje1) {
+                contenedorDuracion.innerText = `Duración: ${disenadora.duraciones.eje1}`;
+                contenedorDuracion.style.display = "block";
+            } else {
+                contenedorDuracion.style.display = "none";
+            }
+        }
+
+        // --- AGREGA ESTE BLOQUE (Muestra la frase inicial del Eje 1) ---
+        const bloqueFrase = document.getElementById('frase-dinamica');
+        if (bloqueFrase) {
+            if (disenadora.frases && disenadora.frases.eje1) {
+                bloqueFrase.innerText = disenadora.frases.eje1;
+                bloqueFrase.style.display = "block"; // Asegura que se vea si estaba oculto
+            } else {
+                bloqueFrase.innerText = "";
+            }
+        }
+        // ---------------------------------------------------------------
+
         if (disenadora.videos && disenadora.videos.eje1) {
             videoDinamico.src = disenadora.videos.eje1;
-            // Se eliminó videoDinamico.load(); para evitar el error en el iframe
         } else {
             videoDinamico.src = "";
         }
