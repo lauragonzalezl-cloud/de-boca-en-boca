@@ -194,7 +194,7 @@ body, html, button, select, input {
 #btn-lightbox-next { right: 40px; }
 
 /* ==========================================
-   LEYENDA DE LA RED (SOLUCIÓN FINAL DE ALTURA)
+   LEYENDA DE LA RED (UNIFICADA Y CORREGIDA)
    ========================================== */
 .leyenda-red {
     position: absolute; 
@@ -202,80 +202,18 @@ body, html, button, select, input {
     left: 40px; 
     z-index: 5;
     background: rgba(12, 12, 12, 0.85); 
-    padding: 15px;
+    padding: 16px 18px; 
     border: 1px solid rgba(255, 255, 255, 0.08); 
     display: flex;
     flex-direction: column; 
     backdrop-filter: blur(5px);
     border-radius: 4px;
-    width: 240px;
+    width: 460px; 
     pointer-events: auto !important; 
     overflow: hidden;
 
-    /* DEFINIDO: Transición suave para que la caja se encoja sin saltos */
-    max-height: 220px; 
-    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Botón minimalista superior para colapsar */
-.btn-toggle-leyenda {
-    background: none; 
-    border: none; 
-    color: #fff;
-    font-size: 0.75rem; 
-    text-transform: uppercase; 
-    letter-spacing: 2px;
-    font-weight: 700; 
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; 
-    cursor: pointer; 
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 10px;
-}
-
-/* Contenedor de las pelotitas de colores */
-.contenido-leyenda {
-    display: flex; 
-    flex-direction: column; 
-    gap: 10px;
-    transition: opacity 0.3s ease;
-    opacity: 1;
-}
-
-/* TUS CLASES ORIGINALES (Se quedan exactamente igual) */
-.leyenda-item { display: flex; align-items: center; gap: 10px; }
-.leyenda-color { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-.color-naranjo { background-color: #F8470C; }
-.color-rosado { background-color: #F05982; }
-.color-verde { background-color: #4aff7a; }
-.leyenda-texto { font-size: 0.7rem; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; font-weight: 400; }
-
-/* ==========================================
-   LEYENDA DE LA RED (EQUILIBRADA: AMPLIA Y DELGADA)
-   ========================================== */
-.leyenda-red {
-    position: absolute; 
-    bottom: 40px; 
-    left: 40px; 
-    z-index: 5;
-    background: rgba(12, 12, 12, 0.85); 
-    padding: 14px 18px; /* Ajustamos padding para que sea más delgada verticalmente */
-    border: 1px solid rgba(255, 255, 255, 0.08); 
-    display: flex;
-    flex-direction: column; 
-    backdrop-filter: blur(5px);
-    border-radius: 4px;
-    width: 460px; /* Ancho perfecto: el texto respira sin ser una caja gigante */
-    pointer-events: auto !important; 
-    overflow: hidden;
-
-    /* Altura ajustada exacta para el contenido abierto */
-    max-height: 165px; 
+    /* Altura máxima en estado abierto y transiciones suaves */
+    max-height: 200px; 
     transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                 padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -298,6 +236,7 @@ body, html, button, select, input {
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     margin-bottom: 10px;
+    line-height: 1; 
 }
 
 /* Contenedor interno de las filas de color */
@@ -305,18 +244,19 @@ body, html, button, select, input {
     display: flex; 
     flex-direction: column; 
     gap: 8px; 
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     opacity: 1;
+    visibility: visible;
 }
 
-/* Filas e ítems con espacio para respirar */
+/* Filas e ítems */
 .leyenda-item { display: flex; align-items: center; gap: 10px; }
 .leyenda-color { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
 .color-naranjo { background-color: #F8470C; }
 .color-rosado { background-color: #F05982; }
 .color-verde { background-color: #4aff7a; }
 .leyenda-texto { 
-    font-size: 0.72rem; /* Restauramos un tamaño legible y cómodo */
+    font-size: 0.72rem; 
     color: rgba(255, 255, 255, 0.7); 
     text-transform: uppercase; 
     letter-spacing: 1px; 
@@ -324,22 +264,34 @@ body, html, button, select, input {
     font-weight: 400; 
 }
 
-/* ESTADO CERRADO (COLAPSADO) */
+/* ESTADO CERRADO OPTIMIZADO */
 .leyenda-red.colapsada {
-    max-height: 42px; 
-    padding-bottom: 0px; 
+    max-height: 54px !important;    /* Altura ideal y segura para que el texto quepa sin cortarse */
+    padding-top: 14px !important;    
+    padding-bottom: 14px !important; 
+    z-index: 99999 !important;      
+    cursor: pointer !important;     
 }
 
+/* Mantenemos el texto y la flecha vivos al colapsar */
 .leyenda-red.colapsada .btn-toggle-leyenda {
-    border-bottom-color: transparent;
-    margin-bottom: 0px;
+    border-bottom-color: transparent !important; 
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    pointer-events: none !important;             
+    opacity: 1 !important;                       
+    visibility: visible !important;
+    display: flex !important;       /* Garantiza que mantenga su estructura flex layout */
 }
 
+/* Solo se esconde la lista de pelotitas y colores */
 .leyenda-red.colapsada .contenido-leyenda {
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;           /* Le quita toda la altura física para que no empuje el botón */
+    margin: 0 !important;
+    padding: 0 !important;
 }
-
 
 /* NAVEGACIÓN DE EJES EN ENTREVISTAS */
 .ejes-video-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
@@ -352,14 +304,13 @@ body, html, button, select, input {
 .btn-eje:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
 .btn-eje.active { background: #ffffff; color: #000000; border-color: #ffffff; font-weight: 700; }
 
-
 /* ==========================================
-   PANEL DE FILTROS: ARRIBA DE LA NUEVA LEYENDA DELGADA
+   PANEL DE FILTROS: ARRIBA DE LA LEYENDA
    ========================================== */
 .panel-filtros {
     position: absolute; 
     left: 40px; 
-    bottom: 215px; /* Altura perfecta sobre la nueva caja estilizada */
+    bottom: 225px; /* Ajustado ligeramente para que acompañe el nuevo margen de la leyenda */
     z-index: 6; 
     width: 240px;
     background: rgba(12, 12, 12, .88); 

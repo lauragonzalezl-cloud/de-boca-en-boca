@@ -925,17 +925,29 @@ function actualizarContenidoLightbox() {
 // CONTROLADOR DE LA LEYENDA COLAPSABLE
 // ==========================================
 (function() {
-    // Esperamos a que la página cargue por si acaso
     const inicializarLeyenda = () => {
         const btnToggle = document.getElementById('btn-toggle-leyenda');
         const leyenda = document.getElementById('leyenda-red');
         const flecha = document.getElementById('flecha-leyenda');
 
-        if (btnToggle && leyenda && flecha) {
-            btnToggle.addEventListener('click', () => {
-                leyenda.classList.toggle('colapsada');
-                // Cambia la flecha: ▲ si está cerrada, ▼ si está abierta
-                flecha.innerText = leyenda.classList.contains('colapsada') ? "▲" : "▼";
+        if (leyenda && btnToggle && flecha) {
+            
+            // ESCUCHAMOS EL CLIC EN TODA LA CAJA DE LA LEYENDA
+            leyenda.addEventListener('click', (e) => {
+                
+                // CASO 1: Si está colapsada, cualquier clic en la barra la vuelve a abrir
+                if (leyenda.classList.contains('colapsada')) {
+                    leyenda.classList.remove('colapsada');
+                    flecha.innerText = "▼"; // Flecha hacia abajo porque ahora está abierta
+                    e.stopPropagation();    // Evita que el clic traspase e interactúe con el mapa de fondo
+                } 
+                
+                // CASO 2: Si está abierta, solo se cierra si haces clic exactamente en el botón superior
+                else if (e.target.closest('#btn-toggle-leyenda')) {
+                    leyenda.classList.add('colapsada');
+                    flecha.innerText = "▲"; // Flecha hacia arriba porque ahora está oculta
+                    e.stopPropagation();
+                }
             });
         }
     };
