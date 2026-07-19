@@ -921,3 +921,28 @@ function actualizarContenidoLightbox() {
         }
     }
 }
+// ==========================================
+// CONTROLADOR DE LA LEYENDA COLAPSABLE
+// ==========================================
+(function() {
+    // Esperamos a que la página cargue por si acaso
+    const inicializarLeyenda = () => {
+        const btnToggle = document.getElementById('btn-toggle-leyenda');
+        const leyenda = document.getElementById('leyenda-red');
+        const flecha = document.getElementById('flecha-leyenda');
+
+        if (btnToggle && leyenda && flecha) {
+            btnToggle.addEventListener('click', () => {
+                leyenda.classList.toggle('colapsada');
+                // Cambia la flecha: ▲ si está cerrada, ▼ si está abierta
+                flecha.innerText = leyenda.classList.contains('colapsada') ? "▲" : "▼";
+            });
+        }
+    };
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", inicializarLeyenda);
+    } else {
+        inicializarLeyenda();
+    }
+})();

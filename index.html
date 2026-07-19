@@ -51,19 +51,28 @@
     </button>
 
 </div>
-        <div class="leyenda-red">
-            <div class="leyenda-item">
-                <span class="leyenda-color color-naranjo"></span>
-                <span class="leyenda-texto">9 Diseñadoras (Índice Libro 2004, P. Álvarez)</span>
+        <div id="leyenda-red" class="leyenda-red">
+            <!-- Botón interactivo para minimizar/maximizar -->
+            <button id="btn-toggle-leyenda" class="btn-toggle-leyenda">
+                <span>Leyenda</span> <span id="flecha-leyenda">▼</span>
+            </button>
+            
+            <!-- Contenedor interno que se va a encoger -->
+            <div id="contenido-leyenda" class="contenido-leyenda">
+                <div class="leyenda-item">
+                    <span class="leyenda-color color-naranjo"></span>
+                    <span class="leyenda-texto">9 Diseñadoras (Índice Libro 2004, P. Álvarez)</span>
+                </div>
+                <div class="leyenda-item">
+                    <span class="leyenda-color color-rosado"></span>
+                    <span class="leyenda-texto">66 Diseñadoras (Índice Libro 2025, P. Álvarez)</span>
+                </div>
+                <div class="leyenda-item">
+                    <span class="leyenda-color color-verde"></span>
+                    <span class="leyenda-texto"><span id="contador-recomendadas" style="font-weight:700;">0</span> Diseñadoras Recomendadas (Boca en Boca)</span>
+                </div>
             </div>
-            <div class="leyenda-item">
-                <span class="leyenda-color color-rosado"></span>
-                <span class="leyenda-texto">66 Diseñadoras (Índice Libro 2025, P. Álvarez)</span>
-            </div>
-            <div class="leyenda-item">
-    <span class="leyenda-color color-verde"></span>
-    <span class="leyenda-texto"><span id="contador-recomendadas" style="font-weight:700;">0</span> Diseñadoras Recomendadas (Boca en Boca)</span>
-</div>
+        </div>
         </div>
 
         <div id="panel-disenadora" class="panel-container panel-oculto">
