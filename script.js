@@ -250,10 +250,10 @@ const datasetDisenadoras = [
         fotoFondo: "imagenes/arigonzalez.jpg", 
         descFotoPrincipal: "Ari González — Registro de Espacio / Taller. 2026.",
         videos: {
-            eje1: "videos/entrevistaari González-eje1.mp4",
-            eje2: "videos/entrevistaari González-eje2.mp4",
-            eje3: "videos/entrevistaari González-eje3.mp4",
-            eje4: "videos/entrevistaari González-eje4.mp4"
+            eje1: "videos/entrevistaariGonzález-eje1.mp4",
+            eje2: "videos/entrevistaariGonzález-eje2.mp4",
+            eje3: "videos/entrevistaariGonzález-eje3.mp4",
+            eje4: "videos/entrevistaariGonzález-eje4.mp4"
         },
         obras: [
             { img: ["imagenes/ari1.jpg", "imagenes/ari1.1.jpg", "imagenes/ari1.2.jpg"], desc: "01. El Margen del Horizonte" },
@@ -481,16 +481,22 @@ document.querySelectorAll('.btn-eje').forEach(boton => {
 });
 
     // Acción para el botón de cierre "X" del panel de la diseñadora
-    const botonCerrar = document.getElementById("btn-cerrar");
-    if (botonCerrar) {
-        botonCerrar.addEventListener("click", () => {
-            document.getElementById("panel-disenadora").classList.add("panel-oculto");
-            const video = document.getElementById("video-dinamico");
-            if (video) {
-                video.src = ""; // Apaga YouTube por completo al vaciar el src
-            }
-        });
-    }
+const botonCerrar = document.getElementById("btn-cerrar");
+if (botonCerrar) {
+    botonCerrar.addEventListener("click", () => {
+        const panel = document.getElementById("panel-disenadora");
+        if (panel) {
+            panel.classList.add("panel-oculto");
+            // --- NUEVO: Limpiamos los fondos al cerrar para que no se queden pegados ---
+            panel.classList.remove('fondo-rosado', 'fondo-verde');
+        }
+        
+        const video = document.getElementById("video-dinamico");
+        if (video) {
+            video.src = ""; // Apaga YouTube por completo al vaciar el src
+        }
+    });
+}
 
    
 });
@@ -595,8 +601,10 @@ function inicializarRedObsidianEstatica() {
         let imageNodo = undefined;
         let colorFondo = "#F05982"; 
         let sizeNodo = 8; 
-        let colorTexto = "rgba(255,255,255,0.45)"; 
         let sizeTexto = 13;
+
+        // 1. ASIGNAR COLOR DE TEXTO BASE UNIFICADO (Para que no salgan nombres verdes en la red)
+        let colorTexto = "rgba(255,255,255,0.45)"; 
 
         if (disenadora.edicion === 1) colorFondo = "#F8470C"; 
         else if (disenadora.edicion === 'verde') colorFondo = "#4AFF7A"; 
@@ -605,8 +613,10 @@ function inicializarRedObsidianEstatica() {
             shapeNodo = "circularImage"; 
             imageNodo = disenadora.fotoFondo; 
             sizeNodo = 28; 
-            colorTexto = "#ffffff";
             sizeTexto = 14;
+            
+            // 2. CORRECCIÓN: Si tiene entrevista brilla en blanco puro, no en verde.
+            colorTexto = "#ffffff";
         }
 
         nodosArray.push({
@@ -619,18 +629,27 @@ function inicializarRedObsidianEstatica() {
             font: { color: colorTexto, size: sizeTexto, face: "Montserrat" }
         });
 
-        // Generar líneas de conexión dinámicas (Edges)
+        // =========================================================================
+        // CONFIGURACIÓN DE LÍNEAS (EDGES) - GROSOR MEDIO Y SUTIL PARA GUIAR LA LECTURA
+        // =========================================================================
+        // Definimos un grosor intermedio (width: 1.5) y un comportamiento interactivo limpio
+        const estiloLinea = { 
+            width: 1.5, 
+            hoverWidth: 2.5, 
+            selectionWidth: 3 
+        };
+
         if (disenadora.edicion === 1) {
             if (disenadora.puente) {
-                lineasArray.push({ from: "NUCLEO_2004", to: disenadora.id, color: { color: "rgba(255, 74, 91, 0.18)" } });
-                lineasArray.push({ from: "NUCLEO_2025", to: disenadora.id, color: { color: "rgba(240, 89, 130, 0.18)" } });
+                lineasArray.push({ ...estiloLinea, from: "NUCLEO_2004", to: disenadora.id, color: { color: "rgba(248, 71, 12, 0.15)" } });
+                lineasArray.push({ ...estiloLinea, from: "NUCLEO_2025", to: disenadora.id, color: { color: "rgba(240, 89, 130, 0.15)" } });
             } else {
-                lineasArray.push({ from: "NUCLEO_2004", to: disenadora.id, color: { color: "rgba(255, 74, 91, 0.18)" } });
+                lineasArray.push({ ...estiloLinea, from: "NUCLEO_2004", to: disenadora.id, color: { color: "rgba(248, 71, 12, 0.15)" } });
             }
         } else if (disenadora.edicion === 2) {
-            lineasArray.push({ from: "NUCLEO_2025", to: disenadora.id, color: { color: "rgba(240, 89, 130, 0.18)" } });
+            lineasArray.push({ ...estiloLinea, from: "NUCLEO_2025", to: disenadora.id, color: { color: "rgba(240, 89, 130, 0.15)" } });
         } else if (disenadora.edicion === 'verde') {
-            lineasArray.push({ from: disenadora.recomendadaPor, to: disenadora.id, color: { color: "rgba(74, 255, 122, 0.25)" } });
+            lineasArray.push({ ...estiloLinea, from: disenadora.recomendadaPor, to: disenadora.id, color: { color: "rgba(74, 255, 122, 0.22)" } });
         }
     });
 
@@ -752,6 +771,18 @@ function abrirPanelDisenadora(disenadora) {
 
     if (!panelDisenadora) return;
 
+    // --- NUEVO: GESTIÓN DE COLOR DE FONDO DINÁMICO ---
+    // Limpiamos colores de selecciones anteriores
+    panelDisenadora.classList.remove('fondo-rosado', 'fondo-verde');
+    
+    // Asignamos el fondo claro correspondiente (la edicion 1 se queda negra por defecto)
+    if (disenadora.edicion === 2) {
+        panelDisenadora.classList.add('fondo-rosado');
+    } else if (disenadora.edicion === 'verde') {
+        panelDisenadora.classList.add('fondo-verde');
+    }
+    // -------------------------------------------------
+
     if (fotoCabecera && disenadora.fotoFondo) {
         fotoCabecera.src = disenadora.fotoFondo;
         const clonFoto = fotoCabecera.cloneNode(true);
@@ -795,9 +826,26 @@ function abrirPanelDisenadora(disenadora) {
                 linkRec.className = 'recomendada-node-link';
                 linkRec.innerText = nom + (index < disenadora.recomiendaA.length - 1 ? ", " : "");
                 linkRec.addEventListener('click', () => {
-                    panelDisenadora.classList.add('panel-oculto');
-                    if (networkInstance) networkInstance.focus(nom, { scale: 1.5, animation: { duration: 1000 } });
-                });
+    // 1. Buscamos en tu base de datos (datasetDisenadoras) a la diseñadora recomendada por su nombre
+    const proximaDisenadora = datasetDisenadoras.find(d => d.id === nom);
+    
+    // 2. Movemos la cámara del grafo hacia ella
+    if (networkInstance) {
+        networkInstance.focus(nom, { scale: 1.35, animation: { duration: 1000 } });
+    }
+    
+    // 3. Si existe en la base de datos y tiene entrevista, actualizamos el panel con sus datos
+    if (proximaDisenadora && proximaDisenadora.hasEntrevista) {
+        // Un pequeño retraso de 300ms para que se note el viaje de la cámara antes de cambiar los datos
+        setTimeout(() => { 
+            abrirPanelDisenadora(proximaDisenadora); 
+        }, 300);
+    } else {
+        // Si no tiene entrevista o no existe, ahí sí cerramos el panel de forma segura
+        panelDisenadora.classList.add('panel-oculto');
+        panelDisenadora.classList.remove('fondo-rosado', 'fondo-verde');
+    }
+});
                 contenedorRecomienda.appendChild(linkRec);
             });
         } else {
@@ -806,19 +854,14 @@ function abrirPanelDisenadora(disenadora) {
     }
 
     if (videoDinamico) {
-        // Guardamos los videos, las duraciones y NUEVO: las frases en el dataset del elemento HTML
         videoDinamico.dataset.videos = disenadora.videos ? JSON.stringify(disenadora.videos) : "";
         videoDinamico.dataset.duraciones = disenadora.duraciones ? JSON.stringify(disenadora.duraciones) : "";
-        
-        // --- AGREGA ESTA LÍNEA (Guarda el objeto con las 4 frases) ---
         videoDinamico.dataset.frases = disenadora.frases ? JSON.stringify(disenadora.frases) : "";
-        // ------------------------------------------------------------
         
         document.querySelectorAll('.btn-eje').forEach(btn => btn.classList.remove('active'));
         const primerBtn = document.querySelector('.btn-eje[data-eje="eje1"]');
         if (primerBtn) primerBtn.classList.add('active');
 
-        // NUEVO: Muestra la duración inicial (Eje 1) al cargar la diseñadora
         const contenedorDuracion = document.getElementById('duracion-video');
         if (contenedorDuracion) {
             if (disenadora.duraciones && disenadora.duraciones.eje1) {
@@ -829,17 +872,15 @@ function abrirPanelDisenadora(disenadora) {
             }
         }
 
-        // --- AGREGA ESTE BLOQUE (Muestra la frase inicial del Eje 1) ---
-        const bloqueFrase = document.getElementById('frase-dinamica');
-        if (bloqueFrase) {
+        const bloqueFraseEje = document.getElementById('frase-dinamica');
+        if (bloqueFraseEje) {
             if (disenadora.frases && disenadora.frases.eje1) {
-                bloqueFrase.innerText = disenadora.frases.eje1;
-                bloqueFrase.style.display = "block"; // Asegura que se vea si estaba oculto
+                bloqueFraseEje.innerText = disenadora.frases.eje1;
+                bloqueFraseEje.style.display = "block";
             } else {
-                bloqueFrase.innerText = "";
+                bloqueFraseEje.innerText = "";
             }
         }
-        // ---------------------------------------------------------------
 
         if (disenadora.videos && disenadora.videos.eje1) {
             videoDinamico.src = disenadora.videos.eje1;

@@ -329,3 +329,168 @@ body, html, button, select, input {
     margin-top: 10px; background: white; color: black; border: none; padding: 10px; cursor: pointer; font-size: .7rem; text-transform: uppercase; font-weight: 700; transition: background 0.2s;
 }
 #btn-limpiar-filtros:hover { background: #ff4a5b; color: white; }
+/* ==========================================================================
+   ESTILOS DINÁMICOS DE CONTRASTE OPTIMIZADOS (MÁXIMA LEGIBILIDAD)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   VARIANTE: DISEÑADORAS ROSADAS (EDICIÓN 2) - FONDO CLARO CON TEXTOS OSCUROS
+   -------------------------------------------------------------------------- */
+.panel-container.fondo-rosado {
+    background-color: #F05982 !important;
+}
+
+/* Títulos principales y subtítulos (Negro puro y peso fuerte) */
+.panel-container.fondo-rosado .first-name,
+.panel-container.fondo-rosado .last-name,
+.panel-container.fondo-rosado .meta-item strong,
+.panel-container.fondo-rosado .seccion-titulo {
+    color: #000000 !important;
+    font-weight: 700 !important; /* Forzamos peso bold para tipografías finas */
+}
+
+/* Textos de lectura, bloques descriptivos y metadatos */
+.panel-container.fondo-rosado .texto-biografia,
+.panel-container.fondo-rosado .meta-item,
+.panel-container.fondo-rosado #frase-dinamica,
+.panel-container.fondo-rosado #duracion-video,
+.panel-container.fondo-rosado .meta-item span {
+    color: #000000 !important; /* Eliminamos grises, todo a negro absoluto */
+    font-weight: 400 !important; /* Subimos de 300 a 400 para que la línea no desaparezca */
+}
+
+/* Bordes divisorios e indicador de cierre */
+.panel-container.fondo-rosado .bloque-frase-destacada {
+    border-left-color: #000000 !important;
+}
+.panel-container.fondo-rosado .close-uid {
+    color: #000000 !important;
+    opacity: 0.7;
+}
+.panel-container.fondo-rosado .metadata-ficha,
+.panel-container.fondo-rosado .seccion-titulo,
+.panel-container.fondo-rosado .sub-navigation {
+    border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Enlaces de áreas (tags) adaptados al fondo oscuro interno */
+.panel-container.fondo-rosado .tag-area-link {
+    background: rgba(0, 0, 0, 0.08) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    font-weight: 700 !important;
+}
+.panel-container.fondo-rosado .tag-area-link:hover {
+    background: #000000 !important;
+    color: #F05982 !important;
+}
+
+/* Botones de control de los ejes de video */
+.panel-container.fondo-rosado .btn-eje {
+    background: rgba(0, 0, 0, 0.06) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+}
+.panel-container.fondo-rosado .btn-eje:hover {
+    background: rgba(0, 0, 0, 0.12) !important;
+}
+.panel-container.fondo-rosado .btn-eje.active {
+    background: #000000 !important;
+    color: #F05982 !important;
+    border-color: #000000 !important;
+}
+
+/* Pies de foto del portafolio */
+.panel-container.fondo-rosado .pie-foto {
+    color: #1a1a1a !important;
+    font-weight: 400 !important;
+}
+
+/* Menú inferior (Navegación) */
+.panel-container.fondo-rosado .nav-item {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+.panel-container.fondo-rosado .nav-item:hover, 
+.panel-container.fondo-rosado .nav-item input:checked ~ span { 
+    color: #000000 !important; 
+}
+
+
+/* --------------------------------------------------------------------------
+   VARIANTE: DISEÑADORAS VERDES (RECOMENDADAS) - FONDO CLARO CON TEXTOS OSCUROS
+   -------------------------------------------------------------------------- */
+.panel-container.fondo-verde {
+    background-color: #4aff7a !important;
+}
+
+.panel-container.fondo-verde .first-name,
+.panel-container.fondo-verde .last-name,
+.panel-container.fondo-verde .meta-item strong,
+.panel-container.fondo-verde .seccion-titulo {
+    color: #000000 !important;
+    font-weight: 700 !important;
+}
+
+.panel-container.fondo-verde .texto-biografia,
+.panel-container.fondo-verde .meta-item,
+.panel-container.fondo-verde #frase-dinamica,
+.panel-container.fondo-verde #duracion-video,
+.panel-container.fondo-verde .meta-item span {
+    color: #000000 !important;
+    font-weight: 400 !important;
+}
+
+.panel-container.fondo-verde .bloque-frase-destacada {
+    border-left-color: #000000 !important;
+}
+.panel-container.fondo-verde .close-uid {
+    color: #000000 !important;
+    opacity: 0.7;
+}
+.panel-container.fondo-verde .metadata-ficha,
+.panel-container.fondo-verde .seccion-titulo,
+.panel-container.fondo-verde .sub-navigation {
+    border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.panel-container.fondo-verde .tag-area-link {
+    background: rgba(0, 0, 0, 0.08) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    font-weight: 700 !important;
+}
+.panel-container.fondo-verde .tag-area-link:hover {
+    background: #000000 !important;
+    color: #4aff7a !important;
+}
+
+.panel-container.fondo-verde .btn-eje {
+    background: rgba(0, 0, 0, 0.06) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+}
+.panel-container.fondo-verde .btn-eje:hover {
+    background: rgba(0, 0, 0, 0.12) !important;
+}
+.panel-container.fondo-verde .btn-eje.active {
+    background: #000000 !important;
+    color: #4aff7a !important;
+    border-color: #000000 !important;
+}
+
+.panel-container.fondo-verde .pie-foto {
+    color: #1a1a1a !important;
+    font-weight: 400 !important;
+}
+
+.panel-container.fondo-verde .nav-item {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+.panel-container.fondo-verde .nav-item:hover, 
+.panel-container.fondo-verde .nav-item input:checked ~ span { 
+    color: #000000 !important; 
+}
+.panel-container.fondo-verde .recomendada-node-link {
+    color: #000000 !important;
+    font-weight: 700 !important;
+}
