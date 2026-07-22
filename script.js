@@ -44,15 +44,26 @@ const datasetDisenadoras = [
         residencia: "Madrid,España",
         areas: ["Diseño Gráfico", "Diseño Editorial", "Ilustración", "Docencia Universitaria"],
         recomiendaA: ["Piedad Rivadeneira", "Julie Carles", "Alejandra Beckdorf", "Catalina Cumsille"],
-        frase: "«Mi estudio es un estudio móvil.»",
+        frases: {
+            eje1: "«En mi familia el tema del arte siempre ha estado muy presente. Mi papá y mi mamá son bastante amantes del arte y eso me lo inculcaron mucho tiempo, y yo creo que eso también es como parte de mis motivaciones con respecto al arte y al diseño.»",
+            eje2: "«Partí de practicante y terminé siendo la coordinadora del área de diseño del centro cultural... Para mí fue súper enriquecedor, fue una escuela, crecí muchísimo... Fue muy bonito como ir creciendo, ir evolucionando e ir aprendiendo.»",
+            eje3: "«Hace muchos años, mi trabajo tiene que ver con la movilidad: que yo me voy moviendo, que voy conociendo lugares diferentes... Mi estudio es un estudio móvil totalmente.»",
+            eje4: "«Es súper importante tener ese feedback, no trabajar solo. El trabajar solo a veces te encapsula; el poder mirar más allá, el poder compartir ideas, el poder compartir... Hay que tener empatía con la gente que uno tiene alrededor también y trabajar en equipo.»"
+        }, 
         bio: "Diseñadora Gráfica especializada en diseño editorial, con un Máster en Edición e Industrias Editoriales y actualmente cursando un Doctorado en Bellas Artes en España. Hace 15 años fundó su estudio de diseño (Estudio PI), un espacio con un marcado enfoque ligado a la cultura y el patrimonio, desde donde desarrolla publicaciones, diseño gráfico y proyectos museográficos. Su trabajo se articula de manera muy humana entre la práctica profesional, la investigación y la docencia universitaria entre Chile y España, consolidando un camino de más de 150 publicaciones en colaboración con museos, instituciones culturales y artistas de Latinoamérica y Europa.",
         fotoFondo: "imagenes/paolairazabal.jpg", 
         descFotoPrincipal: "Paola Irazábal — Registro de estudio móvil. Envío digital, 22 de junio de 2026.",
         videos: {
-            eje1: "videos/entrevistapaola.mp4",
-            eje2: "videos/entrevistapaola.mp4",
-            eje3: "videos/entrevistapaola.mp4",
-            eje4: "videos/entrevistapaola.mp4"
+            eje1: "https://www.youtube.com/embed/JmvOUkWmGy0?si=44lHvWAppnjdZ8jC",
+            eje2: "https://www.youtube.com/embed/tUtfjFbiJM4?si=AApPbpKtkyNSXj48",
+            eje3: "https://www.youtube.com/embed/2gXrXbQgm2I?si=Dz32uTcvPj8Gebue",
+            eje4: "https://www.youtube.com/embed/EJE0c8_Phsc?si=ccdiZxv1EhuJ5OxY"
+        },
+        duraciones: {
+            eje1: "11:43 min",
+            eje2: "14:23 min",
+            eje3: "23:25 min",
+            eje4: "12:47 min"
         },
         obras: [
             { img: ["imagenes/paola1.jpg", "imagenes/paola1.1.jpg", "imagenes/paola1.2.jpg"], desc: "01. Nemesio Antúnez" },
@@ -74,7 +85,12 @@ const datasetDisenadoras = [
         residencia: "Santiago, Chile", 
         areas: ["Investigación", "Docencia Universitaria", "Antropología del Diseño", "Historia del Diseño"], 
         recomiendaA: ["Simoné Malacchini", "Rita Torres", "Camila Rios", "Josefina Vidal", "Katherine Mollenhauer", "Magdalena Cattan"],
-        frase: "«Escribe aquí la frase destacada de Nicole...»", 
+        frases: {
+            eje1: "«Mi estudio comenzó como una respuesta a la necesidad de moverme libremente.»",
+            eje2: "«La docencia me permite devolver al diseño lo mucho que me ha entregado.»",
+            eje3: "«Mi estudio es un estudio móvil.»",
+            eje4: "«El patrimonio no es estático, se construye día a día con nuestro oficio.»"
+        }, 
         bio: "Mamá, diseñadora de formación e investigadora especializada en teoría, estética y pensamiento crítico en torno al diseño, la cultura material y la antropología. En su formación cruzó el diseño con la estética para profundizar en el mundo sensible, enlazando miradas desde el arte contemporáneo y la arqueología. Su trayectoria, serpenteante y en espiral, se consolida en la docencia universitaria y la investigación con enfoque social. Su trabajo se articula desde una dimensión afectiva y política, buscando comprender cómo las materialidades y los objetos median nuestras relaciones humanas y nos constituyen como sociedad, tanto en la intimidad del cuarto propio como en la construcción de los espacios públicos.",
         fotoFondo: "imagenes/nicolecristi.jpg", 
         descFotoPrincipal: "Nicole Cristi — Registro de espacio de trabajo, Campus Lo Contador UC. Fotografía de Laura González, 12 de junio de 2026.",
