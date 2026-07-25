@@ -16,41 +16,50 @@
 
     <button id="btn-restaurar-red" class="btn-restaurar oculto">Mostrar toda la red</button>
 
+    <!-- PANTALLA DE INICIO CON REORDEN DE JERARQUÍA -->
     <div id="pantalla-inicio" class="intro-screen">
         <div class="intro-content">
+            <!-- 1. Statement primero -->
+            <button id="btn-statement" class="btn-secundario">Statement</button>
+
+            <!-- 2. Cita y homenaje -->
             <h1 class="titulo-manifiesto">"Las mujeres también hacemos historia, no solo los hombres"</h1>
             <p class="autora-homenaje">— María Angélica Pizarro</p>
-            <button id="btn-descubrir" class="btn-minimal">Descubrir la Red</button>
+
+            <!-- 3. Botón principal al final -->
+            <button id="btn-descubrir" class="btn-minimal">Conócela aquí</button>
         </div>
     </div>
 
+    <!-- PANTALLA DE LA RED -->
     <div id="pantalla-red" class="main-universe oculto">
         <div id="canvas-constelacion"></div>
-        <!-- SIMBOLOGÍA DE LA RED (AGREGADO) -->
-       <div class="panel-filtros">
+        
+        <!-- SIMBOLOGÍA Y FILTROS DE LA RED -->
+        <div class="panel-filtros">
+            <h3>EXPLORAR LA RED</h3>
 
-    <h3>EXPLORAR LA RED</h3>
+            <label>Universidad</label>
+            <select id="filtro-universidad">
+                <option value="">Todas</option>
+            </select>
 
-    <label>Universidad</label>
-    <select id="filtro-universidad">
-        <option value="">Todas</option>
-    </select>
 
-    <label>Década</label>
-    <select id="filtro-decada">
-        <option value="">Todas</option>
-    </select>
+            <label>Década</label>
+            <select id="filtro-decada">
+                <option value="">Todas</option>
+            </select>
 
-    <label>Área</label>
-    <select id="filtro-area">
-        <option value="">Todas</option>
-    </select>
+            <label>Área</label>
+            <select id="filtro-area">
+                <option value="">Todas</option>
+            </select>
 
-    <button id="btn-limpiar-filtros">
-        Restablecer filtros
-    </button>
+            <button id="btn-limpiar-filtros">
+                Restablecer filtros
+            </button>
+        </div>
 
-</div>
         <div id="leyenda-red" class="leyenda-red">
             <!-- Botón interactivo para minimizar/maximizar -->
             <button id="btn-toggle-leyenda" class="btn-toggle-leyenda">
@@ -73,99 +82,127 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div> <!-- Cierre correcto de pantalla-red -->
 
-        <div id="panel-disenadora" class="panel-container panel-oculto">
-            <button id="btn-cerrar" class="close-uid">&times;</button>
+    <!-- PANEL LATERAL DISEÑADORA -->
+    <div id="panel-disenadora" class="panel-container panel-oculto">
+        <button id="btn-cerrar" class="close-uid">&times;</button>
 
-            <div class="panel-content">
-                <div class="info-wrapper">
+        <div class="panel-content">
+            <div class="info-wrapper">
+                
+                <div id="contenido-biografia" class="tab-content scrollable-tab">
                     
-                    <div id="contenido-biografia" class="tab-content scrollable-tab">
-                        
-                        <div class="contenedor-foto-cabecera">
-                            <img id="foto-horizontal-perfil" src="" alt="Registro de espacio/taller" class="foto-horizontal-clickeable">
-                            <span class="hint-expandir">Click para expandir</span>
-                        </div>
-
-                        <div class="name-layout">
-                            <span class="first-name">Nombre</span>
-                            <span class="last-name">Apellido</span>
-                        </div>
-
-            
-
-                        <div class="metadata-ficha">
-                            <div class="meta-item"><strong>Universidad:</strong> <span id="meta-universidad">—</span></div>
-                            <div class="meta-item"><strong>Año de egreso:</strong> <span id="meta-egreso">—</span></div>
-                            <div class="meta-item"><strong>Reside en:</strong> <span id="meta-residencia">—</span></div>
-                            <div class="meta-item"><strong>Áreas de trabajo:</strong> <div id="meta-areas" class="tags-container"></div></div>
-                            <div class="meta-item recomendacion-box"><strong>Recomienda a:</strong> <div id="meta-recomienda" class="recomendadas-links-container"></div></div>
-                        </div>
-
-                        <p id="biografia-dinamica" class="texto-biografia">Cargando registro histórico...</p>
+                    <div class="contenedor-foto-cabecera">
+                        <img id="foto-horizontal-perfil" src="" alt="Registro de espacio/taller" class="foto-horizontal-clickeable">
+                        <span class="hint-expandir">Click para expandir</span>
                     </div>
 
-                    <div id="contenido-taller" class="tab-content tab-oculto">
-                        <h3 class="seccion-titulo">CÁPSULAS</h3>
-                        
-                        <!-- Selectores de Ejes agregados -->
-                        <div class="ejes-video-nav">
-                            <button class="btn-eje active" data-eje="eje1">Orígenes</button>
-                            <button class="btn-eje" data-eje="eje2">Trayectoria</button>
-                            <button class="btn-eje" data-eje="eje3">Espacio</button>
-                            <button class="btn-eje" data-eje="eje4">Legado</button>
-                        </div>
-
-                        <!-- ¡NUEVO!: Espacio para mostrar la duración de forma sutil -->
-                        <div id="duracion-video" style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 300;">
-                        Duración: Selecciona una cápsula
-                        </div>
-
-                        <div class="video-container">
-                            <iframe id="video-dinamico" src="" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        <div class="bloque-frase-destacada">
-                            <p id="frase-dinamica"></p>
-                        </div>
+                    <div class="name-layout">
+                        <span class="first-name">Nombre</span>
+                        <span class="last-name">Apellido</span>
                     </div>
 
-                    <div id="contenido-portafolio" class="tab-content tab-oculto scrollable-tab">
-                        <h3 class="seccion-titulo">PROYECTOS SELECCIONADOS</h3>
-                        <div id="galeria-dinamica-obras" class="grid-portafolio"></div>
+                    <div class="metadata-ficha">
+                        <div class="meta-item"><strong>Universidad:</strong> <span id="meta-universidad">—</span></div>
+                        <div class="meta-item"><strong>Año de egreso:</strong> <span id="meta-egreso">—</span></div>
+                        <div class="meta-item"><strong>Reside en:</strong> <span id="meta-residencia">—</span></div>
+                        <div class="meta-item"><strong>Áreas de trabajo:</strong> <div id="meta-areas" class="tags-container"></div></div>
+                        <div class="meta-item recomendacion-box"><strong>Recomienda a:</strong> <div id="meta-recomienda" class="recomendadas-links-container"></div></div>
                     </div>
 
-                    <div class="sub-navigation">
-                        <label class="nav-item">
-                            <input type="radio" name="menu-disenadora" value="biografia" id="menu-biografia" checked>
-                            <span id="indicador-color" class="dot"></span>
-                            <span>Perfil</span>
-                        </label>
-                        <label class="nav-item">
-                            <input type="radio" name="menu-disenadora" value="taller">
-                            <span class="dot"></span>
-                            <span>Cápsulas</span>
-                        </label>
-                        <label class="nav-item">
-                            <input type="radio" name="menu-disenadora" value="portafolio">
-                            <span class="dot"></span>
-                            <span>Proyectos</span>
-                        </label>
-                    </div>
-
+                    <p id="biografia-dinamica" class="texto-biografia">Cargando registro histórico...</p>
                 </div>
+
+                <div id="contenido-taller" class="tab-content tab-oculto">
+                    <h3 class="seccion-titulo">CÁPSULAS</h3>
+                    
+                    <!-- Selectores de Ejes -->
+                    <div class="ejes-video-nav">
+                        <button class="btn-eje active" data-eje="eje1">Formación</button>
+                        <button class="btn-eje" data-eje="eje2">Trayectoria</button>
+                        <button class="btn-eje" data-eje="eje3">Espacio</button>
+                        <button class="btn-eje" data-eje="eje4">Legado</button>
+                    </div>
+
+                    <!-- Espacio para mostrar la duración -->
+                    <div id="duracion-video" style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 300;">
+                        Duración: Selecciona una cápsula
+                    </div>
+
+                    <div class="video-container">
+                        <iframe id="video-dinamico" src="" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="bloque-frase-destacada">
+                        <p id="frase-dinamica"></p>
+                    </div>
+                </div>
+
+                <div id="contenido-portafolio" class="tab-content tab-oculto scrollable-tab">
+                    <h3 class="seccion-titulo">PROYECTOS SELECCIONADOS</h3>
+                    <div id="galeria-dinamica-obras" class="grid-portafolio"></div>
+                </div>
+
+                <div class="sub-navigation">
+                    <label class="nav-item">
+                        <input type="radio" name="menu-disenadora" value="biografia" id="menu-biografia" checked>
+                        <span id="indicador-color" class="dot"></span>
+                        <span>Perfil</span>
+                    </label>
+                    <label class="nav-item">
+                        <input type="radio" name="menu-disenadora" value="taller">
+                        <span class="dot"></span>
+                        <span>Cápsulas</span>
+                    </label>
+                    <label class="nav-item">
+                        <input type="radio" name="menu-disenadora" value="portafolio">
+                        <span class="dot"></span>
+                        <span>Proyectos</span>
+                    </label>
+                </div>
+
             </div>
         </div>
     </div>
 
-   <div id="lightbox-global" class="lightbox-modal oculto">
+    <!-- LIGHTBOX GLOBAL -->
+    <div id="lightbox-global" class="lightbox-modal oculto">
         <span class="cerrar-lightbox">&times;</span>
-        <!-- NUEVO: Botones para avanzar y retroceder -->
         <button id="btn-lightbox-prev" class="flecha-lightbox">&lt;</button>
         <img class="imagen-lightbox-activa" id="img-lightbox-src" src="">
         <button id="btn-lightbox-next" class="flecha-lightbox">&gt;</button>
         <p id="caption-lightbox" class="caption-lightbox"></p>
     </div>
+
+    <!-- MODAL STATEMENT (ACTUALIZADO CON TESIS) -->
+<div id="modal-statement" class="modal-overlay hidden">
+    <div class="modal-contenido">
+        <button id="btn-cerrar-modal" class="btn-cerrar">&times;</button>
+        
+        <h2>Statement del Proyecto</h2>
+
+    
+        <p>
+            <strong>Motivación:</strong> 
+            Este proyecto surge ante la baja representatividad de las mujeres en los registros del diseño chileno, buscando aportar a la memoria de la disciplina al reconocer a las diseñadoras no solo por sus obras, sino también por sus procesos, dinámicas de taller y transmisión de conocimiento.
+        </p>
+        <p>
+            <strong>Problemática:</strong> 
+            Los archivos tradicionales operan bajo lógicas estáticas que invisibilizan el patrimonio inmaterial y las redes informales. Esta falta de referentes locales genera un vacío crítico en la identidad de las nuevas generaciones.
+        </p>
+
+        <p>
+            <strong>Metodología:</strong> 
+            Bajo una perspectiva feminista, la plataforma mapea la disciplina mediante cadenas de recomendación ("bola de nieve"), entrevistas y el registro de talleres, devolviendo a las autoras el control sobre su propio relato.
+        </p>
+
+        <p>
+            <strong>Propósito:</strong> 
+            Transformar la memoria oral en un dispositivo digital dinámico, colectivo e inspirador que posicione a las mujeres como sujetos centrales de la comunicación visual en Chile.
+        </p>
+    </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>

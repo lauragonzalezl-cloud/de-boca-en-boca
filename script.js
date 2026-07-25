@@ -1014,4 +1014,16 @@ function actualizarContenidoLightbox() {
     } else {
         inicializarLeyenda();
     }
+    
 })();
+const btnStatement = document.getElementById('btn-statement');
+const modalStatement = document.getElementById('modal-statement');
+const btnCerrar = document.getElementById('btn-cerrar-modal');
+
+btnStatement.addEventListener('click', () => {
+    modalStatement.classList.remove('hidden');
+});
+
+btnCerrar.addEventListener('click', () => {
+    modalStatement.classList.add('hidden');
+});

@@ -59,7 +59,7 @@ body, html, button, select, input {
 /* PANTALLA DE INICIO (MANIFIESTO) */
 .intro-screen {
     height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center;
-    background: #F05982; padding: 40px; z-index: 10; position: relative;
+    background: #4AFF7A; padding: 40px; z-index: 10; position: relative;
     transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .intro-content { text-align: center; max-width: 800px; width: 100%; }
@@ -69,7 +69,7 @@ body, html, button, select, input {
     font-weight: 300; 
     line-height: 1.4; 
     margin-bottom: 35px; 
-    color: #ffffff;
+    color: #000000;
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
@@ -78,7 +78,7 @@ body, html, button, select, input {
 .autora-homenaje { 
     font-size: 1rem; 
     font-weight: 700; 
-    color: rgba(255, 255, 255, 0.9); 
+    color: rgba(0, 0, 0, 0.9); 
     text-transform: uppercase; 
     letter-spacing: 3px; 
     margin-bottom: 60px; 
@@ -86,7 +86,7 @@ body, html, button, select, input {
 .btn-minimal { 
     background: transparent; 
     border: 1px solid rgba(255, 255, 255, 0.35); 
-    color: #ffffff; 
+    color: #000000; 
     padding: 18px 45px; 
     text-transform: uppercase; 
     letter-spacing: 3px; 
@@ -493,4 +493,102 @@ body, html, button, select, input {
 .panel-container.fondo-verde .recomendada-node-link {
     color: #000000 !important;
     font-weight: 700 !important;
+}
+/* ==========================================================================
+   BOTONES EN PORTADA Y MODAL DE STATEMENT
+   ========================================================================== */
+
+/* Botones en portada */
+.acciones-intro {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Ajuste de color y estilo para contraste sobre el fondo verde */
+.btn-secundario {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    color: #000000;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background: #000000;
+    color: #4AFF7A;
+    border-color: #000000;
+}
+
+/* Modal Overlay (Ventana emergente) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; 
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); /* Un fondo oscuro con ligera transparencia */
+    backdrop-filter: blur(5px);      /* Efecto desenfoque para dar elegancia */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 200;                    /* Por encima de todo el contenido */
+}
+
+.modal-overlay.hidden { 
+    display: none !important; 
+}
+
+.modal-contenido {
+    background: #111111;             /* Fondo oscuro alineado a la estética de la app */
+    color: #FFFFFF;
+    padding: 40px;
+    border-radius: 4px;              /* Bordes más rectos estilo archivo/galería */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    max-width: 550px;
+    width: 90%;
+    position: relative;
+    line-height: 1.6;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.modal-contenido h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #4AFF7A;                 /* Título en tono verde neón distintivo */
+}
+
+.modal-contenido p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.modal-contenido strong {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.btn-cerrar {
+    position: absolute; 
+    top: 20px; right: 20px;
+    background: none; 
+    border: none; 
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 24px; 
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-cerrar:hover {
+    color: #FFFFFF;
 }
