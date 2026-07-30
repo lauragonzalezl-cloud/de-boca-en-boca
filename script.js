@@ -107,12 +107,12 @@ const datasetDisenadoras = [
             eje4: "6:43 min"
         },
         obras: [
-            { img: "imagenes/nicole-obra1.jpg", desc: "01. Publicación de Investigación" },
-            { img: "imagenes/nicole-obra2.jpg", desc: "02. Archivo Histórico Visual" },
-            { img: "imagenes/nicole-obra3.jpg", desc: "03. Registro de Exposición" },
-            { img: "imagenes/nicole-obra4.jpg", desc: "04. Proyecto Editorial Colectivo" },
-            { img: "imagenes/nicole-obra5.jpg", desc: "05. Ensayo Crítico Visual" },
-            { img: "imagenes/nicole-obra6.jpg", desc: "06. Documentación Gráfica" }
+            { img: "imagenes/nicole1.jpg", desc: "01. Resistencia Gráfica" },
+            { img: "imagenes/nicole2.jpg", desc: "02. Capítulos en libro \"El Afiche Político en Chile\"" },
+            { img: ["imagenes/nicole3.jpg", "imagenes/nicole3.1.jpg", "imagenes/nicole3.2.jpg"], desc: "03. Curaduría Exposición \"Revueltas Gráficas\"" },
+            { img: "imagenes/nicole4.jpg", desc: "04. Curaduría \"El cuerpo de la memoria\", Peltz Gallery, Londres" },
+            { img: "imagenes/nicole5.jpg", desc: "05. Capítulo en \"Design For More-Than-Human Futures\"" },
+            { img: "imagenes/nicole6.jpg", desc: "06. Co-editora History of Design, Techniques, and Technology, Revista Diseña" }
         ] 
     },
     // 3. PERLA ARRUÉ
@@ -158,6 +158,7 @@ const datasetDisenadoras = [
             { img: ["imagenes/perla6.jpg", "imagenes/perla6.1.jpg", "imagenes/perla6.2.jpg"], desc: "06. Revista Grifo #45" }
         ] 
     },
+    
     // 4. VICO GALLARDO
     { 
         id: "Vico Gallardo", 
@@ -200,12 +201,12 @@ const datasetDisenadoras = [
         universidad: "Católica",
         egreso: "2017", 
         residencia: "Londres, Inglaterra",
-        areas: ["Investigación", "Historia del Diseño"],
+        areas: ["Investigación", "Historia del Diseño", "Diseño Editorial"],
         recomiendaA: [], 
         frase: "«Escribe aquí la frase de la entrevista...»",
-        bio: "Escribe aquí su biografía basada en sus proyectos como Finding the She y Biografías de artesanías...",
-        fotoFondo: "imagenes/jose.jpeg", 
-        descFotoPrincipal: "Josefina Vidal — Registro de Espacio / Taller. Santiago, mayo de 2026.",
+        bio: "Investigadora, escritora y diseñadora de formación, con estudios de maestría y un doctorado en curso en Estudios Culturales en King’s College London. Su trayectoria se sitúa en la intersección entre la teoría del diseño, la cultura material y la escritura creativa como método para narrar historias. Desde 2017 investiga las prácticas textiles lideradas por mujeres en Chile, entendiendo sus formas de hacer como lecciones vivas de cuidado, resiliencia y pertenencia a la naturaleza. Autora de libros como Encontrar el ella (2022) y Biografías de artesanías (2025), su trabajo se despliega como un acto de atención hacia estas corporalidades y saberes, con la convicción profunda de que habitar y sostener estas prácticas es ya el comienzo de una transformación en las narrativas bajo las cuales vivimos.",
+        fotoFondo: "imagenes/josefinavidal.jpg", 
+        descFotoPrincipal: "Josefina Vidal — Registro de espacio de trabajo. Envío digital, 27 de julio de 2026.",
         videos: {
             eje1: "videos/josefina-eje1.mp4",
             eje2: "videos/josefina-eje2.mp4",
@@ -213,12 +214,12 @@ const datasetDisenadoras = [
             eje4: "videos/josefina-eje4.mp4"
         },
         obras: [
-            { img: ["imagenes/jose1.jpg", "imagenes/jose1.1.jpg", "imagenes/jose1.2.jpg"], desc: "01. Biografías de artesanías" },
-            { img: ["imagenes/jose2.png", "imagenes/jose2.1.png"], desc: "02. They Weave and I Remember" },
-            { img: ["imagenes/jose3.png", "imagenes/jose3.1.png", "imagenes/jose3.2.jpg"], desc: "03. Finding the She" },
+            { img: ["imagenes/jose1.jpg", "imagenes/jose1.1.jpg", "imagenes/jose1.2.jpg"], desc: "01. Biografías de artesanías: mujeres creando en prisión y exilio 1973-1990" },
+            { img: ["imagenes/jose2.png", "imagenes/jose2.1.png"], desc: "02. They Weave and I Remember: Chapter for the book Makin Kin: Plant series, published by Cthulhu books." },
+            { img: ["imagenes/jose3.jpg", "imagenes/jose3.1.jpg", "imagenes/jose3.2.jpg"], desc: "03. Encontrar el ella: codiseñando una memoria feminista del Diseño" },
             { img: ["imagenes/jose4.png", "imagenes/jose4.1.png", "imagenes/jose4.2.png"], desc: "04. Tiempo sin lluvia" },
-            { img: ["imagenes/jose5.png", "imagenes/jose5.1.jpg", "imagenes/jose5.2.jpg"], desc: "05. x" },
-            { img: ["imagenes/jose6.jpg", "imagenes/jose6.1.jpg", "imagenes/jose6.2.jpg"], desc: "06. x" },
+            { img: ["imagenes/jose5.jpg", "imagenes/jose5.1.jpg", "imagenes/jose5.2.jpg"], desc: "05. x" },
+            { img: ["imagenes/jose6.jpg", "imagenes/jose6.1.jpg", "imagenes/jose6.2.jpg"], desc: "06. Moda al Paso" },
         ]
     },
     // ALEJANDRA BECKDORF
@@ -259,12 +260,12 @@ const datasetDisenadoras = [
         universidad: "Católica",
         egreso: "2016", 
         residencia: "Santiago, Chile",
-        areas: ["Docencia Universitaria"],
-        recomiendaA: [], 
+        areas: ["Docencia Universitaria", "Diseño Editorial", "Identidad Gráfica", "Diseño de Información", "Ilustración"],
+        recomiendaA: ["Piedad Rivadeneira", "Constanza Gaggero", "Francisca Alcalde", "Paulina Astudillo", "Antonieta Lopez", "Gracia Fernández"], 
         frase: "«Escribe aquí la frase de la entrevista de Ari...»",
-        bio: "Biografía de Ari González...",
-        fotoFondo: "imagenes/arigonzalez.jpg", 
-        descFotoPrincipal: "Ari González — Registro de Espacio / Taller. 2026.",
+        bio: "Diseñadora gráfica y docente, con un interés profundo en la identidad y el diseño editorial como lenguaje. Su trayectoria transita entre la práctica independiente, la colaboración en estudios como Otros Pérez y la dirección gráfica del Festival Internacional de Fotografía de Valparaíso (FIFV), entrelazándose orgánicamente con la docencia universitaria en el Instituto Arcos, la Universidad Andrés Bello y la Universidad Diego Portales. En 2014 cofunda la editorial Buen Lugar junto a los fotógrafos Alejandro y Cristóbal Olivares, un espacio que consolida su cruce constante con la imagen y el libro como contenedor de memoria. Su trabajo —reconocido en certámenes como Premios Chile Diseño, FELIFA, Latin American Design Awards, POY LATAM y PhotoEspaña— se despliega desde el cuidado por el detalle y la sensibilidad visual, entendiendo las publicaciones y la gráfica no solo como soportes estéticos, sino como objetos capaces de conectar miradas, construir relatos y perdurar en el tiempo.",
+        fotoFondo: "imagenes/aribelgonzalez.jpg", 
+        descFotoPrincipal: "Aribel González — Registro de espacio de trabajo. Envío digital, 24 de julio de 2026.",
         videos: {
             eje1: "videos/entrevistaariGonzález-eje1.mp4",
             eje2: "videos/entrevistaariGonzález-eje2.mp4",
@@ -272,12 +273,71 @@ const datasetDisenadoras = [
             eje4: "videos/entrevistaariGonzález-eje4.mp4"
         },
         obras: [
-            { img: ["imagenes/ari1.jpg", "imagenes/ari1.1.jpg", "imagenes/ari1.2.jpg"], desc: "01. El Margen del Horizonte" },
-            { img: ["imagenes/ari2.jpg", "imagenes/ari2.1.jpg", "imagenes/ari2.2.jpg"], desc: "02. El Paisaje Mineral Tiene el Cielo Celeste y Dos Montañas Blancas" },
-            { img: ["imagenes/ari3.jpg", "imagenes/ari3.1.jpeg", "imagenes/ari3.2.jpeg"], desc: "03. Palabras Marchitas" },
-            { img: ["imagenes/ari4.jpg", "imagenes/ari4.1.jpg", "imagenes/ari4.2.jpg"], desc: "04. Fosfeno" },
-            { img: ["imagenes/ari5.png", "imagenes/ari5.1.jpg", "imagenes/ari5.2.jpg"], desc: "05. Los Nietos de Lautaro tomando el micrófono" },
-            { img: ["imagenes/ari6.jpg", "imagenes/ari6.1.jpg", "imagenes/ari6.2.jpg"], desc: "06. 18 años La Fuente" },
+            { img: ["imagenes/ari1.jpg", "imagenes/ari1.1.jpg", "imagenes/ari1.2.jpg"], desc: "01. Atlas de la historia abstracta y subjetiva de Chile, Alejandro Olivares. Editorial Buen Lugar, 2025." },
+            { img: ["imagenes/ari2.jpg", "imagenes/ari2.1.jpg", "imagenes/ari2.2.jpg"], desc: "02. El cielo se ha vuelto rojo, Catalina Juger. Coedición Buen Lugar – Tacto, 2024." },
+            { img: ["imagenes/ari3.jpg", "imagenes/ari3.1.jpg", "imagenes/ari3.2.jpg"], desc: "03. Predio, Javier Álvarez. Editorial Buen Lugar, 2022." },
+            { img: ["imagenes/ari4.jpg", "imagenes/ari4.1.jpg", "imagenes/ari4.2.jpg"], desc: "04. Tú no sabes si vas a volver, Lilith Kraushaar. Editorial Cenfoto UDP, 2022." },
+            { img: ["imagenes/ari5.jpg", "imagenes/ari5.1.png", "imagenes/ari5.2.png"], desc: "05. Festival Internacional de Fotografía de Valparaíso, 2024." },
+            { img: ["imagenes/ari6.png", "imagenes/ari6.1.png", "imagenes/ari6.2.png"], desc: "06. Discusiones contemporáneas del diseño, Escuela de Diseño Universidad Diego Portales, 2025." },
+        ]
+    },
+    // Francisca Alcalde
+    { 
+        id: "Francisca Alcalde", 
+        name: "Francisca Alcalde", 
+        edicion: 'verde', 
+        recomendadaPor: "Ari González", 
+        hasEntrevista: true, 
+        universidad: "Diego Portales",
+        egreso: "2017", 
+        residencia: "Santiago, Chile",
+        areas: ["Docencia Universitaria"],
+        recomiendaA: [], 
+        frase: "«Escribe aquí la frase de la entrevista de Francisca...»",
+        bio: "",
+        fotoFondo: "imagenes/franciscaalcalde.jpg", 
+        descFotoPrincipal: "Francisca Alcalde — Registro de espacio de trabajo. Envío digital, 24 de julio de 2026.",
+        videos: {
+            eje1: "videos/entrevistafpAlcalde-eje1.mp4",
+            eje2: "videos/entrevistafpAlcalde-eje2.mp4",
+            eje3: "videos/entrevistafpAlcalde-eje3.mp4",
+            eje4: "videos/entrevistafpAlcalde-eje4.mp4"
+        },
+        obras: [
+            { img: ["imagenes/francisca1.jpg", "imagenes/francisca1.1.jpg", "imagenes/francisca1.2.jpg"], desc: "01. Atlas de la historia abstracta y subjetiva de Chile, Alejandro Olivares. Editorial Buen Lugar, 2025." },
+            { img: ["imagenes/francisca2.jpg", "imagenes/francisca2.1.jpg", "imagenes/francisca2.2.jpg"], desc: "02. El cielo se ha vuelto rojo, Catalina Juger. Coedición Buen Lugar – Tacto, 2024." },
+            { img: ["imagenes/francisca3.jpg", "imagenes/francisca3.1.jpg", "imagenes/francisca3.2.jpg"], desc: "03. Predio, Javier Álvarez. Editorial Buen Lugar, 2022." },
+            { img: ["imagenes/francisca4.jpg", "imagenes/francisca4.1.jpg", "imagenes/francisca4.2.jpg"], desc: "04. Tú no sabes si vas a volver, Lilith Kraushaar. Editorial Cenfoto UDP, 2022." },
+            { img: ["imagenes/francisca5.jpg", "imagenes/francisca5.1.png", "imagenes/francisca5.2.png"], desc: "05. Festival Internacional de Fotografía de Valparaíso, 2024." },
+            { img: ["imagenes/francisca6.png", "imagenes/francisca6.1.png", "imagenes/francisca6.2.png"], desc: "06. Discusiones contemporáneas del diseño, Escuela de Diseño Universidad Diego Portales, 2025." },
+        ]
+    },
+    // Pía Pulgar
+    { 
+        id: "Pía Pulgar", 
+        name: "Pía Pulgar", 
+        edicion: 'verde', 
+        recomendadaPor: "Perla Arrué", 
+        hasEntrevista: true, 
+        universidad: "",
+        egreso: "", 
+        residencia: "Talca, Chile",
+        areas: ["Diseño Gráfico"],
+        recomiendaA: [], 
+        frase: "«Escribe aquí la frase de la entrevista de Pía...»",
+        bio: "Biografía de Pía Pulgar...",
+        fotoFondo: "imagenes/piapulgar.jpg", 
+        descFotoPrincipal: "Pía Pulgar — Registro de Espacio / Taller. 2026.",
+        videos: {
+            eje1: "videos/entrevistapiapulgar-eje1.mp4",
+            eje2: "videos/entrevistapiapulgar-eje2.mp4",
+            eje3: "videos/entrevistapiapulgar-eje3.mp4",
+            eje4: "videos/entrevistapiapulgar-eje4.mp4"
+        },
+        obras: 
+        [
+            { img: "imagenes/piapulgar1.jpg", desc: "01. Finding the She" },
+            { img: "imagenes/piapulgar2.jpg", desc: "02. Muestras Editoriales" }
         ]
     },
     
@@ -353,8 +413,10 @@ const datasetDisenadoras = [
     { id: "Katherine Mollenhauer", name: "Katherine Mollenhauer", edicion: 'verde', recomendadaPor: "Nicole Cristi" },
     { id: "Magdalena Cattan", name: "Magdalena Cattan", edicion: 'verde', recomendadaPor: "Nicole Cristi" },
     { id: "Valentina Contreras", name: "Valentina Contreras", edicion: 'verde', recomendadaPor: "Perla Arrué" },
-    { id: "Pía Pulgar", name: "Pía Pulgar", edicion: 'verde', recomendadaPor: "Perla Arrué" },
-    { id: "Camila Jouannet", name: "Camila Jouannet", edicion: 'verde', recomendadaPor: "Perla Arrué" }
+    { id: "Camila Jouannet", name: "Camila Jouannet", edicion: 'verde', recomendadaPor: "Perla Arrué" },
+    { id: "Paulina Astudillo", name: "Paulina Astudillo", edicion: 'verde', recomendadaPor: "Ari González" },
+    { id: "Gracia Fernández", name: "Gracia Fernández", edicion: 'verde', recomendadaPor: "Ari González" }
+
 ];
 
 // =========================================================================
