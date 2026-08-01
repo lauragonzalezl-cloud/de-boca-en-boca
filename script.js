@@ -86,10 +86,10 @@ const datasetDisenadoras = [
         areas: ["Investigación", "Docencia Universitaria", "Antropología del Diseño", "Historia del Diseño"], 
         recomiendaA: ["Simoné Malacchini", "Rita Torres", "Camila Rios", "Josefina Vidal", "Katherine Mollenhauer", "Magdalena Cattan"],
         frases: {
-            eje1: "«Mi estudio comenzó como una respuesta a la necesidad de moverme libremente.»",
-            eje2: "«La docencia me permite devolver al diseño lo mucho que me ha entregado.»",
-            eje3: "«Mi estudio es un estudio móvil.»",
-            eje4: "«El patrimonio no es estático, se construye día a día con nuestro oficio.»"
+            eje1: "«Yo creo que siempre es un trabajo de insistencia, de querer, de tener una voluntad de querer trabajar también desde las autoras o desde las diseñadoras, porque si uno se mete a la bibliografía no es lo primero que uno encuentra.»",
+            eje2: "«Yo me vinculo desde un lugar de mucha pasión con lo que hago; o sea, a mí me gusta mucho investigar y yo también tenía ganas de volver de mi posnatal a volver a hacer clases, a volver a vincularme con mis temas de investigación... Trabajo desde un goce, en el fondo me vinculo desde un goce. También tengo esa suerte.»",
+            eje3: "«Para mí, en este momento, este espacio está jugando un rol súper importante porque pasa a ser un espacio mío, en el fondo, porque mi casa está también muy cruzada por la maternidad.»",
+            eje4: "«El tomarnos en serio el diseño... Entendiendo su relevancia en nuestra sociedad actual, en nuestra creación de relaciones, en nuestra posibilidad de vincularnos con el medio, con el mundo, en el desarrollo de sensibilidades, es como tomarnos en serio nuestra disciplina.»"
         }, 
         bio: "Mamá, diseñadora de formación e investigadora especializada en teoría, estética y pensamiento crítico en torno al diseño, la cultura material y la antropología. En su formación cruzó el diseño con la estética para profundizar en el mundo sensible, enlazando miradas desde el arte contemporáneo y la arqueología. Su trayectoria, serpenteante y en espiral, se consolida en la docencia universitaria y la investigación con enfoque social. Su trabajo se articula desde una dimensión afectiva y política, buscando comprender cómo las materialidades y los objetos median nuestras relaciones humanas y nos constituyen como sociedad, tanto en la intimidad del cuarto propio como en la construcción de los espacios públicos.",
         fotoFondo: "imagenes/nicolecristi.jpg", 
@@ -218,7 +218,7 @@ const datasetDisenadoras = [
             { img: ["imagenes/jose2.png", "imagenes/jose2.1.png"], desc: "02. They Weave and I Remember: Chapter for the book Makin Kin: Plant series, published by Cthulhu books." },
             { img: ["imagenes/jose3.jpg", "imagenes/jose3.1.jpg", "imagenes/jose3.2.jpg"], desc: "03. Encontrar el ella: codiseñando una memoria feminista del Diseño" },
             { img: ["imagenes/jose4.png", "imagenes/jose4.1.png", "imagenes/jose4.2.png"], desc: "04. Tiempo sin lluvia" },
-            { img: ["imagenes/jose5.jpg", "imagenes/jose5.1.jpg", "imagenes/jose5.2.jpg"], desc: "05. x" },
+            { img: ["imagenes/jose5.jpg", "imagenes/jose5.1.jpg"], desc: "05. Escribir una investigación-canasto: Siguiendo los gestos cesteriles entre mujeres tejedoras y la ñocha en Wadalafken" },
             { img: ["imagenes/jose6.jpg", "imagenes/jose6.1.jpg", "imagenes/jose6.2.jpg"], desc: "06. Moda al Paso" },
         ]
     },
