@@ -128,10 +128,10 @@ const datasetDisenadoras = [
         recomiendaA: ["Valentina Contreras", "Antonieta Lopez", "Pía Pulgar", "Camila Jouannet" ], 
         // REEMPLAZAMOS EL TEXTO ÚNICO POR ESTE OBJETO:
         frases: {
-            eje1: "«Mi estudio comenzó como una respuesta a la necesidad de moverme libremente.»",
-            eje2: "«La docencia me permite devolver al diseño lo mucho que me ha entregado.»",
-            eje3: "«Mi estudio es un estudio móvil.»",
-            eje4: "«El patrimonio no es estático, se construye día a día con nuestro oficio.»"
+            eje1: "«Lo que sí me llamaba harto la atención era que no veía o no sentía que había como tanto conocimiento, tanta búsqueda de referentes, ya sean mujeres, pero también del mundo editorial.»",
+            eje2: "«Es mucho mejor un proyecto cuando se trabaja con más personas, porque está mucho más enriquecido.»",
+            eje3: "«Para mí era muy importante que, aunque sea un espacio chiquitito, fuese un espacio en donde yo pudiera tener mis cosas y sentir esa sensación cálida, como de casa, y una casa usable.»",
+            eje4: "«Entender que el proceso es mucho más importante que el resultado... Es un aprendizaje y es lo que no se te va a terminar olvidando.»"
         }, 
         bio: "Diseñadora de formación y creadora visual guiada por la íntima convicción de que dar forma a un libro es un privilegio que conecta con el lector. Su práctica se despliega entre el diseño editorial, de información, visualización de datos y tipografía, colaborando con Latinotype, Estudio Vicencio y Ediciones Fulgor. Concibe la diagramación como un puente para transmitir conocimientos y emociones, visión que traslada a las aulas de la Universidad Diego Portales y la Universidad de Chile. Su portafolio destaca por proyectos como Carmela y La Alborada y la publicación Oficina Larrea (Premio Amster-Coré 2024), trayectoria docente que respalda con un diplomado con enfoque de género.", 
         fotoFondo: "imagenes/perlaarrue.jpg", 
@@ -142,7 +142,7 @@ const datasetDisenadoras = [
             eje3: "https://www.youtube.com/embed/EtdvZYov80k?si=Qj70-x43MosB7-Ka",
             eje4: "https://www.youtube.com/embed/uNERN-zC3Sw?si=tPEAbbiQmz2oVmQj"
         }, 
-        // ¡NUEVO APARTADO EDITABLE!: Agrega los tiempos aquí correspondientes a cada eje
+        // Tiempos correspondientes a cada eje
         duraciones: {
             eje1: "8:25 min",
             eje2: "14:57 min",
