@@ -214,11 +214,11 @@ const datasetDisenadoras = [
             eje4: "videos/josefina-eje4.mp4"
         },
         obras: [
-            { img: ["imagenes/jose1primera.jpg", "imagenes/jose1.1.jpg", "imagenes/jose1.2.jpg"], desc: "01. Biografías de artesanías: mujeres creando en prisión y exilio 1973-1990" },
+            { img: ["imagenes/jose1primera.JPG", "imagenes/jose1.1.jpg", "imagenes/jose1.2.jpg"], desc: "01. Biografías de artesanías: mujeres creando en prisión y exilio 1973-1990" },
             { img: ["imagenes/jose2.png", "imagenes/jose2.1.png"], desc: "02. They Weave and I Remember: Chapter for the book Makin Kin: Plant series, published by Cthulhu books." },
             { img: ["imagenes/jose3.jpg", "imagenes/jose3.1.jpg", "imagenes/jose3.2.jpg"], desc: "03. Encontrar el ella: codiseñando una memoria feminista del Diseño" },
             { img: ["imagenes/jose4.png", "imagenes/jose4.1.png", "imagenes/jose4.2.png"], desc: "04. Tiempo sin lluvia" },
-            { img: ["imagenes/jose5oficial.jpg", "imagenes/jose5.1.jpg"], desc: "05. Escribir una investigación-canasto: Siguiendo los gestos cesteriles entre mujeres tejedoras y la ñocha en Wadalafken" },
+            { img: ["imagenes/jose5oficial.JPG", "imagenes/jose5.1.jpg"], desc: "05. Escribir una investigación-canasto: Siguiendo los gestos cesteriles entre mujeres tejedoras y la ñocha en Wadalafken" },
             { img: ["imagenes/jose6.jpg", "imagenes/jose6.1.jpg", "imagenes/jose6.2.jpg"], desc: "06. Moda al Paso" },
         ]
     },
