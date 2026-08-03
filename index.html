@@ -18,21 +18,24 @@
 
     <!-- PANTALLA DE INICIO CON REORDEN DE JERARQUÍA -->
     <div id="pantalla-inicio" class="intro-screen">
-        <div class="intro-content">
-            <!-- 1. Statement primero -->
-            <button id="btn-statement" class="btn-secundario">Statement</button>
+    <div class="intro-content">
+        <!-- 1. Cita y homenaje -->
+        <h1 class="titulo-manifiesto">"Las mujeres también hacemos historia, no solo los hombres"</h1>
+        <p class="autora-homenaje">— María Angélica Pizarro</p>
 
-            <!-- 2. Cita y homenaje -->
-            <h1 class="titulo-manifiesto">"Las mujeres también hacemos historia, no solo los hombres"</h1>
-            <p class="autora-homenaje">— María Angélica Pizarro</p>
-
-            <!-- 3. Botón principal al final -->
-            <button id="btn-descubrir" class="btn-minimal">Conócela aquí</button>
-        </div>
+        <!-- 2. Botón principal para entrar a la red -->
+        <button id="btn-descubrir" class="btn-minimal">Conócela aquí</button>
     </div>
+</div>
 
     <!-- PANTALLA DE LA RED -->
     <div id="pantalla-red" class="main-universe oculto">
+        <!-- BOTONES SUPERIORES (Statement y Estadísticas) -->
+    <div class="header-acciones-top">
+        <button id="btn-statement" class="btn-top-nav">Statement</button>
+        <button id="btn-estadisticas" class="btn-top-nav">Estadísticas</button>
+    </div>
+
         <div id="canvas-constelacion"></div>
         
         <!-- SIMBOLOGÍA Y FILTROS DE LA RED -->
@@ -174,32 +177,94 @@
         <p id="caption-lightbox" class="caption-lightbox"></p>
     </div>
 
-    <!-- MODAL STATEMENT (ACTUALIZADO CON TESIS) -->
-<div id="modal-statement" class="modal-overlay hidden">
-    <div class="modal-contenido">
-        <button id="btn-cerrar-modal" class="btn-cerrar">&times;</button>
-        
-        <h2>Statement del Proyecto</h2>
+    <!-- MODAL 1: STATEMENT -->
+    <div id="modal-statement" class="modal-overlay oculto">
+        <div class="modal-contenido">
+            <button id="btn-cerrar-statement" class="btn-cerrar">&times;</button>
+            <div class="modal-scroll">
+                <h2>Statement del Proyecto</h2>
+                
+                <p>
+                    <strong>Motivación:</strong> 
+                    Este proyecto surge ante la baja representatividad de las mujeres en los registros del diseño chileno, buscando aportar a la memoria de la disciplina al reconocer a las diseñadoras no solo por sus obras, sino también por sus procesos, dinámicas de taller y transmisión de conocimiento.
+                </p>
+                <p>
+                    <strong>Problemática:</strong> 
+                    Los archivos tradicionales operan bajo lógicas estáticas que invisibilizan el patrimonio inmaterial y las redes informales. Esta falta de referentes locales genera un vacío crítico en la identidad de las nuevas generaciones.
+                </p>
+                <p>
+                    <strong>Metodología:</strong> 
+                    Bajo una perspectiva feminista, la plataforma mapea la disciplina mediante cadenas de recomendación ("bola de nieve"), entrevistas y el registro de talleres, devolviendo a las autoras el control sobre su propio relato.
+                </p>
+                <p>
+                    <strong>Propósito:</strong> 
+                    Transformar la memoria oral en un dispositivo digital dinámico, colectivo e inspirador que posicione a las mujeres como sujetos centrales de la comunicación visual en Chile.
+                </p>
+            </div>
+        </div>
+    </div>
 
-    
-        <p>
-            <strong>Motivación:</strong> 
-            Este proyecto surge ante la baja representatividad de las mujeres en los registros del diseño chileno, buscando aportar a la memoria de la disciplina al reconocer a las diseñadoras no solo por sus obras, sino también por sus procesos, dinámicas de taller y transmisión de conocimiento.
-        </p>
-        <p>
-            <strong>Problemática:</strong> 
-            Los archivos tradicionales operan bajo lógicas estáticas que invisibilizan el patrimonio inmaterial y las redes informales. Esta falta de referentes locales genera un vacío crítico en la identidad de las nuevas generaciones.
-        </p>
+    <!-- MODAL 2: ESTADÍSTICAS COMPARATIVAS -->
+<div id="modal-estadisticas" class="modal-overlay oculto">
+    <div class="modal-contenido modal-graficos">
+        <button id="btn-cerrar-estadisticas" class="btn-cerrar">&times;</button>
+        <div class="modal-scroll">
+            <h2>Brecha de Género en la Historia del Diseño</h2>
+            <p class="subtitulo-modal">Comparativa de representatividad en las publicaciones de Pedro Álvarez Caselli.</p>
+            
+            <!-- Leyenda Global de Colores -->
+            <div class="leyenda-grafico-global">
+                <div class="item-leyenda-pie">
+                    <span class="dot-pie color-mujeres"></span>
+                    <span>Diseñadoras (Mujeres)</span>
+                </div>
+                <div class="item-leyenda-pie">
+                    <span class="dot-pie color-hombres"></span>
+                    <span>Diseñadores (Hombres)</span>
+                </div>
+            </div>
 
-        <p>
-            <strong>Metodología:</strong> 
-            Bajo una perspectiva feminista, la plataforma mapea la disciplina mediante cadenas de recomendación ("bola de nieve"), entrevistas y el registro de talleres, devolviendo a las autoras el control sobre su propio relato.
-        </p>
+            <!-- Contenedor de las dos tortas -->
+            <div class="grid-graficos-torta">
+                
+                <!-- GRÁFICO 1: Edición 2004 -->
+                <div class="card-grafico">
+                    <h3>1ª Edición (2004)</h3>
+                    <div class="pie-chart-wrapper">
+                        <div class="pie-chart" id="pie-2004">
+                            <div class="pie-center-info">
+                                <span class="porcentaje-destacado">17%</span>
+                                <span class="label-porcentaje">Mujeres</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="datos-desglosados">
+                        <p><strong>9</strong> Diseñadoras</p>
+                        <p class="texto-secundario">44 Diseñadores (83%)</p>
+                        <p class="texto-total">Total: 53 nombres</p>
+                    </div>
+                </div>
 
-        <p>
-            <strong>Propósito:</strong> 
-            Transformar la memoria oral en un dispositivo digital dinámico, colectivo e inspirador que posicione a las mujeres como sujetos centrales de la comunicación visual en Chile.
-        </p>
+                <!-- GRÁFICO 2: Edición 2025 -->
+                <div class="card-grafico">
+                    <h3>2ª Edición (2025)</h3>
+                    <div class="pie-chart-wrapper">
+                        <div class="pie-chart" id="pie-2025">
+                            <div class="pie-center-info">
+                                <span class="porcentaje-destacado">39%</span>
+                                <span class="label-porcentaje">Mujeres</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="datos-desglosados">
+                        <p><strong>66</strong> Diseñadoras</p>
+                        <p class="texto-secundario">103 Diseñadores (61%)</p>
+                        <p class="texto-total">Total: 169 nombres</p>
+                    </div>
+                </div>
+
+            </div> <!-- Cierre grid-graficos-torta -->
+        </div>
     </div>
 </div>
 

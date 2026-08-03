@@ -592,3 +592,328 @@ body, html, button, select, input {
 .btn-cerrar:hover {
     color: #FFFFFF;
 }
+/* ==========================================================================
+   BOTONES EN ESQUINA SUPERIOR DERECHA (PANTALLA DE LA RED)
+   ========================================================================== */
+.header-acciones-top {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 999; /* Por encima del canvas de la red */
+    display: flex;
+    gap: 12px;
+}
+
+.btn-top-nav {
+    background: rgba(15, 15, 15, 0.85);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-top-nav:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   CONTENEDORES EMERGENTES (MODALES STATEMENT Y ESTADÍSTICAS)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 2000; /* Siempre por encima de todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Ocultar elementos suavemente */
+.modal-overlay.oculto {
+    display: none !important;
+}
+
+.modal-contenido {
+    position: relative;
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    padding: 40px 35px;
+    border-radius: 8px;
+    color: #ffffff;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+}
+
+.modal-scroll {
+    max-height: calc(85vh - 80px);
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Scrollbar fina y moderna */
+.modal-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+.modal-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.modal-contenido h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+.modal-contenido p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 16px;
+    font-weight: 300;
+}
+
+.modal-contenido strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Botón de cierre (X) */
+.modal-contenido .btn-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.modal-contenido .btn-cerrar:hover {
+    color: #ffffff;
+}
+
+/* Grid de Estadísticas con aspecto Fina/Tech */
+.grid-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.card-stat {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.num-stat {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.label-stat {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.detalle-estadisticas p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+/* ==========================================================================
+   ESTILOS PARA GRÁFICOS DE TORTA (ESTADÍSTICAS)
+   ========================================================================== */
+.modal-graficos {
+    max-width: 700px !important;
+}
+
+.subtitulo-modal {
+    font-size: 0.85rem !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    margin-bottom: 20px !important;
+}
+
+/* Leyenda de colores */
+.leyenda-grafico-global {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+}
+
+.item-leyenda-pie {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dot-pie {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Ajusta estos dos colores si usas una paleta distinta en tu sitio */
+.color-mujeres {
+    background-color: #F05982; /* Rosado/Fucsia del proyecto */
+}
+.color-hombres {
+    background-color: #2A2A38; /* Gris oscuro elegante */
+}
+
+/* Grid para poner las dos tortas lado a lado */
+.grid-graficos-torta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.card-grafico {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-grafico h3 {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* El círculo/torta dibujado con CSS Puro */
+.pie-chart-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pie-chart {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.pie-chart:hover {
+    transform: scale(1.05);
+}
+
+/* Gráfico 2004: 16.98% Rosado (#F05982), el resto Gris (#2A2A38) */
+#pie-2004 {
+    background: conic-gradient(#F05982 0% 16.98%, #2A2A38 16.98% 100%);
+}
+
+/* Gráfico 2025: 39.05% Rosado (#F05982), el resto Gris (#2A2A38) */
+#pie-2025 {
+    background: conic-gradient(#F05982 0% 39.05%, #2A2A38 39.05% 100%);
+}
+
+/* Agujero del centro para hacerlo tipo Donut/Dona moderna */
+.pie-center-info {
+    width: 90px;
+    height: 90px;
+    background-color: #111111; /* Mismo color de fondo del modal */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.porcentaje-destacado {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #F05982;
+    line-height: 1;
+}
+
+.label-porcentaje {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 3px;
+}
+
+/* Datos textuales bajo la dona */
+.datos-desglosados p {
+    margin: 4px 0 !important;
+    font-size: 0.85rem !important;
+}
+
+.datos-desglosados strong {
+    color: #F05982;
+}
+
+.texto-secundario {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.texto-total {
+    font-size: 0.75rem !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    margin-top: 8px !important;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 6px;
+}
+/* Ocultar botones superiores cuando el panel lateral de la diseñadora está abierto */
+.header-acciones-top.oculto-panel {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}

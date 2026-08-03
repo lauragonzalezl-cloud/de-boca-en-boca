@@ -170,16 +170,28 @@ const datasetDisenadoras = [
         residencia: "Santiago, Chile", 
         areas: ["Diseño Gráfico", "Diseño Editorial", "Diseño de Información"], 
         recomiendaA: ["Camila González", "Nicole Cristi", "Valeria Montt", "Renata Tesser", "Ángeles Briones", "Constanza Gaggero", "Constanza Diez"], 
-        frase: "«El espacio tiene que poder contribuir a lo que tú estás haciendo y no ser un obstáculo»", 
+        frases: {
+            eje1: "«Lo mío es la tipografía, las letras, incluso en un sentido como la ‘siguiente capa’, que tiene algo similar a la poesía en el sentido de que no es solo lo que dices, sino cómo lo dices.»",
+            eje2: "«Hay una diferencia considerable entre lo que uno piensa que va a hacer y cuando ya estás adentro haciéndolo.»",
+            eje3: "«Que el escritorio se adapte a mí, más que tener que forzarme yo a adaptarme al escritorio.»",
+            eje4: "«Reconocer que esta persona que es en mi vida personal también es la misma persona que hace, que existe en el mundo profesional: somos lo mismo. No va a haber otro cuerpo, no va a haber otra salud, no van a haber otros ojos... son los mismos.»"
+        },         
         bio: "Diseñadora especializada en diseño editorial, tipografía y diseño de información. A lo largo de su trayectoria profesional, ha consolidado un profundo lazo con la literatura y la poesía, disciplinas que han trazado su camino y pasión por la creación de libros. Su enfoque concibe el diseño como una herramienta con la capacidad de conectar emocional y sensorialmente con las personas, facilitando la comprensión de contenidos complejos para influenciar positivamente en su entorno. Su práctica se centra en el valor de trabajar con la información y su impacto social, transformando los proyectos editoriales en legados materiales y tangibles construidos para la posteridad.", 
         fotoFondo: "imagenes/victoriagallardo.jpg", 
         descFotoPrincipal: "Vico Gallardo — Registro de espacio de trabajo en estudio personal. Fotografía de Laura González, 14 de junio de 2026.",
         videos: {
-            eje1: "",
-            eje2: "",
-            eje3: "",
-            eje4: ""
+            eje1: "https://www.youtube.com/embed/ClyPXgizOgA?si=v--keESZL6Z__vwR",
+            eje2: "https://www.youtube.com/embed/dhRhNu8PcYg?si=6luKNuwVjsrS12YV",
+            eje3: "https://www.youtube.com/embed/ixI9eu4uTc8?si=QmvCemAQA7qMcb6J",
+            eje4: "https://www.youtube.com/embed/R1bDeC6xLoQ?si=djMxPREmshHMayo9"
         }, 
+        // Tiempos correspondientes a cada eje
+        duraciones: {
+            eje1: "34:38 min",
+            eje2: "42:36 min",
+            eje3: "21:20 min",
+            eje4: "5:47 min"
+        },
         obras: [
             { img: ["imagenes/vico1.png", "imagenes/vico1.1.png", "imagenes/vico1.2.png"], desc: "01. Cocino con plantas: Diseño editorial de cubierta e interior. Libro ganador Chile Diseño 2024." },
             { img: ["imagenes/vico2.png", "imagenes/vico2.1.png", "imagenes/vico2.2.png"], desc: "02. 80 años de Fernando Mayer: Diseño de cubierta (que contempló la elección material) y su interior." },
@@ -196,7 +208,7 @@ const datasetDisenadoras = [
         id: "Josefina Vidal", 
         name: "Josefina Vidal", 
         edicion: 'verde', 
-        recomendadaPor: "Nicole Cristi", 
+        recomendadasPor: ["Nicole Cristi", "Rita Torres"],
         hasEntrevista: true, 
         universidad: "Católica",
         egreso: "2017", 
@@ -255,7 +267,7 @@ const datasetDisenadoras = [
         id: "Ari González", 
         name: "Ari González", 
         edicion: 'verde', 
-        recomendadaPor: "Myrna Cisneros", 
+        recomendadasPor: ["Myrna Cisneros", "Karin Gildemeister"],
         hasEntrevista: true, 
         universidad: "Católica",
         egreso: "2016", 
@@ -342,7 +354,8 @@ const datasetDisenadoras = [
     },
     
     // --- NODOS SIMPLES (Edición 2 - Rosadas sin entrevista) ---
-    { id: "Alejandra Amenábar", name: "Alejandra Amenábar", edicion: 2, puente: false, hasEntrevista: false },
+    { id: "Alejandra Amenábar", name: "Alejandra Amenábar", edicion: 2, puente: false, hasEntrevista: false, recomiendaA: 
+        ["Catalina Pérez", "Piedad Rivadeneira", "Julie Carles" ] },
     { id: "Ana Villagrán", name: "Ana Villagrán", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Andrea Estefanía", name: "Andrea Estefanía", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Ángeles Briones", name: "Ángeles Briones", edicion: 2, puente: false, hasEntrevista: false }, 
@@ -351,7 +364,8 @@ const datasetDisenadoras = [
     { id: "Bernardita Espinoza", name: "Bernardita Espinoza", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Bianca Sartori", name: "Bianca Sartori", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Camila Muñoz", name: "Camila Muñoz", edicion: 2, puente: false, hasEntrevista: false },
-    { id: "Camila Rios", name: "Camila Rios", edicion: 2, puente: false, hasEntrevista: false },
+    { id: "Camila Rios", name: "Camila Rios", edicion: 2, puente: false, hasEntrevista: false, recomiendaA: 
+        ["Jenny Abud", "Perla Arrué"] },
     { id: "Camila Vicencio", name: "Camila Vicencio", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Carola Ureta", name: "Carola Ureta", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Carolina Bórquez", name: "Carolina Bórquez", edicion: 2, puente: false, hasEntrevista: false },
@@ -375,7 +389,8 @@ const datasetDisenadoras = [
     { id: "Jenny Abud", name: "Jenny Abud", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Josefina Bunster", name: "Josefina Bunster", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Julie Carles", name: "Julie Carles", edicion: 2, puente: false, hasEntrevista: false },
-    { id: "Karin Gildemeister", name: "Karin Gildemeister", edicion: 2, puente: false, hasEntrevista: false },
+    { id: "Karin Gildemeister", name: "Karin Gildemeister", edicion: 2, puente: false, hasEntrevista: false, recomiendaA: 
+        ["Daniela Escobar"] },
     { id: "Kathryn Gillmore", name: "Kathryn Gillmore", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Loreto Pavez", name: "Loreto Pavez", edicion: 2, puente: false, hasEntrevista: false },
     { id: "María Cristina Adasme", name: "María Cristina Adasme", edicion: 2, puente: false, hasEntrevista: false },
@@ -401,12 +416,12 @@ const datasetDisenadoras = [
     { id: "Valentina Pizarro", name: "Valentina Pizarro", edicion: 'verde', recomendadaPor: "Isadora Diaz" },
     { id: "Andrea Torres", name: "Andrea Torres", edicion: 'verde', recomendadaPor: "Isadora Diaz" },
     { id: "Mara Soto Aguilar", name: "Mara Soto Aguilar", edicion: 'verde', recomendadaPor: "Myrna Cisneros" },
-    { id: "Coto Mendoza", name: "Coto Mendoza", edicion: 'verde', recomendadaPor: "Myrna Cisneros" },
+    { id: "Coto Mendoza", name: "Coto Mendoza", edicion: 'verde', recomendadasPor: ["Myrna Cisneros", "Camila Rios"] },
     { id: "Dora Sánchez", name: "Dora Sánchez", edicion: 'verde', recomendadaPor: "Rita Torres" },
     { id: "Liz Bravo", name: "Liz Bravo", edicion: 'verde', recomendadaPor: "Rita Torres" },
     { id: "Andrea Meza", name: "Andrea Meza", edicion: 'verde', recomendadaPor: "Rita Torres" },
     { id: "Catalina Cumsille", name: "Catalina Cumsille", edicion: 'verde', recomendadaPor: "Paola Irazábal" },
-    { id: "Camila González", name: "Camila González", edicion: 'verde', recomendadaPor: "Vico Gallardo"},
+    { id: "Camila González", name: "Camila González", edicion: 'verde', recomendadasPor: ["Vico Gallardo", "Pamela Sthandier"]},
     { id: "Valeria Montt", name: "Valeria Montt", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
     { id: "Renata Tesser", name: "Renata Tesser", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
     { id: "Constanza Diez", name: "Constanza Diez", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
@@ -415,7 +430,10 @@ const datasetDisenadoras = [
     { id: "Valentina Contreras", name: "Valentina Contreras", edicion: 'verde', recomendadaPor: "Perla Arrué" },
     { id: "Camila Jouannet", name: "Camila Jouannet", edicion: 'verde', recomendadaPor: "Perla Arrué" },
     { id: "Paulina Astudillo", name: "Paulina Astudillo", edicion: 'verde', recomendadaPor: "Ari González" },
-    { id: "Gracia Fernández", name: "Gracia Fernández", edicion: 'verde', recomendadaPor: "Ari González" }
+    { id: "Gracia Fernández", name: "Gracia Fernández", edicion: 'verde', recomendadaPor: "Ari González" },
+    { id: "Consuelo Yávar", name: "Consuelo Yávar", edicion: 'verde', recomendadaPor: "Alejandra Amenábar" },
+    { id: "Catalina Cortés", name: "Catalina Cortés", edicion: 'verde', recomendadaPor: "Alejandra Amenábar" }
+
 
 ];
 
@@ -509,7 +527,40 @@ document.querySelectorAll('input[name="menu-disenadora"]').forEach(radio => {
         }
     });
 }); // <--- AQUÍ SE CIERRA CORRECTAMENTE EL EVENTO DE LAS PESTAÑAS
+// =========================================================================
+    // CONTROLADORES PARA MODALES DE STATEMENT Y ESTADÍSTICAS
+    // =========================================================================
+    const btnStatement = document.getElementById("btn-statement");
+    const modalStatement = document.getElementById("modal-statement");
+    const btnCerrarStatement = document.getElementById("btn-cerrar-statement");
 
+    const btnEstadisticas = document.getElementById("btn-estadisticas");
+    const modalEstadisticas = document.getElementById("modal-estadisticas");
+    const btnCerrarEstadisticas = document.getElementById("btn-cerrar-estadisticas");
+
+    // Abrir Statement
+    if (btnStatement && modalStatement) {
+        btnStatement.addEventListener("click", () => modalStatement.classList.remove("oculto"));
+    }
+    // Cerrar Statement
+    if (btnCerrarStatement && modalStatement) {
+        btnCerrarStatement.addEventListener("click", () => modalStatement.classList.add("oculto"));
+    }
+
+    // Abrir Estadísticas
+    if (btnEstadisticas && modalEstadisticas) {
+        btnEstadisticas.addEventListener("click", () => modalEstadisticas.classList.remove("oculto"));
+    }
+    // Cerrar Estadísticas
+    if (btnCerrarEstadisticas && modalEstadisticas) {
+        btnCerrarEstadisticas.addEventListener("click", () => modalEstadisticas.classList.add("oculto"));
+    }
+
+    // Cerrar si hacen clic fuera de la ventana (en el fondo oscuro)
+    window.addEventListener("click", (e) => {
+        if (e.target === modalStatement) modalStatement.classList.add("oculto");
+        if (e.target === modalEstadisticas) modalEstadisticas.classList.add("oculto");
+    });
 // B. Escuchar clicks en los botones de cápsulas (ejes) de forma independiente y eficiente
 document.querySelectorAll('.btn-eje').forEach(boton => {
     boton.addEventListener('click', (e) => {
@@ -573,7 +624,10 @@ if (botonCerrar) {
         if (video) {
             video.src = ""; // Apaga YouTube por completo al vaciar el src
         }
+        // --- NUEVO: Hacemos reaparecer los botones superiores al cerrar el panel ---
+        document.querySelector('.header-acciones-top')?.classList.remove('oculto-panel');
     });
+
 }
 
    
@@ -661,6 +715,23 @@ function inicializarRedObsidianEstatica() {
     const nodosArray = [];
     const lineasArray = [];
 
+    // --- 1. CONTEO DE RECOMENDACIONES POR DISEÑADORA ---
+    const conteoRecomendaciones = {};
+
+    datasetDisenadoras.forEach(d => {
+        // Contamos menciones en lista 'recomiendaA'
+        if (d.recomiendaA && Array.isArray(d.recomiendaA)) {
+            d.recomiendaA.forEach(nombre => {
+                conteoRecomendaciones[nombre] = (conteoRecomendaciones[nombre] || 0) + 1;
+            });
+        }
+        // Contamos menciones en 'recomendadasPor' / 'recomendadaPor'
+        const quienes = d.recomendadasPor || (d.recomendadaPor ? [d.recomendadaPor] : []);
+        quienes.forEach(autora => {
+            conteoRecomendaciones[d.id] = (conteoRecomendaciones[d.id] || 0) + 1;
+        });
+    });
+
     // Dibujar núcleos históricos fijos
     nucleosHistoricos.forEach(nucleo => {
         let colNucleo = nucleo.tipo === "nucleo1" ? "#F8470C" : "#F05982";
@@ -678,10 +749,14 @@ function inicializarRedObsidianEstatica() {
         let shapeNodo = "dot";
         let imageNodo = undefined;
         let colorFondo = "#F05982"; 
-        let sizeNodo = 8; 
-        let sizeTexto = 13;
 
-        // 1. ASIGNAR COLOR DE TEXTO BASE UNIFICADO (Para que no salgan nombres verdes en la red)
+        // --- 2. TAMAÑO DINÁMICO SEGÚN POPULARIDAD / RECOMENDACIONES ---
+        const totalVotos = conteoRecomendaciones[disenadora.id] || 0;
+        
+        // Base: 8px secundarias, 28px con foto. Sumamos +4px por cada recomendación extra recibida.
+        let sizeNodo = (disenadora.hasEntrevista ? 28 : 8) + (totalVotos * 4); 
+        let sizeTexto = (disenadora.hasEntrevista ? 14 : 13) + Math.min(totalVotos, 4); // Crece un poco el texto
+
         let colorTexto = "rgba(255,255,255,0.45)"; 
 
         if (disenadora.edicion === 1) colorFondo = "#F8470C"; 
@@ -690,10 +765,6 @@ function inicializarRedObsidianEstatica() {
         if (disenadora.hasEntrevista) {
             shapeNodo = "circularImage"; 
             imageNodo = disenadora.fotoFondo; 
-            sizeNodo = 28; 
-            sizeTexto = 14;
-            
-            // 2. CORRECCIÓN: Si tiene entrevista brilla en blanco puro, no en verde.
             colorTexto = "#ffffff";
         }
 
@@ -707,16 +778,17 @@ function inicializarRedObsidianEstatica() {
             font: { color: colorTexto, size: sizeTexto, face: "Montserrat" }
         });
 
-        // =========================================================================
-        // CONFIGURACIÓN DE LÍNEAS (EDGES) - GROSOR MEDIO Y SUTIL PARA GUIAR LA LECTURA
-        // =========================================================================
-        // Definimos un grosor intermedio (width: 1.5) y un comportamiento interactivo limpio
         const estiloLinea = { 
             width: 1.5, 
             hoverWidth: 2.5, 
             selectionWidth: 3 
         };
 
+        // =========================================================================
+        // DIBUJO INTELIGENTE DE LÍNEAS (EDGES)
+        // =========================================================================
+
+        // 1. Conexiones a núcleos históricos
         if (disenadora.edicion === 1) {
             if (disenadora.puente) {
                 lineasArray.push({ ...estiloLinea, from: "NUCLEO_2004", to: disenadora.id, color: { color: "rgba(248, 71, 12, 0.15)" } });
@@ -726,11 +798,46 @@ function inicializarRedObsidianEstatica() {
             }
         } else if (disenadora.edicion === 2) {
             lineasArray.push({ ...estiloLinea, from: "NUCLEO_2025", to: disenadora.id, color: { color: "rgba(240, 89, 130, 0.15)" } });
-        } else if (disenadora.edicion === 'verde') {
-            lineasArray.push({ ...estiloLinea, from: disenadora.recomendadaPor, to: disenadora.id, color: { color: "rgba(74, 255, 122, 0.22)" } });
+        }
+
+        // 2. Conexiones por Recomendación (detección inteligente de color)
+        if (disenadora.recomiendaA && Array.isArray(disenadora.recomiendaA)) {
+            disenadora.recomiendaA.forEach(nombreRecomendado => {
+                const personaRecomendada = datasetDisenadoras.find(d => d.id === nombreRecomendado);
+
+                if (personaRecomendada) {
+                    let colorConexion = (personaRecomendada.edicion === 'verde') 
+                        ? "rgba(74, 255, 122, 0.22)"  // Verde
+                        : "rgba(240, 89, 130, 0.35)"; // Rosado
+
+                    lineasArray.push({
+                        ...estiloLinea,
+                        from: disenadora.id,
+                        to: personaRecomendada.id,
+                        color: { color: colorConexion }
+                    });
+                }
+            });
+        }
+        
+        // 3. Soporte para recomendadas verdes
+        if (disenadora.edicion === 'verde') {
+            const quienes = disenadora.recomendadasPor || (disenadora.recomendadaPor ? [disenadora.recomendadaPor] : []);
+            quienes.forEach(autora => {
+                const yaExiste = lineasArray.some(l => l.from === autora && l.to === disenadora.id);
+                if (!yaExiste) {
+                    lineasArray.push({ 
+                        ...estiloLinea, 
+                        from: autora, 
+                        to: disenadora.id, 
+                        color: { color: "rgba(74, 255, 122, 0.22)" } 
+                    });
+                }
+            });
         }
     });
 
+    // Guardar los datos en la red
     nodesDataset = new vis.DataSet(nodosArray);
     edgesDataset = new vis.DataSet(lineasArray);
 
@@ -848,6 +955,8 @@ function abrirPanelDisenadora(disenadora) {
     const videoDinamico = document.getElementById('video-dinamico');
 
     if (!panelDisenadora) return;
+    // --- NUEVO: Ocultamos la barra superior al abrir cualquier perfil ---
+    document.querySelector('.header-acciones-top')?.classList.add('oculto-panel');
 
     // --- NUEVO: GESTIÓN DE COLOR DE FONDO DINÁMICO ---
     // Limpiamos colores de selecciones anteriores
@@ -922,6 +1031,9 @@ function abrirPanelDisenadora(disenadora) {
         // Si no tiene entrevista o no existe, ahí sí cerramos el panel de forma segura
         panelDisenadora.classList.add('panel-oculto');
         panelDisenadora.classList.remove('fondo-rosado', 'fondo-verde');
+        
+        // --- NUEVO: Como el panel se cerró solo, volvemos a mostrar los botones arriba ---
+        document.querySelector('.header-acciones-top')?.classList.remove('oculto-panel');
     }
 });
                 contenedorRecomienda.appendChild(linkRec);
