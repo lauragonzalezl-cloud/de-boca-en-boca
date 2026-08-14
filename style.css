@@ -1258,20 +1258,28 @@ body, html, button, select, input {
     margin-bottom: 5px;
 }
 
+/* Grilla principal de 3 columnas de igual ancho */
 .grid-espacios-trabajo {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+    align-items: stretch;
 }
 
+/* Cada tarjeta se comporta como una sub-grilla vertical de 3 niveles */
 .card-espacio {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 16px 14px;
     text-align: left;
     transition: border-color 0.3s ease;
+    
+    /* Pauta interna de 3 filas fijos: Cabecera | Barra | Texto inferior */
+    display: grid;
+    grid-template-rows: 44px 10px 1fr;
+    gap: 10px;
 }
 
 .card-espacio.principal {
@@ -1279,39 +1287,38 @@ body, html, button, select, input {
     background: rgba(74, 255, 122, 0.02);
 }
 
+/* FILA 1: Encabezado (misma altura fija en las 3) */
 .header-espacio {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-}
-
-.icono-espacio {
-    font-size: 1.6rem;
+    gap: 10px;
+    margin: 0;
 }
 
 .tit-espacio h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
+    font-size: 0.90rem;
     color: #ffffff;
     margin: 0;
     font-weight: 600;
+    line-height: 1.2;
 }
 
 .cifra-espacio {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: #4AFF7A;
     font-weight: 700;
+    display: block;
 }
 
-/* Barras de Progreso */
+/* FILA 2: Barras de Progreso (misma posición exacta) */
 .bar-container {
     width: 100%;
-    height: 8px;
+    height: 6px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 12px;
+    align-self: center; /* Centrado vertical en su fila de 10px */
 }
 
 .bar-fill.color-neon {
@@ -1326,28 +1333,28 @@ body, html, button, select, input {
     border-radius: 10px;
 }
 
-/* Sub-desglose para el Home Office */
-.subdesglose-espacio {
+/* FILA 3: Secciones de texto inferior */
+.subdesglose-espacio,
+.detalle-espacio {
+    margin: 0;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1); /* Mismo separador superior para las 3 */
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-top: 15px;
-    padding-top: 12px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .sub-item {
     display: flex;
-    align-items: flex-start; /* CAMBIO: Alínea con el inicio de la primera línea de texto */
-    gap: 10px;
-    font-size: 0.85rem;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.78rem;
     color: #cccccc;
 }
 
-/* NUEVA REGLA: Elimina el margen por defecto del <p> que empujaba el texto hacia abajo */
 .sub-item p {
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 .sub-item strong {
@@ -1355,35 +1362,45 @@ body, html, button, select, input {
 }
 
 .dot-sub {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     display: inline-block;
     flex-shrink: 0;
-    margin-top: 5px; /* CAMBIO: Ajusta el punto exacto a la altura del texto */
+    margin-top: 4px;
 }
 
 .dot-sub.color-neon { background-color: #4AFF7A; }
 .dot-sub.color-blanco { background-color: #ffffff; }
 
 .detalle-espacio {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: #aaaaaa;
-    margin: 0;
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 .icono-espacio {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #4AFF7A; /* Color neón uniforme para los tres íconos */
+    color: #4AFF7A;
     background: rgba(74, 255, 122, 0.08);
-    padding: 8px;
+    padding: 6px;
     border-radius: 8px;
     border: 1px solid rgba(74, 255, 122, 0.2);
+    flex-shrink: 0;
 }
 
 .icono-espacio svg {
     display: block;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 640px) {
+    .grid-espacios-trabajo {
+        grid-template-columns: 1fr;
+    }
+    .card-espacio {
+        grid-template-rows: auto auto auto;
+    }
 }
