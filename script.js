@@ -37,6 +37,7 @@ const datasetDisenadoras = [
     { 
         id: "Paola Irazábal", 
         name: "Paola Irazábal", 
+        instagram: "@estudiopi",
         edicion: 2, 
         hasEntrevista: true, 
         universidad: "Diego Portales",
@@ -78,6 +79,7 @@ const datasetDisenadoras = [
     { 
         id: "Nicole Cristi", 
         name: "Nicole Cristi", 
+        instagram: "@nicolecristirojas",
         edicion: 2, 
         hasEntrevista: true, 
         universidad: "Católica", 
@@ -119,6 +121,7 @@ const datasetDisenadoras = [
     { 
         id: "Perla Arrué", 
         name: "Perla Arrué", 
+        instagram: "@perla_port",
         edicion: 2, 
         hasEntrevista: true, 
         universidad: "Diego Portales",
@@ -134,8 +137,8 @@ const datasetDisenadoras = [
             eje4: "«Entender que el proceso es mucho más importante que el resultado... Es un aprendizaje y es lo que no se te va a terminar olvidando.»"
         }, 
         bio: "Diseñadora de formación y creadora visual guiada por la íntima convicción de que dar forma a un libro es un privilegio que conecta con el lector. Su práctica se despliega entre el diseño editorial, de información, visualización de datos y tipografía, colaborando con Latinotype, Estudio Vicencio y Ediciones Fulgor. Concibe la diagramación como un puente para transmitir conocimientos y emociones, visión que traslada a las aulas de la Universidad Diego Portales y la Universidad de Chile. Su portafolio destaca por proyectos como Carmela y La Alborada y la publicación Oficina Larrea (Premio Amster-Coré 2024), trayectoria docente que respalda con un diplomado con enfoque de género.", 
-        fotoFondo: "imagenes/perlaarrue.jpg", 
-        descFotoPrincipal: "Perla Arrué — Registro de espacio de trabajo en estudio personal. Fotografía de Laura González, 18 de junio de 2026.",
+        fotoFondo: "imagenes/perlaarruee.jpg", 
+        descFotoPrincipal: "Perla Arrué — Registro de espacio de trabajo. Envío digital, 5 de agosto de 2026.",
         videos: {
             eje1: "https://www.youtube.com/embed/u8rO0Hhx0rw?si=8rWzMPOrduvAaPc8",
             eje2: "https://www.youtube.com/embed/6R8UG4_dI4A?si=R79FLXAtXKUv7YiD",
@@ -161,8 +164,9 @@ const datasetDisenadoras = [
     
     // 4. VICO GALLARDO
     { 
-        id: "Vico Gallardo", 
-        name: "Vico Gallardo", 
+        id: "Victoria Gallardo", 
+        name: "Victoria Gallardo", 
+        instagram: "@fakeuniverse",
         edicion: 2, 
         hasEntrevista: true, 
         universidad: "Católica", 
@@ -206,7 +210,8 @@ const datasetDisenadoras = [
     // JOSEFINA VIDAL
     { 
         id: "Josefina Vidal", 
-        name: "Josefina Vidal", 
+        name: "Josefina Vidal",
+        instagram: "@jfvidalm", 
         edicion: 'verde', 
         recomendadasPor: ["Nicole Cristi", "Rita Torres"],
         hasEntrevista: true, 
@@ -238,6 +243,7 @@ const datasetDisenadoras = [
     { 
         id: "Alejandra Beckdorf", 
         name: "Alejandra Beckdorf", 
+        instagram: "@alebeckdsgn",
         edicion: 'verde', 
         recomendadaPor: "Paola Irazábal", 
         hasEntrevista: true, 
@@ -249,23 +255,27 @@ const datasetDisenadoras = [
         frase: "«Escribe aquí la frase de la entrevista de Alejandra...»",
         bio: "Biografía de Alejandra Beckdorf...",
         fotoFondo: "imagenes/alebeckdorf.jpg", 
-        descFotoPrincipal: "Alejandra Beckdorf — Registro de Espacio / Taller. 2026.",
+        descFotoPrincipal: "Alejandra Beckdorf — Registro de espacio de trabajo. Envío digital, 5 de agosto de 2026.",
         videos: {
             eje1: "videos/entrevistaalejandrabekkdorf-eje1.mp4",
             eje2: "videos/entrevistaalejandrabekkdorf-eje2.mp4",
             eje3: "videos/entrevistaalejandrabekkdorf-eje3.mp4",
             eje4: "videos/entrevistaalejandrabekkdorf-eje4.mp4"
         },
-        obras: 
-        [
-            { img: "imagenes/alejandrabekkdorf1.jpg", desc: "01. Finding the She" },
-            { img: "imagenes/alejandrabekkdorf2.jpg", desc: "02. Muestras Editoriales" }
-        ]
+        obras: [
+            { img: ["imagenes/ale1.jpg", "imagenes/ale1.1.jpg", "imagenes/ale1.2.jpg"], desc: "01. Rebranding para uno de los principales medios digitales de Chile. Una identidad más sólida y dinámica, construida desde la “D” como eje del sistema, que conecta su trayectoria periodística con una experiencia contemporánea, análoga y digital." },
+            { img: ["imagenes/ale2.jpg", "imagenes/ale2.1.jpg", "imagenes/ale2.2.jpg"], desc: "02. Una nueva identidad para conectar la tradición culinaria con una nueva generación. A partir de su icónica “C”, se construyó un sistema vivo y flexible inspirado en el gesto de emplatar, capaz de representar las distintas expresiones del nuevo Culinary." },
+            { img: ["imagenes/ale3.jpg", "imagenes/ale3.1.jpg", "imagenes/ale3.2.jpg"], desc: "03. Una marca de alimentación para mascotas que vuelve a su origen más salvaje. Inspirada en la naturaleza del sur de Chile y en la trucha arcoíris como materia prima, Bayts construye un universo que conecta nutrición, territorio y naturaleza." },
+            { img: ["imagenes/ale4.png", "imagenes/ale4.1.jpg", "imagenes/ale4.2.jpg"], desc: "04. Un rebranding construido desde el movimiento. La morfología de su botella, inspirada en una coctelera, dio origen a un sistema gráfico dinámico que transforma sus siete sabores en una identidad lista para agitarse y moverse." },
+            { img: ["imagenes/ale5.jpg", "imagenes/ale5.1.jpg", "imagenes/ale5.2.jpeg"], desc: "05. Una nueva identidad para una comunidad de mujeres que hacen crecer grandes negocios. Un sistema enérgico y contemporáneo, donde colores atrevidos, tipografías bold y una nueva expresión del logo proyectan el poder, la actitud y el crecimiento de Fundadoras." },
+            { img: ["imagenes/ale6.png", "imagenes/ale6.1.jpeg", "imagenes/ale6.2.jpeg"], desc: "06. Una identidad visual para entender una sociedad en constante movimiento. Un sistema modular transforma valores y datos complejos en un lenguaje visual claro y dinámico, capaz de representar cómo las personas transitan entre distintas formas de pensar." },
+        ] 
     },
-    // ARI GONZÁLEZ
+    // ARIBEL GONZÁLEZ
     { 
-        id: "Ari González", 
-        name: "Ari González", 
+        id: "Aribel González", 
+        name: "Aribel González", 
+        instagram: "@ari.bit",
         edicion: 'verde', 
         recomendadasPor: ["Myrna Cisneros", "Karin Gildemeister"],
         hasEntrevista: true, 
@@ -293,53 +303,24 @@ const datasetDisenadoras = [
             { img: ["imagenes/ari6.png", "imagenes/ari6.1.png", "imagenes/ari6.2.png"], desc: "06. Discusiones contemporáneas del diseño, Escuela de Diseño Universidad Diego Portales, 2025." },
         ]
     },
-    // Francisca Alcalde
-    { 
-        id: "Francisca Alcalde", 
-        name: "Francisca Alcalde", 
-        edicion: 'verde', 
-        recomendadaPor: "Ari González", 
-        hasEntrevista: true, 
-        universidad: "Diego Portales",
-        egreso: "2017", 
-        residencia: "Santiago, Chile",
-        areas: ["Docencia Universitaria"],
-        recomiendaA: [], 
-        frase: "«Escribe aquí la frase de la entrevista de Francisca...»",
-        bio: "",
-        fotoFondo: "imagenes/franciscaalcalde.jpg", 
-        descFotoPrincipal: "Francisca Alcalde — Registro de espacio de trabajo. Envío digital, 24 de julio de 2026.",
-        videos: {
-            eje1: "videos/entrevistafpAlcalde-eje1.mp4",
-            eje2: "videos/entrevistafpAlcalde-eje2.mp4",
-            eje3: "videos/entrevistafpAlcalde-eje3.mp4",
-            eje4: "videos/entrevistafpAlcalde-eje4.mp4"
-        },
-        obras: [
-            { img: ["imagenes/francisca1.jpg", "imagenes/francisca1.1.jpg", "imagenes/francisca1.2.jpg"], desc: "01. Atlas de la historia abstracta y subjetiva de Chile, Alejandro Olivares. Editorial Buen Lugar, 2025." },
-            { img: ["imagenes/francisca2.jpg", "imagenes/francisca2.1.jpg", "imagenes/francisca2.2.jpg"], desc: "02. El cielo se ha vuelto rojo, Catalina Juger. Coedición Buen Lugar – Tacto, 2024." },
-            { img: ["imagenes/francisca3.jpg", "imagenes/francisca3.1.jpg", "imagenes/francisca3.2.jpg"], desc: "03. Predio, Javier Álvarez. Editorial Buen Lugar, 2022." },
-            { img: ["imagenes/francisca4.jpg", "imagenes/francisca4.1.jpg", "imagenes/francisca4.2.jpg"], desc: "04. Tú no sabes si vas a volver, Lilith Kraushaar. Editorial Cenfoto UDP, 2022." },
-            { img: ["imagenes/francisca5.jpg", "imagenes/francisca5.1.png", "imagenes/francisca5.2.png"], desc: "05. Festival Internacional de Fotografía de Valparaíso, 2024." },
-            { img: ["imagenes/francisca6.png", "imagenes/francisca6.1.png", "imagenes/francisca6.2.png"], desc: "06. Discusiones contemporáneas del diseño, Escuela de Diseño Universidad Diego Portales, 2025." },
-        ]
-    },
+    
     // Pía Pulgar
     { 
         id: "Pía Pulgar", 
         name: "Pía Pulgar", 
+        instagram: "@jornalera.cl",
         edicion: 'verde', 
         recomendadaPor: "Perla Arrué", 
         hasEntrevista: true, 
-        universidad: "",
-        egreso: "", 
+        universidad: "De Talca",
+        egreso: "2013", 
         residencia: "Talca, Chile",
-        areas: ["Diseño Gráfico"],
+        areas: ["Branding", "Diseño Editorial", "Ilustración","Diseño Gráfico"],
         recomiendaA: [], 
         frase: "«Escribe aquí la frase de la entrevista de Pía...»",
         bio: "Biografía de Pía Pulgar...",
         fotoFondo: "imagenes/piapulgar.jpg", 
-        descFotoPrincipal: "Pía Pulgar — Registro de Espacio / Taller. 2026.",
+        descFotoPrincipal: "Pía Pulgar — Registro de espacio de trabajo. Envío digital, 11 de agosto de 2026.",
         videos: {
             eje1: "videos/entrevistapiapulgar-eje1.mp4",
             eje2: "videos/entrevistapiapulgar-eje2.mp4",
@@ -421,16 +402,17 @@ const datasetDisenadoras = [
     { id: "Liz Bravo", name: "Liz Bravo", edicion: 'verde', recomendadaPor: "Rita Torres" },
     { id: "Andrea Meza", name: "Andrea Meza", edicion: 'verde', recomendadaPor: "Rita Torres" },
     { id: "Catalina Cumsille", name: "Catalina Cumsille", edicion: 'verde', recomendadaPor: "Paola Irazábal" },
-    { id: "Camila González", name: "Camila González", edicion: 'verde', recomendadasPor: ["Vico Gallardo", "Pamela Sthandier"]},
-    { id: "Valeria Montt", name: "Valeria Montt", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
-    { id: "Renata Tesser", name: "Renata Tesser", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
-    { id: "Constanza Diez", name: "Constanza Diez", edicion: 'verde', recomendadaPor: "Vico Gallardo" },
+    { id: "Camila González", name: "Camila González", edicion: 'verde', recomendadasPor: ["Victoria Gallardo", "Pamela Sthandier"]},
+    { id: "Valeria Montt", name: "Valeria Montt", edicion: 'verde', recomendadaPor: "Victoria Gallardo" },
+    { id: "Renata Tesser", name: "Renata Tesser", edicion: 'verde', recomendadaPor: "Victoria Gallardo" },
+    { id: "Constanza Diez", name: "Constanza Diez", edicion: 'verde', recomendadaPor: "Victoria Gallardo" },
     { id: "Katherine Mollenhauer", name: "Katherine Mollenhauer", edicion: 'verde', recomendadaPor: "Nicole Cristi" },
     { id: "Magdalena Cattan", name: "Magdalena Cattan", edicion: 'verde', recomendadaPor: "Nicole Cristi" },
     { id: "Valentina Contreras", name: "Valentina Contreras", edicion: 'verde', recomendadaPor: "Perla Arrué" },
     { id: "Camila Jouannet", name: "Camila Jouannet", edicion: 'verde', recomendadaPor: "Perla Arrué" },
-    { id: "Paulina Astudillo", name: "Paulina Astudillo", edicion: 'verde', recomendadaPor: "Ari González" },
-    { id: "Gracia Fernández", name: "Gracia Fernández", edicion: 'verde', recomendadaPor: "Ari González" },
+    { id: "Paulina Astudillo", name: "Paulina Astudillo", edicion: 'verde', recomendadaPor: "Aribel González" },
+    { id: "Francisca Alcalde", name: "Francisca Alcalde", edicion: 'verde', recomendadaPor: "Aribel González" },
+    { id: "Gracia Fernández", name: "Gracia Fernández", edicion: 'verde', recomendadaPor: "Aribel González" },
     { id: "Consuelo Yávar", name: "Consuelo Yávar", edicion: 'verde', recomendadaPor: "Alejandra Amenábar" },
     { id: "Catalina Cortés", name: "Catalina Cortés", edicion: 'verde', recomendadaPor: "Alejandra Amenábar" }
 
@@ -441,17 +423,23 @@ const datasetDisenadoras = [
 // ESCUCHADOR DOM PRINCIPAL (INICIALIZACIÓN UNIFICADA)
 // =========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-    const btnDescubrir = document.getElementById('btn-descubrir');
+    // 1. Cambiamos 'btn-descubrir' por 'btn-explorar'
+    const btnExplorar = document.getElementById('btn-explorar');
     const pantallaInicio = document.getElementById('pantalla-inicio');
     const pantallaRed = document.getElementById('pantalla-red');
     const btnRestaurarRed = document.getElementById('btn-restaurar-red');
 
-    if (btnDescubrir) {
-        btnDescubrir.addEventListener('click', () => {
+    if (btnExplorar) {
+        btnExplorar.addEventListener('click', () => {
+            // Transición suave de salida
+            pantallaInicio.style.transition = 'opacity 1s ease';
             pantallaInicio.style.opacity = '0';
+            
             setTimeout(() => {
                 pantallaInicio.classList.add('oculto');
                 pantallaRed.classList.remove('oculto');
+                
+                // Inicialización de la red y filtros
                 inicializarRedObsidianEstatica(); 
                 cargarFiltrosAutomaticos();
                 
@@ -460,7 +448,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("filtro-area")?.addEventListener("change", aplicarFiltros);
                 
                 actualizarContadorRecomendadas();
-            }, 1200); 
+            }, 1000); // 1 segundo para la animación de fade-out
         });
     }
 
@@ -530,22 +518,13 @@ document.querySelectorAll('input[name="menu-disenadora"]').forEach(radio => {
 // =========================================================================
     // CONTROLADORES PARA MODALES DE STATEMENT Y ESTADÍSTICAS
     // =========================================================================
-    const btnStatement = document.getElementById("btn-statement");
-    const modalStatement = document.getElementById("modal-statement");
-    const btnCerrarStatement = document.getElementById("btn-cerrar-statement");
+    
 
     const btnEstadisticas = document.getElementById("btn-estadisticas");
     const modalEstadisticas = document.getElementById("modal-estadisticas");
     const btnCerrarEstadisticas = document.getElementById("btn-cerrar-estadisticas");
 
-    // Abrir Statement
-    if (btnStatement && modalStatement) {
-        btnStatement.addEventListener("click", () => modalStatement.classList.remove("oculto"));
-    }
-    // Cerrar Statement
-    if (btnCerrarStatement && modalStatement) {
-        btnCerrarStatement.addEventListener("click", () => modalStatement.classList.add("oculto"));
-    }
+    
 
     // Abrir Estadísticas
     if (btnEstadisticas && modalEstadisticas) {
@@ -683,15 +662,29 @@ function aplicarFiltros(){
 
     if(!nodesDataset) return;
 
+    // 1. Si NO hay ningún filtro seleccionado (todos están en blanco/Opción por defecto)
+    if (universidad === "" && decada === "" && area === "") {
+        datasetDisenadoras.forEach(d => {
+            if (nodesDataset.get(d.id)) {
+                // Volvemos a mostrar absolutamente todo en el mapa
+                nodesDataset.update({ id: d.id, hidden: false });
+            }
+        });
+        return;
+    }
+
+    // 2. Si el usuario SÍ seleccionó al menos un filtro
     datasetDisenadoras.forEach(d => {
         const nodo = nodesDataset.get(d.id);
         if (!nodo) return;
 
+        // Ocultamos a las que no tienen datos de entrevista
         if (!d.hasEntrevista) {
-            nodesDataset.update({ id: d.id, hidden: false });
+            nodesDataset.update({ id: d.id, hidden: true });
             return;
         }
 
+        // Evaluamos si la diseñadora cumple con los filtros activos
         let visible = true;
         if (universidad !== "") visible = visible && d.universidad === universidad;
         if (decada !== "") {
@@ -699,8 +692,9 @@ function aplicarFiltros(){
             let grupo = año <= 2010 ? "2000-2010" : (año <= 2020 ? "2011-2020" : "2021+");
             visible = visible && grupo === decada;
         }
-        if (area !== "") visible = visible && d.areas.includes(area);
+        if (area !== "") visible = visible && (d.areas && d.areas.includes(area));
 
+        // Muestra u oculta según si cumple el criterio
         nodesDataset.update({ id: d.id, hidden: !visible });
     });
 }
@@ -845,8 +839,18 @@ function inicializarRedObsidianEstatica() {
         physics: {
             enabled: true,
             solver: "forceAtlas2Based",
-            forceAtlas2Based: { gravitationalConstant: -75, centralGravity: 0.02, springLength: 160, springConstant: 0.05, damping: 0.7 },
-            stabilization: { enabled: true, iterations: 1000 }
+            forceAtlas2Based: { 
+                gravitationalConstant: -180, // Duplica la repulsión para dar espacio a los textos
+                centralGravity: 0.015,       // Permite que la red se expanda un poco más
+                springLength: 220,          // Estira los enlaces entre nodos
+                springConstant: 0.04,
+                damping: 0.75,
+                avoidOverlap: 1             // CLAVE: Activa el motor anti-solapamiento de Vis.js
+            },
+            stabilization: { 
+                enabled: true, 
+                iterations: 1200 
+            }
         },
         interaction: { hover: true, zoomView: true, dragView: true }
     };
@@ -943,9 +947,6 @@ function restaurarEstadoOriginalRed() {
     }
 }
 
-// =========================================================================
-// GESTIÓN DEL PANEL LATERAL E INYECCIÓN DINÁMICA DE TEXTOS/PROYECTOS
-// =========================================================================
 function abrirPanelDisenadora(disenadora) {
     const panelDisenadora = document.getElementById('panel-disenadora');
     const fotoCabecera = document.getElementById('foto-horizontal-perfil');
@@ -955,20 +956,18 @@ function abrirPanelDisenadora(disenadora) {
     const videoDinamico = document.getElementById('video-dinamico');
 
     if (!panelDisenadora) return;
-    // --- NUEVO: Ocultamos la barra superior al abrir cualquier perfil ---
+    
+    // Ocultamos la barra superior al abrir cualquier perfil
     document.querySelector('.header-acciones-top')?.classList.add('oculto-panel');
 
-    // --- NUEVO: GESTIÓN DE COLOR DE FONDO DINÁMICO ---
-    // Limpiamos colores de selecciones anteriores
+    // GESTIÓN DE COLOR DE FONDO DINÁMICO
     panelDisenadora.classList.remove('fondo-rosado', 'fondo-verde');
     
-    // Asignamos el fondo claro correspondiente (la edicion 1 se queda negra por defecto)
     if (disenadora.edicion === 2) {
         panelDisenadora.classList.add('fondo-rosado');
     } else if (disenadora.edicion === 'verde') {
         panelDisenadora.classList.add('fondo-verde');
     }
-    // -------------------------------------------------
 
     if (fotoCabecera && disenadora.fotoFondo) {
         fotoCabecera.src = disenadora.fotoFondo;
@@ -980,10 +979,49 @@ function abrirPanelDisenadora(disenadora) {
         });
     }
 
+    // --- NOMBRE DE LA DISEÑADORA ---
     const partesNombre = disenadora.name.toUpperCase().split(' ');
     document.querySelector('.first-name').innerText = partesNombre[0] || "";
     document.querySelector('.last-name').innerText = partesNombre.slice(1).join(' ') || "";
-    
+
+    // =========================================================================
+    // NUEVO: INYECCIÓN DINÁMICA DE INSTAGRAM BAJO EL NOMBRE
+    // =========================================================================
+    let elemIg = document.getElementById('instagram-disenadora');
+
+    if (!elemIg) {
+        elemIg = document.createElement('a');
+        elemIg.id = 'instagram-disenadora';
+        elemIg.target = '_blank';
+        elemIg.rel = 'noopener noreferrer';
+        elemIg.className = 'link-instagram-perfil';
+        
+        const nameLayout = document.querySelector('.name-layout');
+        if (nameLayout) {
+            nameLayout.insertAdjacentElement('afterend', elemIg);
+        }
+    }
+
+    if (disenadora.instagram) {
+        let handle = disenadora.instagram
+            .replace('https://www.instagram.com/', '')
+            .replace('https://instagram.com/', '')
+            .replace('/', '');
+        
+        if (!handle.startsWith('@')) handle = '@' + handle;
+        
+        let url = disenadora.instagram.startsWith('http') 
+            ? disenadora.instagram 
+            : `https://instagram.com/${handle.replace('@', '')}`;
+        
+        elemIg.href = url;
+        elemIg.innerHTML = `<svg class="icon-ig-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> ${handle}`;
+        elemIg.style.display = 'inline-flex';
+    } else {
+        elemIg.style.display = 'none';
+    }
+    // =========================================================================
+
     if (bloqueFrase) bloqueFrase.innerText = disenadora.frase || "";
     document.getElementById('biografia-dinamica').innerText = disenadora.bio || "";
     document.getElementById('meta-universidad').innerText = disenadora.universidad || "—";
@@ -1013,29 +1051,20 @@ function abrirPanelDisenadora(disenadora) {
                 linkRec.className = 'recomendada-node-link';
                 linkRec.innerText = nom + (index < disenadora.recomiendaA.length - 1 ? ", " : "");
                 linkRec.addEventListener('click', () => {
-    // 1. Buscamos en tu base de datos (datasetDisenadoras) a la diseñadora recomendada por su nombre
-    const proximaDisenadora = datasetDisenadoras.find(d => d.id === nom);
-    
-    // 2. Movemos la cámara del grafo hacia ella
-    if (networkInstance) {
-        networkInstance.focus(nom, { scale: 1.35, animation: { duration: 1000 } });
-    }
-    
-    // 3. Si existe en la base de datos y tiene entrevista, actualizamos el panel con sus datos
-    if (proximaDisenadora && proximaDisenadora.hasEntrevista) {
-        // Un pequeño retraso de 300ms para que se note el viaje de la cámara antes de cambiar los datos
-        setTimeout(() => { 
-            abrirPanelDisenadora(proximaDisenadora); 
-        }, 300);
-    } else {
-        // Si no tiene entrevista o no existe, ahí sí cerramos el panel de forma segura
-        panelDisenadora.classList.add('panel-oculto');
-        panelDisenadora.classList.remove('fondo-rosado', 'fondo-verde');
-        
-        // --- NUEVO: Como el panel se cerró solo, volvemos a mostrar los botones arriba ---
-        document.querySelector('.header-acciones-top')?.classList.remove('oculto-panel');
-    }
-});
+                    const proximaDisenadora = datasetDisenadoras.find(d => d.id === nom);
+                    if (networkInstance) {
+                        networkInstance.focus(nom, { scale: 1.35, animation: { duration: 1000 } });
+                    }
+                    if (proximaDisenadora && proximaDisenadora.hasEntrevista) {
+                        setTimeout(() => { 
+                            abrirPanelDisenadora(proximaDisenadora); 
+                        }, 300);
+                    } else {
+                        panelDisenadora.classList.add('panel-oculto');
+                        panelDisenadora.classList.remove('fondo-rosado', 'fondo-verde');
+                        document.querySelector('.header-acciones-top')?.classList.remove('oculto-panel');
+                    }
+                });
                 contenedorRecomienda.appendChild(linkRec);
             });
         } else {

@@ -9,30 +9,90 @@
 </head>
 <body>
 
-    <div class="marca-fija">
-        <h1>De boca en boca</h1>
-        <h2>Archivo de diseñadoras chilenas</h2>
-    </div>
-
     <button id="btn-restaurar-red" class="btn-restaurar oculto">Mostrar toda la red</button>
 
-    <!-- PANTALLA DE INICIO CON REORDEN DE JERARQUÍA -->
-    <div id="pantalla-inicio" class="intro-screen">
-    <div class="intro-content">
-        <!-- 1. Cita y homenaje -->
-        <h1 class="titulo-manifiesto">"Las mujeres también hacemos historia, no solo los hombres"</h1>
-        <p class="autora-homenaje">— María Angélica Pizarro</p>
+    <!-- NUEVA PANTALLA DE INICIO -->
+    <div id="pantalla-inicio" class="pantalla-inicio">
+      
+      <!-- 1. Fondo con Polaroids flotantes -->
+      <div class="polaroids-container">
+        <div class="polaroid p1">
+          <div class="polaroid-img" style="background-image: url('imagenes/paolairazabal.jpg');"></div>
+          <span>Paola Irazábal</span>
+        </div>
 
-        <!-- 2. Botón principal para entrar a la red -->
-        <button id="btn-descubrir" class="btn-minimal">Conócela aquí</button>
+        <div class="polaroid p2">
+          <div class="polaroid-img" style="background-image: url('imagenes/nicolecristi.jpg');"></div>
+          <span>Nicole Cristi</span>
+        </div>
+
+        <div class="polaroid p3">
+          <div class="polaroid-img posicion-izquierda" style="background-image: url('imagenes/victoriagallardo.jpg');"></div>
+          <span>Victoria Gallardo</span>
+        </div>
+
+        <div class="polaroid p4">
+          <div class="polaroid-img" style="background-image: url('imagenes/perlaarruee.jpg');"></div>
+          <span>Perla Arrué</span>
+        </div>
+
+        <div class="polaroid p5">
+          <div class="polaroid-img" style="background-image: url('imagenes/aribelgonzalez.jpg');"></div>
+          <span>Aribel González</span>
+        </div>
+
+        <div class="polaroid p6">
+          <div class="polaroid-img" style="background-image: url('imagenes/josefinavidal.jpg');"></div>
+          <span>Josefina Vidal</span>
+        </div>
+
+        <div class="polaroid p7">
+          <div class="polaroid-img" style="background-image: url('imagenes/alebeckdorf.jpg');"></div>
+          <span>Alejandra Beckdorf</span>
+        </div>
+
+        <div class="polaroid p8">
+          <div class="polaroid-img" style="background-image: url('imagenes/piapulgar.jpg');"></div>
+          <span>Pía Pulgar</span>
+        </div>
+      </div>
+
+      <!-- 2. Contenido Central (Logo + Statement + Frase + Botón) -->
+      <div class="inicio-content">
+        <!-- Logo en PNG -->
+        <img src="imagenes/debocaenboca.png" alt="Diseñadoras Chilenas" class="logo-inicio" />
+
+        <!-- Statement y cita -->
+        <div class="statement-box">
+          <p class="statement-texto">
+            Proyecto de título que activa la memoria colectiva mediante la recomendación entre pares. Un archivo digital vivo que reconstruye la historia de las diseñadoras en Chile a partir de sus propias voces, redes y trayectorias.
+          </p>
+          
+          <blockquote class="cita-destacada">
+            «Las mujeres también hacemos historia, no solo los hombres»
+            <cite>— María Angélica Pizarro</cite>
+          </blockquote>
+        </div>
+
+        <!-- Botón Principal -->
+        <button id="btn-explorar" class="btn-entrar">
+          EXPLORAR LA RED DE DISEÑADORAS
+          <span class="flecha">→</span>
+        </button>
+      </div>
+
     </div>
-</div>
 
     <!-- PANTALLA DE LA RED -->
     <div id="pantalla-red" class="main-universe oculto">
-        <!-- BOTONES SUPERIORES (Statement y Estadísticas) -->
+        <!-- BOTONES SUPERIORES Estadísticas) -->
+         <!-- MARCA / LOGO FIJO EN LA ESQUINA SUPERIOR IZQUIERDA -->
+<div class="marca-fija">
+    <a href="#">
+        <img src="imagenes/debocaenboca.png" alt="De boca en boca - Archivo de diseñadoras chilenas" class="logo-img">
+    </a>
+</div>
     <div class="header-acciones-top">
-        <button id="btn-statement" class="btn-top-nav">Statement</button>
         <button id="btn-estadisticas" class="btn-top-nav">Estadísticas</button>
     </div>
 
@@ -73,15 +133,15 @@
             <div id="contenido-leyenda" class="contenido-leyenda">
                 <div class="leyenda-item">
                     <span class="leyenda-color color-naranjo"></span>
-                    <span class="leyenda-texto">9 Diseñadoras (Índice Libro 2004, P. Álvarez)</span>
+                    <span class="leyenda-texto">9 Diseñadoras (2004)</span>
                 </div>
                 <div class="leyenda-item">
                     <span class="leyenda-color color-rosado"></span>
-                    <span class="leyenda-texto">66 Diseñadoras (Índice Libro 2025, P. Álvarez)</span>
+                    <span class="leyenda-texto">66 Diseñadoras (2025)</span>
                 </div>
                 <div class="leyenda-item">
                     <span class="leyenda-color color-verde"></span>
-                    <span class="leyenda-texto"><span id="contador-recomendadas" style="font-weight:700;">0</span> Diseñadoras Recomendadas (Boca en Boca)</span>
+                    <span class="leyenda-texto"><span id="contador-recomendadas" style="font-weight:700;">0</span> Recomendadas</span>
                 </div>
             </div>
         </div>
@@ -177,32 +237,6 @@
         <p id="caption-lightbox" class="caption-lightbox"></p>
     </div>
 
-    <!-- MODAL 1: STATEMENT -->
-    <div id="modal-statement" class="modal-overlay oculto">
-        <div class="modal-contenido">
-            <button id="btn-cerrar-statement" class="btn-cerrar">&times;</button>
-            <div class="modal-scroll">
-                <h2>Statement del Proyecto</h2>
-                
-                <p>
-                    <strong>Motivación:</strong> 
-                    Este proyecto surge ante la baja representatividad de las mujeres en los registros del diseño chileno, buscando aportar a la memoria de la disciplina al reconocer a las diseñadoras no solo por sus obras, sino también por sus procesos, dinámicas de taller y transmisión de conocimiento.
-                </p>
-                <p>
-                    <strong>Problemática:</strong> 
-                    Los archivos tradicionales operan bajo lógicas estáticas que invisibilizan el patrimonio inmaterial y las redes informales. Esta falta de referentes locales genera un vacío crítico en la identidad de las nuevas generaciones.
-                </p>
-                <p>
-                    <strong>Metodología:</strong> 
-                    Bajo una perspectiva feminista, la plataforma mapea la disciplina mediante cadenas de recomendación ("bola de nieve"), entrevistas y el registro de talleres, devolviendo a las autoras el control sobre su propio relato.
-                </p>
-                <p>
-                    <strong>Propósito:</strong> 
-                    Transformar la memoria oral en un dispositivo digital dinámico, colectivo e inspirador que posicione a las mujeres como sujetos centrales de la comunicación visual en Chile.
-                </p>
-            </div>
-        </div>
-    </div>
 
     <!-- MODAL 2: ESTADÍSTICAS COMPARATIVAS -->
 <div id="modal-estadisticas" class="modal-overlay oculto">
@@ -264,10 +298,107 @@
                 </div>
 
             </div> <!-- Cierre grid-graficos-torta -->
+            <!-- SECCIÓN 2: ESPACIOS DE TRABAJO -->
+<hr class="divisor-modal">
+
+<div class="seccion-estadistica-espacios">
+    <h3>Distribución del Espacio de Trabajo</h3>
+    <p class="subtitulo-modal">Muestra cualitativa sobre las dinámicas espaciales de las 8 diseñadoras entrevistadas.</p>
+
+    <div class="grid-espacios-trabajo">
+
+        <!-- 1. HOME OFFICE -->
+        <div class="card-espacio principal">
+            <div class="header-espacio">
+                <span class="icono-espacio">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </span>
+                <div class="tit-espacio">
+                    <h4>Home Office</h4>
+                    <span class="cifra-espacio">5 de 8 (62.5%)</span>
+                </div>
+            </div>
+            
+            <div class="bar-container">
+                <div class="bar-fill color-neon" style="width: 62.5%;"></div>
+            </div>
+
+            <div class="subdesglose-espacio">
+                <div class="sub-item">
+                    <span class="dot-sub color-neon"></span>
+                    <p><strong>3 de 5</strong> comparten este espacio con su pareja / familia</p>
+                </div>
+                <div class="sub-item">
+                    <span class="dot-sub color-blanco"></span>
+                    <p><strong>2 de 5</strong> cuentan con un espacio propio exclusivo en casa</p>
+                </div>
+            </div>
         </div>
+
+        <!-- 2. OFICINA DEDICADA -->
+        <div class="card-espacio">
+            <div class="header-espacio">
+                <span class="icono-espacio">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                        <line x1="9" y1="6" x2="9.01" y2="6"></line>
+                        <line x1="15" y1="6" x2="15.01" y2="6"></line>
+                        <line x1="9" y1="10" x2="9.01" y2="10"></line>
+                        <line x1="15" y1="10" x2="15.01" y2="10"></line>
+                        <line x1="9" y1="14" x2="9.01" y2="14"></line>
+                        <line x1="15" y1="14" x2="15.01" y2="14"></line>
+                        <path d="M10 22v-4h4v4"></path>
+                    </svg>
+                </span>
+                <div class="tit-espacio">
+                    <h4>Oficina</h4>
+                    <span class="cifra-espacio">2 de 8 (25%)</span>
+                </div>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill color-gris" style="width: 25%;"></div>
+            </div>
+            <p class="detalle-espacio">Cuentan con un espacio físico fuera del hogar dedicado exclusivamente al trabajo disciplinar.</p>
+        </div>
+
+        <!-- 3. ESTUDIO MÓVIL -->
+        <div class="card-espacio">
+            <div class="header-espacio">
+                <span class="icono-espacio">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="2" y1="20" x2="22" y2="20"></line>
+                    </svg>
+                </span>
+                <div class="tit-espacio">
+                    <h4>Estudio Nómade</h4>
+                    <span class="cifra-espacio">1 de 8 (12.5%)</span>
+                </div>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill color-gris" style="width: 12.5%;"></div>
+            </div>
+            <p class="detalle-espacio">Sin lugar físico fijo; su espacio de trabajo se desplaza según los proyectos o clientes.</p>
+        </div>
+
     </div>
 </div>
 
     <script src="script.js"></script>
+    <!-- Enlace de Instagram flotante minimalista -->
+   <a href="https://www.instagram.com/debocaenboca.cl/" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="instagram-float" 
+   aria-label="Instagram">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+</a>
 </body>
 </html>

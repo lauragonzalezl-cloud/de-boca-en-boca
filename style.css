@@ -1,5 +1,5 @@
 /* ==========================================================================
-   REGISTRO DE FUENTES LOCALES (MONTSERRAT DESDE CARPETA FUENTES)
+   1. REGISTRO DE FUENTES LOCALES (MONTSERRAT DESDE CARPETA FUENTES)
    ========================================================================== */
 @font-face {
     font-family: 'Montserrat';
@@ -23,7 +23,38 @@
 }
 
 /* ==========================================================================
-   RESET GENERAL Y TIPOGRAFÍA BASE
+   2. SISTEMA DE TOKENS: TIPOGRAFÍA, PALETA Y ESPACIADOS (DESIGN SYSTEM)
+   ========================================================================== */
+:root {
+    /* Escala Tipográfica Unificada */
+    --font-size-xs:   0.70rem;  /* 11px - Captions, tags pequeños, labels secundarios */
+    --font-size-sm:   0.80rem;  /* 13px - Botones, metadata, textos auxiliares */
+    --font-size-base: 0.95rem;  /* 15px - Cuerpo de texto principal (Bio, párrafos) */
+    --font-size-md:   1.10rem;  /* 17.5px - Frases destacadas, subtítulos */
+    --font-size-lg:   1.35rem;  /* 21.5px - Títulos de secciones, marca principal */
+    --font-size-xl:   1.80rem;  /* 28px - Primer nombre de la diseñadora */
+    --font-size-2xl:  2.10rem;  /* 33.5px - Apellido de la diseñadora */
+
+    /* Pesos de Fuente */
+    --font-weight-light:   300;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold:    700;
+
+    /* Interlineado (Line Heights) */
+    --line-height-tight:  1.1;
+    --line-height-heading: 1.35;
+    --line-height-body:    1.65;
+
+    /* Letter Spacing */
+    --tracking-tight: -0.5px;
+    --tracking-normal: 0px;
+    --tracking-wide:   1.2px;
+    --tracking-widest: 2.5px;
+}
+
+/* ==========================================================================
+   3. RESET GENERAL Y CONFIGURACIÓN BASE
    ========================================================================== */
 * { 
     margin: 0; 
@@ -41,582 +72,511 @@ body, html, button, select, input {
 
 .oculto { display: none !important; }
 
-/* BRANDING FIJO */
-.marca-fija { position: absolute; top: 40px; left: 40px; z-index: 5; pointer-events: none; }
-.marca-fija h1 { font-size: 1.35rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; margin-bottom: 5px; }
-.marca-fija h2 { font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 2px; }
+/* ==========================================================================
+   MARCA / LOGO FIJO SUPERIOR IZQUIERDA
+   ========================================================================== */
+.marca-fija {
+    position: fixed; /* 'fixed' para que acompañe el scroll si lo hubiera */
+    top: 30px;
+    left: 40px;
+    z-index: 1000; /* Asegura que quede siempre por encima del canvas y los modales */
+    pointer-events: auto;
+}
 
-/* BOTÓN FILTRAR RED */
+.marca-fija .logo-img {
+    width: 160px; /* Ajusta según el tamaño que desees para tu logo */
+    height: auto; /* Mantener proporción original sin deformar */
+    display: block;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.marca-fija .logo-img:hover {
+    opacity: 0.8; /* Efecto sutil al pasar el mouse */
+}
+
+/* BOTÓN RESTAURAR / FILTRAR RED */
 .btn-restaurar {
-    position: absolute; top: 40px; right: 40px; z-index: 10;
-    background: #ffffff; color: #000000; border: none;
-    padding: 10px 20px; font-size: 0.75rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1px; cursor: pointer;
-    transition: all 0.3s;
-}
-.btn-restaurar:hover { background: #F05982; color: #ffffff; }
-
-/* PANTALLA DE INICIO (MANIFIESTO) */
-.intro-screen {
-    height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center;
-    background: #4AFF7A; padding: 40px; z-index: 10; position: relative;
-    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.intro-content { text-align: center; max-width: 800px; width: 100%; }
-
-.titulo-manifiesto { 
-    font-size: 2.2rem; 
-    font-weight: 300; 
-    line-height: 1.4; 
-    margin-bottom: 35px; 
-    color: #000000;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    letter-spacing: -0.5px;
-}
-.autora-homenaje { 
-    font-size: 1rem; 
-    font-weight: 700; 
-    color: rgba(0, 0, 0, 0.9); 
-    text-transform: uppercase; 
-    letter-spacing: 3px; 
-    margin-bottom: 60px; 
-}
-.btn-minimal { 
-    background: transparent; 
-    border: 1px solid rgba(255, 255, 255, 0.35); 
+    position: absolute; 
+    top: 40px; 
+    right: 40px; 
+    z-index: 10;
+    background: #ffffff; 
     color: #000000; 
-    padding: 18px 45px; 
+    border: none;
+    padding: 10px 20px; 
+    font-size: var(--font-size-sm); 
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase; 
-    letter-spacing: 3px; 
-    cursor: pointer; 
-    font-weight: 700;
-    transition: all 0.4s; 
+    letter-spacing: var(--tracking-wide); 
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.btn-minimal:hover { border-color: #ffffff; background-color: #ffffff; color: #000000; }
+.btn-restaurar:hover { 
+    background: #F05982; 
+    color: #ffffff; 
+}
 
-/* CANVAS RED */
-.main-universe { width: 100vw; height: 100vh; position: relative; background-color: #030303; }
-#canvas-constelacion { position: absolute; width: 100%; height: 100%; z-index: 1; outline: none; }
 
-/* PANEL LATERAL MODULAR */
+/* ==========================================================================
+   6. CANVAS Y UNIVERSO PRINCIPAL
+   ========================================================================== */
+.main-universe { 
+    width: 100vw; 
+    height: 100vh; 
+    position: relative; 
+    background-color: #030303; 
+}
+#canvas-constelacion { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 1; 
+    outline: none; 
+}
+
+/* ==========================================================================
+   7. PANEL LATERAL DE PERFIL (DISEÑADORA)
+   ========================================================================== */
 .panel-container { 
-    position: absolute; top: 0; right: 0; width: 42%; height: 100vh; z-index: 6; 
-    background-color: #0c0c0c; border-left: 1px solid rgba(255,255,255,0.08);
-    display: flex; flex-direction: column; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    width: 42%; 
+    height: 100vh; 
+    z-index: 6; 
+    background-color: #0c0c0c; 
+    border-left: 1px solid rgba(255,255,255,0.08);
+    display: flex; 
+    flex-direction: column; 
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
 }
-.panel-oculto { transform: translateX(100%); opacity: 0; pointer-events: none; }
-.panel-content { width: 100%; height: 100%; padding: 45px; display: flex; flex-direction: column; }
-.close-uid { position: absolute; top: 35px; right: 35px; background: none; border: none; color: rgba(255,255,255,0.4); font-size: 1.8rem; cursor: pointer; z-index: 7; }
+.panel-oculto { 
+    transform: translateX(100%); 
+    opacity: 0; 
+    pointer-events: none; 
+}
+.panel-content { 
+    width: 100%; 
+    height: 100%; 
+    padding: 40px; 
+    display: flex; 
+    flex-direction: column; 
+}
+.close-uid { 
+    position: absolute; 
+    top: 30px; 
+    right: 30px; 
+    background: none; 
+    border: none; 
+    color: rgba(255,255,255,0.5); 
+    font-size: 1.6rem; 
+    cursor: pointer; 
+    z-index: 7; 
+    transition: color 0.2s;
+}
+.close-uid:hover { color: #ffffff; }
 
-.info-wrapper { display: flex; flex-direction: column; height: 100%; justify-content: space-between; }
+.info-wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    justify-content: space-between; 
+}
 
 /* SCROLL INTERNO */
-.scrollable-tab { max-height: 80vh; overflow-y: auto; padding-right: 10px; }
+.scrollable-tab { 
+    max-height: 80vh; 
+    overflow-y: auto; 
+    padding-right: 12px; 
+}
 .scrollable-tab::-webkit-scrollbar { width: 4px; }
-.scrollable-tab::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+.scrollable-tab::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 2px; }
 .tab-oculto { display: none !important; }
 
-/* FOTO CABECERA */
-.contenedor-foto-cabecera { width: 100%; position: relative; margin-bottom: 20px; cursor: zoom-in; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-.foto-horizontal-clickeable { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; filter: brightness(90%); transition: filter 0.3s; }
-.foto-horizontal-clickeable:hover { filter: brightness(100%); }
-.hint-expandir { position: absolute; bottom: 8px; right: 8px; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1px; background: rgba(0,0,0,0.75); padding: 2px 6px; color: rgba(255,255,255,0.6); pointer-events: none; font-weight: 300; }
-
-/* NOMBRE FICHAS */
-.name-layout { display: flex; flex-direction: column; line-height: 0.9; margin-bottom: 15px; }
-.first-name { font-size: 2.2rem; font-weight: 300; letter-spacing: -0.5px; text-transform: uppercase; color: #ffffff; }
-.last-name { font-size: 2.8rem; font-weight: 700; letter-spacing: -1px; text-transform: uppercase; color: #ffffff; }
-
-/* FRASE MANIFIESTO INTERNA */
-.bloque-frase-destacada { margin-bottom: 20px; padding-left: 15px; border-left: 2px solid #ffffff; }
-#frase-dinamica { font-size: 1.1rem; font-weight: 300; line-height: 1.4; color: rgba(255,255,255,0.9); }
-
-/* FICHA TÉCNICA */
-.metadata-ficha {
-    display: flex; flex-direction: column; gap: 8px;
-    border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 12px 0; margin-bottom: 15px; font-size: 0.8rem; color: #999999;
+/* FOTO CABECERA EN PERFIL */
+.contenedor-foto-cabecera { 
+    width: 100%; 
+    position: relative; 
+    margin-bottom: 20px; 
+    cursor: zoom-in; 
+    overflow: hidden; 
+    border: 1px solid rgba(255,255,255,0.1); 
 }
-.meta-item { display: flex; align-items: baseline; gap: 8px; font-weight: 300; }
-.meta-item strong { color: #ffffff; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 1px; min-width: 120px; font-weight: 700; }
+.foto-horizontal-clickeable { 
+    width: 100%; 
+    aspect-ratio: 16/9; 
+    object-fit: cover; 
+    display: block; 
+    filter: brightness(90%); 
+    transition: filter 0.3s; 
+}
+.foto-horizontal-clickeable:hover { filter: brightness(100%); }
+.hint-expandir { 
+    position: absolute; 
+    bottom: 8px; 
+    right: 8px; 
+    font-size: var(--font-size-xs); 
+    text-transform: uppercase; 
+    letter-spacing: var(--tracking-wide); 
+    background: rgba(0,0,0,0.8); 
+    padding: 3px 8px; 
+    color: rgba(255,255,255,0.7); 
+    pointer-events: none; 
+    font-weight: var(--font-weight-light); 
+}
 
-.tags-container { display: flex; flex-wrap: wrap; gap: 5px; }
-.tag-area-link { background: rgba(255,255,255,0.05); color: #ffffff; padding: 2px 6px; border-radius: 2px; font-size: 0.65rem; cursor: pointer; border: 1px solid rgba(255,255,255,0.08); font-weight: 400; transition: all 0.2s; }
-.tag-area-link:hover { background: #ffffff; color: #000000; border-color: #ffffff; }
+/* TIPOGRAFÍA DE NOMBRE (NORMADA) */
+.name-layout { 
+    display: flex; 
+    flex-direction: column; 
+    line-height: 1.0; 
+    margin-bottom: 12px; 
+}
+.first-name,
+.last-name { 
+    font-size: 2rem; /* O el tamaño único que prefieras */
+    font-weight: var(--font-weight-bold); /* O var(--font-weight-regular) */
+    letter-spacing: var(--tracking-tight); 
+    text-transform: uppercase; 
+    color: #ffffff; 
+}
+
+/* ENLACE INSTAGRAM EN PERFIL */
+.link-instagram-perfil {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--tracking-wide);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: all 0.25s ease;
+    width: fit-content;
+}
+.link-instagram-perfil:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+.icon-ig-inline {
+    width: 14px;
+    height: 14px;
+}
+
+/* FRASE DESTACADA / MANIFIESTO INTERNO */
+.bloque-frase-destacada { 
+    margin-bottom: 20px; 
+    padding-left: 15px; 
+    border-left: 2px solid #ffffff; 
+}
+#frase-dinamica { 
+    font-size: var(--font-size-md); 
+    font-weight: var(--font-weight-light); 
+    line-height: var(--line-height-heading); 
+    color: rgba(255,255,255,0.92); 
+}
+
+/* FICHA TÉCNICA Y METADATOS (NORMADOS) */
+.metadata-ficha {
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 0; 
+    margin-bottom: 20px; 
+    font-size: var(--font-size-sm); 
+    color: #a0a0a0;
+}
+.meta-item { 
+    display: flex; 
+    align-items: baseline; 
+    gap: 10px; 
+    font-weight: var(--font-weight-light); 
+}
+.meta-item strong { 
+    color: #ffffff; 
+    text-transform: uppercase; 
+    font-size: var(--font-size-xs); 
+    letter-spacing: var(--tracking-wide); 
+    min-width: 120px; 
+    font-weight: var(--font-weight-bold); 
+}
+
+.tags-container { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag-area-link { 
+    background: rgba(255,255,255,0.06); 
+    color: #ffffff; 
+    padding: 3px 8px; 
+    border-radius: 2px; 
+    font-size: var(--font-size-xs); 
+    cursor: pointer; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    font-weight: var(--font-weight-semibold); 
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    transition: all 0.2s; 
+}
+.tag-area-link:hover { 
+    background: #ffffff; 
+    color: #000000; 
+    border-color: #ffffff; 
+}
 
 .recomendadas-links-container { display: flex; flex-wrap: wrap; gap: 6px; }
-.recomendada-node-link { color: #4aff7a; font-weight: 700; text-decoration: underline; cursor: pointer; font-size: 0.75rem; }
+.recomendada-node-link { 
+    color: #4aff7a; 
+    font-weight: var(--font-weight-bold); 
+    text-decoration: underline; 
+    cursor: pointer; 
+    font-size: var(--font-size-sm); 
+}
 
-.texto-biografia { font-size: 0.9rem; font-weight: 300; line-height: 1.5; color: #b3b3b3; text-align: left; }
+/* TEXTO DE BIOGRAFÍA (DESCANSADO Y ALTAMENTE LEGIBLE) */
+.texto-biografia, #biografia-dinamica { 
+    font-size: var(--font-size-base); 
+    font-weight: var(--font-weight-regular); 
+    line-height: var(--line-height-body); 
+    color: #d1d1d1; 
+    text-align: left; 
+}
 
-/* PESTAÑAS ADICIONALES */
-.seccion-titulo { font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
-.video-container { width: 100%; aspect-ratio: 16/9; background-color: #000; border: 1px solid rgba(255,255,255,0.1); }
+/* PESTAÑAS Y SECCIONES INTERNAS */
+.seccion-titulo { 
+    font-size: var(--font-size-sm); 
+    font-weight: var(--font-weight-bold); 
+    letter-spacing: var(--tracking-wide); 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+    padding-bottom: 8px; 
+}
+.video-container { 
+    width: 100%; 
+    aspect-ratio: 16/9; 
+    background-color: #000; 
+    border: 1px solid rgba(255,255,255,0.1); 
+}
 
-/* GRID DE PROYECTOS */
+/* NAVEGACIÓN DE EJES DE VIDEO */
+.ejes-video-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.btn-eje {
+    background: rgba(255, 255, 255, 0.05); 
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12); 
+    padding: 8px 14px;
+    font-size: var(--font-size-xs); 
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    flex-grow: 1; 
+    text-align: center; 
+    font-weight: var(--font-weight-semibold);
+}
+.btn-eje:hover { background: rgba(255, 255, 255, 0.12); color: #ffffff; }
+.btn-eje.active { background: #ffffff; color: #000000; border-color: #ffffff; font-weight: var(--font-weight-bold); }
+
+/* GRID DE PORTAFOLIO */
 .grid-portafolio { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-.obra-item { display: flex; flex-direction: column; gap: 6px; cursor: zoom-in; }
+.obra-item { display: flex; flex-direction: column; gap: 8px; cursor: zoom-in; }
 .img-obra-real { width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s; }
 .obra-item:hover .img-obra-real { border-color: #fff; }
-.pie-foto { font-size: 0.6rem; color: #666; font-weight: 300; }
+.pie-foto { 
+    font-size: var(--font-size-xs); 
+    color: #999999; 
+    font-weight: var(--font-weight-regular); 
+    line-height: var(--line-height-heading);
+}
 
-/* COMPONENTE NAVEGACIÓN INFERIOR (PESTAÑAS) */
-.sub-navigation { display: flex; gap: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; margin-top: 10px; }
-.nav-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
+/* MENÚ INFERIOR DE PESTAÑAS EN PANEL */
+.sub-navigation { 
+    display: flex; 
+    gap: 25px; 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    padding-top: 16px; 
+    margin-top: 12px; 
+}
+.nav-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    font-size: var(--font-size-sm); 
+    color: rgba(255,255,255,0.5); 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    letter-spacing: var(--tracking-wide); 
+    font-weight: var(--font-weight-semibold); 
+}
 .nav-item input { display: none; }
-.dot { width: 6px; height: 6px; border-radius: 50%; background-color: rgba(255,255,255,0.2); display: inline-block; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background-color: rgba(255,255,255,0.25); display: inline-block; }
 
-/* NUEVOS ESTADOS DINÁMICOS COMPATIBLES CON SCRIPT.JS */
 .nav-item input:checked + .dot.rojo-activo { background-color: #F8470C !important; box-shadow: 0 0 8px #F8470C !important; }
 .nav-item input:checked + .dot.rosado-activo { background-color: #F05982 !important; box-shadow: 0 0 8px #F05982 !important; }
 .nav-item input:checked + .dot.verde-activo { background-color: #4aff7a !important; box-shadow: 0 0 8px #4aff7a !important; }
 
-.nav-item:hover, .nav-item input:checked ~ span { color: #ffffff; font-weight: 700; }
+.nav-item:hover, .nav-item input:checked ~ span { color: #ffffff; font-weight: var(--font-weight-bold); }
 
-/* LIGHTBOX INTERFAZ */
-.lightbox-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.95); z-index: 100; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.imagen-lightbox-activa { max-width: 85%; max-height: 80vh; object-fit: contain; border: 1px solid rgba(255,255,255,0.15); }
-.cerrar-lightbox { position: absolute; top: 40px; right: 50px; color: #fff; font-size: 3rem; cursor: pointer; }
-.caption-lightbox { margin-top: 15px; font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 300; }
+/* ==========================================================================
+   8. CONTROLES DE INTERFAZ SOBRE LA RED (UI MINIMALISTA Y HORIZONTAL)
+   ========================================================================== */
 
-/* FLECHAS LIGHTBOX */
-.flecha-lightbox {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(12, 12, 12, 0.75); color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    font-size: 1.5rem; padding: 12px 20px; cursor: pointer; z-index: 110;
-    transition: all 0.3s ease; backdrop-filter: blur(5px); font-weight: 700;
-}
-.flecha-lightbox:hover { background: #ffffff; color: #000000; border-color: #ffffff; }
-#btn-lightbox-prev { left: 40px; }
-#btn-lightbox-next { right: 40px; }
-
-/* ==========================================
-   LEYENDA DE LA RED (UNIFICADA Y CORREGIDA)
-   ========================================== */
-.leyenda-red {
-    position: absolute; 
-    bottom: 40px; 
-    left: 40px; 
-    z-index: 5;
-    background: rgba(12, 12, 12, 0.85); 
-    padding: 16px 18px; 
-    border: 1px solid rgba(255, 255, 255, 0.08); 
-    display: flex;
-    flex-direction: column; 
-    backdrop-filter: blur(5px);
-    border-radius: 4px;
-    width: 460px; 
-    pointer-events: auto !important; 
-    overflow: hidden;
-
-    /* Altura máxima en estado abierto y transiciones suaves */
-    max-height: 200px; 
-    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Botón superior (Palabra LEYENDA + Flecha ▼) */
-.btn-toggle-leyenda {
-    background: none; 
-    border: none; 
-    color: #fff;
-    font-size: 0.75rem; 
-    text-transform: uppercase; 
-    letter-spacing: 2px;
-    font-weight: 700; 
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; 
-    cursor: pointer; 
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 10px;
-    line-height: 1; 
-}
-
-/* Contenedor interno de las filas de color */
-.contenido-leyenda {
-    display: flex; 
-    flex-direction: column; 
-    gap: 8px; 
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Filas e ítems */
-.leyenda-item { display: flex; align-items: center; gap: 10px; }
-.leyenda-color { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-.color-naranjo { background-color: #F8470C; }
-.color-rosado { background-color: #F05982; }
-.color-verde { background-color: #4aff7a; }
-.leyenda-texto { 
-    font-size: 0.72rem; 
-    color: rgba(255, 255, 255, 0.7); 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    line-height: 1.2; 
-    font-weight: 400; 
-}
-
-/* ESTADO CERRADO OPTIMIZADO */
-.leyenda-red.colapsada {
-    max-height: 54px !important;    /* Altura ideal y segura para que el texto quepa sin cortarse */
-    padding-top: 14px !important;    
-    padding-bottom: 14px !important; 
-    z-index: 99999 !important;      
-    cursor: pointer !important;     
-}
-
-/* Mantenemos el texto y la flecha vivos al colapsar */
-.leyenda-red.colapsada .btn-toggle-leyenda {
-    border-bottom-color: transparent !important; 
-    margin-bottom: 0px !important;
-    padding-bottom: 0px !important;
-    pointer-events: none !important;             
-    opacity: 1 !important;                       
-    visibility: visible !important;
-    display: flex !important;       /* Garantiza que mantenga su estructura flex layout */
-}
-
-/* Solo se esconde la lista de pelotitas y colores */
-.leyenda-red.colapsada .contenido-leyenda {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    height: 0 !important;           /* Le quita toda la altura física para que no empuje el botón */
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* NAVEGACIÓN DE EJES EN ENTREVISTAS */
-.ejes-video-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
-.btn-eje {
-    background: rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1); padding: 6px 12px;
-    font-size: 0.7rem; text-transform: uppercase;
-    cursor: pointer; transition: all 0.3s ease; flex-grow: 1; text-align: center; font-weight: 400;
-}
-.btn-eje:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
-.btn-eje.active { background: #ffffff; color: #000000; border-color: #ffffff; font-weight: 700; }
-
-/* ==========================================
-   PANEL DE FILTROS: ARRIBA DE LA LEYENDA
-   ========================================== */
+/* PANEL DE FILTROS (POSICIONADO MÁS ARRIBA CON BUEN AIRE) */
+/* PANEL DE FILTROS (CENTRADO VERTICALMENTE EN EL LATERAL IZQUIERDO) */
 .panel-filtros {
     position: absolute; 
     left: 40px; 
-    bottom: 225px; /* Ajustado ligeramente para que acompañe el nuevo margen de la leyenda */
+    top: 50%; /* Centrado relativo al alto de la pantalla */
+    transform: translateY(-50%); /* Ajuste fino de eje Y entre cabecera y leyenda */
     z-index: 6; 
-    width: 240px;
-    background: rgba(12, 12, 12, .88); 
-    border: 1px solid rgba(255, 255, 255, .08);
-    backdrop-filter: blur(6px); 
-    padding: 16px; 
+    width: 220px; 
+    background: rgba(10, 10, 10, 0.75); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); 
+    padding: 14px; 
+    border-radius: 6px;
     display: flex; 
     flex-direction: column; 
-    gap: 10px;
+    gap: 8px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
-.panel-filtros h3 { font-size: .75rem; color: white; letter-spacing: 2px; margin-bottom: 5px; }
-.panel-filtros label { font-size: .65rem; text-transform: uppercase; color: #888; }
-.panel-filtros select { background: #111; color: white; border: 1px solid rgba(255, 255, 255, .12); padding: 8px; outline: none; }
+
+.panel-filtros h3 { 
+    font-size: var(--font-size-xs); 
+    color: rgba(255, 255, 255, 0.9); 
+    letter-spacing: var(--tracking-wide); 
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 2px;
+}
+
+.panel-filtros label { 
+    font-size: 0.68rem; 
+    text-transform: none; /* Sentence case suave */
+    color: rgba(255, 255, 255, 0.55); 
+    font-weight: var(--font-weight-regular);
+    display: block;
+}
+
+.panel-filtros select { 
+    width: 100%;
+    background: #0d0d0d; 
+    color: rgba(255, 255, 255, 0.9); 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    padding: 6px 10px; 
+    font-size: 0.75rem;
+    border-radius: 4px;
+    outline: none; 
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.panel-filtros select:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
 
 #btn-limpiar-filtros {
-    margin-top: 10px; background: white; color: black; border: none; padding: 10px; cursor: pointer; font-size: .7rem; text-transform: uppercase; font-weight: 700; transition: background 0.2s;
-}
-#btn-limpiar-filtros:hover { background: #ff4a5b; color: white; }
-/* ==========================================================================
-   ESTILOS DINÁMICOS DE CONTRASTE OPTIMIZADOS (MÁXIMA LEGIBILIDAD)
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   VARIANTE: DISEÑADORAS ROSADAS (EDICIÓN 2) - FONDO CLARO CON TEXTOS OSCUROS
-   -------------------------------------------------------------------------- */
-.panel-container.fondo-rosado {
-    background-color: #F05982 !important;
-}
-
-/* Títulos principales y subtítulos (Negro puro y peso fuerte) */
-.panel-container.fondo-rosado .first-name,
-.panel-container.fondo-rosado .last-name,
-.panel-container.fondo-rosado .meta-item strong,
-.panel-container.fondo-rosado .seccion-titulo {
-    color: #000000 !important;
-    font-weight: 700 !important; /* Forzamos peso bold para tipografías finas */
+    margin-top: 4px; 
+    background: rgba(255, 255, 255, 0.08); 
+    color: rgba(255, 255, 255, 0.85); 
+    border: 1px solid rgba(255, 255, 255, 0.12); 
+    padding: 6px 10px; 
+    cursor: pointer; 
+    font-size: 0.70rem; 
+    text-transform: none; 
+    font-weight: var(--font-weight-regular); 
+    border-radius: 3px;
+    transition: all 0.2s ease;
 }
 
-/* Textos de lectura, bloques descriptivos y metadatos */
-.panel-container.fondo-rosado .texto-biografia,
-.panel-container.fondo-rosado .meta-item,
-.panel-container.fondo-rosado #frase-dinamica,
-.panel-container.fondo-rosado #duracion-video,
-.panel-container.fondo-rosado .meta-item span {
-    color: #000000 !important; /* Eliminamos grises, todo a negro absoluto */
-    font-weight: 400 !important; /* Subimos de 300 a 400 para que la línea no desaparezca */
+#btn-limpiar-filtros:hover { 
+    background: #ff4a5b; 
+    color: #ffffff; 
+    border-color: #ff4a5b;
 }
 
-/* Bordes divisorios e indicador de cierre */
-.panel-container.fondo-rosado .bloque-frase-destacada {
-    border-left-color: #000000 !important;
-}
-.panel-container.fondo-rosado .close-uid {
-    color: #000000 !important;
-    opacity: 0.7;
-}
-.panel-container.fondo-rosado .metadata-ficha,
-.panel-container.fondo-rosado .seccion-titulo,
-.panel-container.fondo-rosado .sub-navigation {
-    border-color: rgba(0, 0, 0, 0.25) !important;
-}
-
-/* Enlaces de áreas (tags) adaptados al fondo oscuro interno */
-.panel-container.fondo-rosado .tag-area-link {
-    background: rgba(0, 0, 0, 0.08) !important;
-    color: #000000 !important;
-    border-color: rgba(0, 0, 0, 0.15) !important;
-    font-weight: 700 !important;
-}
-.panel-container.fondo-rosado .tag-area-link:hover {
-    background: #000000 !important;
-    color: #F05982 !important;
-}
-
-/* Botones de control de los ejes de video */
-.panel-container.fondo-rosado .btn-eje {
-    background: rgba(0, 0, 0, 0.06) !important;
-    color: #000000 !important;
-    border-color: rgba(0, 0, 0, 0.15) !important;
-}
-.panel-container.fondo-rosado .btn-eje:hover {
-    background: rgba(0, 0, 0, 0.12) !important;
-}
-.panel-container.fondo-rosado .btn-eje.active {
-    background: #000000 !important;
-    color: #F05982 !important;
-    border-color: #000000 !important;
-}
-
-/* Pies de foto del portafolio */
-.panel-container.fondo-rosado .pie-foto {
-    color: #1a1a1a !important;
-    font-weight: 400 !important;
-}
-
-/* Menú inferior (Navegación) */
-.panel-container.fondo-rosado .nav-item {
-    color: rgba(0, 0, 0, 0.6) !important;
-}
-.panel-container.fondo-rosado .nav-item:hover, 
-.panel-container.fondo-rosado .nav-item input:checked ~ span { 
-    color: #000000 !important; 
-}
-
-
-/* --------------------------------------------------------------------------
-   VARIANTE: DISEÑADORAS VERDES (RECOMENDADAS) - FONDO CLARO CON TEXTOS OSCUROS
-   -------------------------------------------------------------------------- */
-.panel-container.fondo-verde {
-    background-color: #4aff7a !important;
-}
-
-.panel-container.fondo-verde .first-name,
-.panel-container.fondo-verde .last-name,
-.panel-container.fondo-verde .meta-item strong,
-.panel-container.fondo-verde .seccion-titulo {
-    color: #000000 !important;
-    font-weight: 700 !important;
-}
-
-.panel-container.fondo-verde .texto-biografia,
-.panel-container.fondo-verde .meta-item,
-.panel-container.fondo-verde #frase-dinamica,
-.panel-container.fondo-verde #duracion-video,
-.panel-container.fondo-verde .meta-item span {
-    color: #000000 !important;
-    font-weight: 400 !important;
-}
-
-.panel-container.fondo-verde .bloque-frase-destacada {
-    border-left-color: #000000 !important;
-}
-.panel-container.fondo-verde .close-uid {
-    color: #000000 !important;
-    opacity: 0.7;
-}
-.panel-container.fondo-verde .metadata-ficha,
-.panel-container.fondo-verde .seccion-titulo,
-.panel-container.fondo-verde .sub-navigation {
-    border-color: rgba(0, 0, 0, 0.25) !important;
-}
-
-.panel-container.fondo-verde .tag-area-link {
-    background: rgba(0, 0, 0, 0.08) !important;
-    color: #000000 !important;
-    border-color: rgba(0, 0, 0, 0.15) !important;
-    font-weight: 700 !important;
-}
-.panel-container.fondo-verde .tag-area-link:hover {
-    background: #000000 !important;
-    color: #4aff7a !important;
-}
-
-.panel-container.fondo-verde .btn-eje {
-    background: rgba(0, 0, 0, 0.06) !important;
-    color: #000000 !important;
-    border-color: rgba(0, 0, 0, 0.15) !important;
-}
-.panel-container.fondo-verde .btn-eje:hover {
-    background: rgba(0, 0, 0, 0.12) !important;
-}
-.panel-container.fondo-verde .btn-eje.active {
-    background: #000000 !important;
-    color: #4aff7a !important;
-    border-color: #000000 !important;
-}
-
-.panel-container.fondo-verde .pie-foto {
-    color: #1a1a1a !important;
-    font-weight: 400 !important;
-}
-
-.panel-container.fondo-verde .nav-item {
-    color: rgba(0, 0, 0, 0.6) !important;
-}
-.panel-container.fondo-verde .nav-item:hover, 
-.panel-container.fondo-verde .nav-item input:checked ~ span { 
-    color: #000000 !important; 
-}
-.panel-container.fondo-verde .recomendada-node-link {
-    color: #000000 !important;
-    font-weight: 700 !important;
-}
-/* ==========================================================================
-   BOTONES EN PORTADA Y MODAL DE STATEMENT
-   ========================================================================== */
-
-/* Botones en portada */
-.acciones-intro {
+/* LEYENDA HORIZONTAL (A LO LARGO EN LA ESQUINA INFERIOR IZQUIERDA) */
+.leyenda-red {
+    position: absolute; 
+    bottom: 35px; 
+    left: 40px; 
+    z-index: 5;
+    background: rgba(10, 10, 10, 0.6); 
+    padding: 8px 16px; 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
     display: flex;
-    gap: 15px;
-    justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    backdrop-filter: blur(8px);
+    border-radius: 20px; /* Borde redondeado estilo cápsula super discreto */
+    pointer-events: auto;
+    width: auto; /* Se ajusta automáticamente al contenido horizontal */
 }
 
-/* Ajuste de color y estilo para contraste sobre el fondo verde */
-.btn-secundario {
-    background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    color: #000000;
-    padding: 12px 25px;
-    cursor: pointer;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
-}
-
-.btn-secundario:hover {
-    background: #000000;
-    color: #4AFF7A;
-    border-color: #000000;
-}
-
-/* Modal Overlay (Ventana emergente) */
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0; 
-    width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.85); /* Un fondo oscuro con ligera transparencia */
-    backdrop-filter: blur(5px);      /* Efecto desenfoque para dar elegancia */
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    z-index: 200;                    /* Por encima de todo el contenido */
-}
-
-.modal-overlay.hidden { 
+/* Ocultamos el botón de colapsar tradicional porque ya no es una caja alta */
+.btn-toggle-leyenda {
     display: none !important; 
 }
 
-.modal-contenido {
-    background: #111111;             /* Fondo oscuro alineado a la estética de la app */
-    color: #FFFFFF;
-    padding: 40px;
-    border-radius: 4px;              /* Bordes más rectos estilo archivo/galería */
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    max-width: 550px;
-    width: 90%;
-    position: relative;
-    line-height: 1.6;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+.contenido-leyenda {
+    display: flex; 
+    flex-direction: row; /* Elementos alineados horizontalmente */
+    align-items: center;
+    gap: 18px; /* Espaciado entre items */
 }
 
-.modal-contenido h2 {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    color: #4AFF7A;                 /* Título en tono verde neón distintivo */
+.leyenda-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 7px; 
 }
 
-.modal-contenido p {
-    font-size: 0.85rem;
-    font-weight: 300;
-    margin-bottom: 15px;
-    color: rgba(255, 255, 255, 0.85);
+.leyenda-color { 
+    width: 7px; 
+    height: 7px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    flex-shrink: 0; 
 }
 
-.modal-contenido strong {
-    color: #FFFFFF;
-    font-weight: 700;
+.color-naranjo { background-color: #F8470C; box-shadow: 0 0 6px rgba(248, 71, 12, 0.4); }
+.color-rosado { background-color: #F05982; box-shadow: 0 0 6px rgba(240, 89, 130, 0.4); }
+.color-verde { background-color: #4aff7a; box-shadow: 0 0 6px rgba(74, 255, 122, 0.4); }
+
+.leyenda-texto { 
+    font-size: 0.70rem; 
+    color: rgba(255, 255, 255, 0.7); 
+    text-transform: none; /* Legibilidad suave en minúsculas */
+    letter-spacing: 0.3px; 
+    white-space: nowrap;
+    font-weight: var(--font-weight-regular); 
 }
 
-.btn-cerrar {
-    position: absolute; 
-    top: 20px; right: 20px;
-    background: none; 
-    border: none; 
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 24px; 
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.btn-cerrar:hover {
-    color: #FFFFFF;
-}
 /* ==========================================================================
-   BOTONES EN ESQUINA SUPERIOR DERECHA (PANTALLA DE LA RED)
+   9. BOTONES SUPERIORES EN RED Y ACCIONES Y MODALES
    ========================================================================== */
 .header-acciones-top {
     position: fixed;
     top: 25px;
     right: 30px;
-    z-index: 999; /* Por encima del canvas de la red */
+    z-index: 999; 
     display: flex;
     gap: 12px;
 }
 
 .btn-top-nav {
-    background: rgba(15, 15, 15, 0.85);
+    background: rgba(15, 15, 15, 0.88);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 10px 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: var(--tracking-wide);
     cursor: pointer;
     border-radius: 4px;
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -629,19 +589,23 @@ body, html, button, select, input {
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
-/* ==========================================================================
-   CONTENEDORES EMERGENTES (MODALES STATEMENT Y ESTADÍSTICAS)
-   ========================================================================== */
+.header-acciones-top.oculto-panel {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* MODALES Y OVERLAYS GENERALES */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.88);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 2000; /* Siempre por encima de todo */
+    z-index: 2000; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -650,9 +614,8 @@ body, html, button, select, input {
     transition: opacity 0.3s ease;
 }
 
-/* Ocultar elementos suavemente */
-.modal-overlay.oculto {
-    display: none !important;
+.modal-overlay.hidden, .modal-overlay.oculto { 
+    display: none !important; 
 }
 
 .modal-contenido {
@@ -663,7 +626,7 @@ body, html, button, select, input {
     max-width: 600px;
     max-height: 85vh;
     padding: 40px 35px;
-    border-radius: 8px;
+    border-radius: 6px;
     color: #ffffff;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
 }
@@ -674,56 +637,48 @@ body, html, button, select, input {
     padding-right: 15px;
 }
 
-/* Scrollbar fina y moderna */
-.modal-scroll::-webkit-scrollbar {
-    width: 4px;
-}
-.modal-scroll::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-}
+.modal-scroll::-webkit-scrollbar { width: 4px; }
+.modal-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
 
 .modal-contenido h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 12px;
+    color: #4AFF7A;
 }
 
 .modal-contenido p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-body);
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 16px;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
 }
 
 .modal-contenido strong {
     color: #ffffff;
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
-/* Botón de cierre (X) */
-.modal-contenido .btn-cerrar {
+.btn-cerrar {
     position: absolute;
     top: 20px;
     right: 20px;
     background: transparent;
     border: none;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 2rem;
+    font-size: 1.8rem;
     cursor: pointer;
     line-height: 1;
     transition: color 0.2s ease;
 }
+.btn-cerrar:hover { color: #ffffff; }
 
-.modal-contenido .btn-cerrar:hover {
-    color: #ffffff;
-}
-
-/* Grid de Estadísticas con aspecto Fina/Tech */
+/* GRID DE ESTADÍSTICAS */
 .grid-estadisticas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -741,38 +696,35 @@ body, html, button, select, input {
 
 .num-stat {
     font-size: 2.2rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     color: #ffffff;
     display: block;
     margin-bottom: 6px;
 }
 
 .label-stat {
-    font-size: 0.7rem;
+    font-size: var(--font-size-xs);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: var(--tracking-wide);
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .detalle-estadisticas p {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.55);
     text-align: center;
 }
-/* ==========================================================================
-   ESTILOS PARA GRÁFICOS DE TORTA (ESTADÍSTICAS)
-   ========================================================================== */
-.modal-graficos {
-    max-width: 700px !important;
-}
 
+/* ==========================================================================
+   10. GRÁFICOS DE TORTA (ESTADÍSTICAS)
+   ========================================================================== */
+.modal-graficos { max-width: 700px !important; }
 .subtitulo-modal {
-    font-size: 0.85rem !important;
+    font-size: var(--font-size-sm) !important;
     color: rgba(255, 255, 255, 0.6) !important;
     margin-bottom: 20px !important;
 }
 
-/* Leyenda de colores */
 .leyenda-grafico-global {
     display: flex;
     justify-content: center;
@@ -787,26 +739,14 @@ body, html, button, select, input {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.8rem;
+    font-size: var(--font-size-sm);
     color: rgba(255, 255, 255, 0.8);
 }
 
-.dot-pie {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-}
+.dot-pie { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.color-mujeres { background-color: #F05982; }
+.color-hombres { background-color: #2A2A38; }
 
-/* Ajusta estos dos colores si usas una paleta distinta en tu sitio */
-.color-mujeres {
-    background-color: #F05982; /* Rosado/Fucsia del proyecto */
-}
-.color-hombres {
-    background-color: #2A2A38; /* Gris oscuro elegante */
-}
-
-/* Grid para poner las dos tortas lado a lado */
 .grid-graficos-torta {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -823,20 +763,14 @@ body, html, button, select, input {
 }
 
 .card-grafico h3 {
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 20px;
 }
 
-/* El círculo/torta dibujado con CSS Puro */
-.pie-chart-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
+.pie-chart-wrapper { display: flex; justify-content: center; margin-bottom: 20px; }
 .pie-chart {
     width: 140px;
     height: 140px;
@@ -848,26 +782,15 @@ body, html, button, select, input {
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     transition: transform 0.3s ease;
 }
+.pie-chart:hover { transform: scale(1.05); }
 
-.pie-chart:hover {
-    transform: scale(1.05);
-}
+#pie-2004 { background: conic-gradient(#F05982 0% 16.98%, #2A2A38 16.98% 100%); }
+#pie-2025 { background: conic-gradient(#F05982 0% 39.05%, #2A2A38 39.05% 100%); }
 
-/* Gráfico 2004: 16.98% Rosado (#F05982), el resto Gris (#2A2A38) */
-#pie-2004 {
-    background: conic-gradient(#F05982 0% 16.98%, #2A2A38 16.98% 100%);
-}
-
-/* Gráfico 2025: 39.05% Rosado (#F05982), el resto Gris (#2A2A38) */
-#pie-2025 {
-    background: conic-gradient(#F05982 0% 39.05%, #2A2A38 39.05% 100%);
-}
-
-/* Agujero del centro para hacerlo tipo Donut/Dona moderna */
 .pie-center-info {
     width: 90px;
     height: 90px;
-    background-color: #111111; /* Mismo color de fondo del modal */
+    background-color: #111111;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -877,43 +800,590 @@ body, html, button, select, input {
 
 .porcentaje-destacado {
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     color: #F05982;
     line-height: 1;
 }
 
 .label-porcentaje {
-    font-size: 0.65rem;
+    font-size: var(--font-size-xs);
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.5);
     margin-top: 3px;
 }
 
-/* Datos textuales bajo la dona */
-.datos-desglosados p {
-    margin: 4px 0 !important;
-    font-size: 0.85rem !important;
-}
-
-.datos-desglosados strong {
-    color: #F05982;
-}
-
-.texto-secundario {
-    color: rgba(255, 255, 255, 0.5) !important;
-}
-
+.datos-desglosados p { margin: 4px 0 !important; font-size: var(--font-size-sm) !important; }
+.datos-desglosados strong { color: #F05982; }
+.texto-secundario { color: rgba(255, 255, 255, 0.5) !important; }
 .texto-total {
-    font-size: 0.75rem !important;
-    color: rgba(255, 255, 255, 0.3) !important;
+    font-size: var(--font-size-xs) !important;
+    color: rgba(255, 255, 255, 0.35) !important;
     margin-top: 8px !important;
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
     padding-top: 6px;
 }
-/* Ocultar botones superiores cuando el panel lateral de la diseñadora está abierto */
-.header-acciones-top.oculto-panel {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+/* ==========================================================================
+   11. LIGHTBOX INTERFAZ
+   ========================================================================== */
+.lightbox-modal { 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100vw; height: 100vh; 
+    background-color: rgba(0, 0, 0, 0.95); 
+    z-index: 100; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+.imagen-lightbox-activa { 
+    max-width: 85%; 
+    max-height: 80vh; 
+    object-fit: contain; 
+    border: 1px solid rgba(255,255,255,0.15); 
+}
+.cerrar-lightbox { 
+    position: absolute; 
+    top: 40px; 
+    right: 50px; 
+    color: #fff; 
+    font-size: 2.5rem; 
+    cursor: pointer; 
+}
+.caption-lightbox { 
+    margin-top: 15px; 
+    font-size: var(--font-size-sm); 
+    color: rgba(255,255,255,0.65); 
+    font-weight: var(--font-weight-light); 
+}
+
+.flecha-lightbox {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
+    background: rgba(12, 12, 12, 0.75); 
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1.5rem; 
+    padding: 12px 20px; 
+    cursor: pointer; 
+    z-index: 110;
+    transition: all 0.3s ease; 
+    backdrop-filter: blur(5px); 
+    font-weight: var(--font-weight-bold);
+}
+.flecha-lightbox:hover { background: #ffffff; color: #000000; border-color: #ffffff; }
+#btn-lightbox-prev { left: 40px; }
+#btn-lightbox-next { right: 40px; }
+
+/* BOTÓN FLOTANTE INSTAGRAM GLOBAL */
+.instagram-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(18, 18, 18, 0.75); 
+  backdrop-filter: blur(8px); 
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.instagram-float svg { width: 20px; height: 20px; }
+.instagram-float:hover {
+  color: #ffffff;
+  background-color: rgba(18, 18, 18, 0.95);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   12. VARIACIONES DINÁMICAS DE FONDO (ROSADO / VERDE)
+   ========================================================================== */
+
+/* FONDO ROSADO (EDICIÓN 2) */
+.panel-container.fondo-rosado { background-color: #F05982 !important; }
+.panel-container.fondo-rosado .first-name,
+.panel-container.fondo-rosado .last-name,
+.panel-container.fondo-rosado .meta-item strong,
+.panel-container.fondo-rosado .seccion-titulo {
+    color: #000000 !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+.panel-container.fondo-rosado .texto-biografia,
+.panel-container.fondo-rosado #biografia-dinamica,
+.panel-container.fondo-rosado .meta-item,
+.panel-container.fondo-rosado #frase-dinamica,
+.panel-container.fondo-rosado #duracion-video,
+.panel-container.fondo-rosado .meta-item span {
+    color: #000000 !important;
+    font-weight: var(--font-weight-regular) !important;
+}
+.panel-container.fondo-rosado .bloque-frase-destacada { border-left-color: #000000 !important; }
+.panel-container.fondo-rosado .close-uid { color: #000000 !important; opacity: 0.7; }
+.panel-container.fondo-rosado .metadata-ficha,
+.panel-container.fondo-rosado .seccion-titulo,
+.panel-container.fondo-rosado .sub-navigation { border-color: rgba(0, 0, 0, 0.25) !important; }
+
+.panel-container.fondo-rosado .tag-area-link {
+    background: rgba(0, 0, 0, 0.08) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.18) !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+.panel-container.fondo-rosado .tag-area-link:hover {
+    background: #000000 !important;
+    color: #F05982 !important;
+}
+.panel-container.fondo-rosado .btn-eje {
+    background: rgba(0, 0, 0, 0.06) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.18) !important;
+}
+.panel-container.fondo-rosado .btn-eje:hover { background: rgba(0, 0, 0, 0.12) !important; }
+.panel-container.fondo-rosado .btn-eje.active {
+    background: #000000 !important;
+    color: #F05982 !important;
+    border-color: #000000 !important;
+}
+.panel-container.fondo-rosado .pie-foto { color: #1a1a1a !important; font-weight: var(--font-weight-regular) !important; }
+.panel-container.fondo-rosado .nav-item { color: rgba(0, 0, 0, 0.6) !important; }
+.panel-container.fondo-rosado .nav-item:hover, 
+.panel-container.fondo-rosado .nav-item input:checked ~ span { color: #000000 !important; }
+.panel-container.fondo-rosado .link-instagram-perfil { color: #000000 !important; opacity: 0.85; }
+.panel-container.fondo-rosado .link-instagram-perfil:hover { opacity: 1; }
+
+/* FONDO VERDE (RECOMENDADAS) */
+.panel-container.fondo-verde { background-color: #4aff7a !important; }
+.panel-container.fondo-verde .first-name,
+.panel-container.fondo-verde .last-name,
+.panel-container.fondo-verde .meta-item strong,
+.panel-container.fondo-verde .seccion-titulo {
+    color: #000000 !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+.panel-container.fondo-verde .texto-biografia,
+.panel-container.fondo-verde #biografia-dinamica,
+.panel-container.fondo-verde .meta-item,
+.panel-container.fondo-verde #frase-dinamica,
+.panel-container.fondo-verde #duracion-video,
+.panel-container.fondo-verde .meta-item span {
+    color: #000000 !important;
+    font-weight: var(--font-weight-regular) !important;
+}
+.panel-container.fondo-verde .bloque-frase-destacada { border-left-color: #000000 !important; }
+.panel-container.fondo-verde .close-uid { color: #000000 !important; opacity: 0.7; }
+.panel-container.fondo-verde .metadata-ficha,
+.panel-container.fondo-verde .seccion-titulo,
+.panel-container.fondo-verde .sub-navigation { border-color: rgba(0, 0, 0, 0.25) !important; }
+
+.panel-container.fondo-verde .tag-area-link {
+    background: rgba(0, 0, 0, 0.08) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.18) !important;
+    font-weight: var(--font-weight-bold) !important;
+}
+.panel-container.fondo-verde .tag-area-link:hover {
+    background: #000000 !important;
+    color: #4aff7a !important;
+}
+.panel-container.fondo-verde .btn-eje {
+    background: rgba(0, 0, 0, 0.06) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.18) !important;
+}
+.panel-container.fondo-verde .btn-eje:hover { background: rgba(0, 0, 0, 0.12) !important; }
+.panel-container.fondo-verde .btn-eje.active {
+    background: #000000 !important;
+    color: #4aff7a !important;
+    border-color: #000000 !important;
+}
+.panel-container.fondo-verde .pie-foto { color: #1a1a1a !important; font-weight: var(--font-weight-regular) !important; }
+.panel-container.fondo-verde .nav-item { color: rgba(0, 0, 0, 0.6) !important; }
+.panel-container.fondo-verde .nav-item:hover, 
+.panel-container.fondo-verde .nav-item input:checked ~ span { color: #000000 !important; }
+.panel-container.fondo-verde .recomendada-node-link { color: #000000 !important; font-weight: var(--font-weight-bold) !important; }
+.panel-container.fondo-verde .link-instagram-perfil { color: #000000 !important; opacity: 0.85; }
+.panel-container.fondo-verde .link-instagram-perfil:hover { opacity: 1; }
+/* ==========================================
+   PANTALLA DE INICIO (TEXTO FLOTANTE + POLAROIDS EXPANDIDAS)
+   ========================================== */
+
+.pantalla-inicio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0b0b; /* Negro profundo de fondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 9999;
+  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- CONTENIDO CENTRAL (SIN FONDO NI BLUR) --- */
+.inicio-content {
+  position: relative;
+  z-index: 10;
+  max-width: 580px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.logo-inicio {
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.9));
+}
+
+.statement-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #e0e0e0;
+  text-align: center; /* Alineación unificada */
+}
+
+.statement-texto {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.cita-destacada {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 0;
+  padding-top: 1.2rem;
+  /* En vez de borde izquierdo, ponemos una línea neón arriba centrada */
+  border-top: 1px solid rgba(74, 255, 122, 0.4); 
+  border-left: none; 
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.cita-destacada cite {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #4AFF7A;
+  letter-spacing: 1px;
+}
+
+/* --- BOTÓN DE ENTRADA (NEÓN) --- */
+.btn-entrar {
+  background-color: #4AFF7A;
+  color: #000000;
+  border: none;
+  padding: 1rem 2.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(74, 255, 122, 0.4);
+  margin-top: 0.5rem;
+}
+
+.btn-entrar:hover {
+  background-color: #3ae06b;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 30px rgba(74, 255, 122, 0.8);
+}
+
+.btn-entrar .flecha {
+  transition: transform 0.3s ease;
+}
+
+.btn-entrar:hover .flecha {
+  transform: translateX(5px);
+}
+
+/* --- POLAROIDS FLOTANTES EXPANDIDAS --- */
+.polaroids-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.polaroid {
+  position: absolute;
+  background: #ffffff;
+  padding: 8px 8px 20px 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0.4s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.polaroid:hover {
+  transform: scale(1.2) rotate(0deg) !important;
+  z-index: 20;
+  box-shadow: 0 0 25px rgba(74, 255, 122, 0.6);
+}
+
+.polaroid-img {
+  width: 125px;
+  height: 125px;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(15%);
+  transition: filter 0.3s ease;
+}
+
+.polaroid:hover .polaroid-img {
+  filter: grayscale(0%);
+}
+
+.polaroid span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #111111;
+  margin-top: 8px;
+  letter-spacing: -0.2px;
+}
+
+/* --- BLOQUE IZQUIERDO (p1, p3, p5, p7) --- */
+.p1 { 
+  top: 6%;    
+  left: 4%;   
+  transform: rotate(-7deg); 
+}
+.p5 { 
+  top: 29%;   
+  left: 8%;   
+  transform: rotate(6deg); 
+}
+.p7 { 
+  top: 53%;   
+  left: 3%;   
+  transform: rotate(-10deg); 
+}
+.p3 { 
+  bottom: 6%; 
+  left: 7%;   
+  transform: rotate(5deg); 
+}
+
+/* --- BLOQUE DERECHO (p2, p4, p6, p8) --- */
+.p2 { 
+  top: 7%;    
+  right: 5%;  
+  transform: rotate(8deg); 
+}
+.p6 { 
+  top: 31%;   
+  right: 8%;  
+  transform: rotate(-5deg); 
+}
+.p8 { 
+  top: 55%;   
+  right: 4%;  
+  transform: rotate(9deg); 
+}
+.p4 { 
+  bottom: 5%; 
+  right: 7%;  
+  transform: rotate(-6deg); 
+}
+
+/* Ocultar polaroids en móviles */
+@media (max-width: 768px) {
+  .polaroid {
+    display: none;
+  }
+}
+/* Ajuste especial para descentrar/alinear fotos específicas */
+.polaroid-img.posicion-izquierda {
+  background-position: left center !important; /* O prueba 'left top' si está muy arriba */
+}
+/* ==========================================
+   NUEVA SECCIÓN: ESTADÍSTICAS ESPACIALES
+   ========================================== */
+
+.divisor-modal {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 35px 0;
+}
+
+.seccion-estadistica-espacios h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.grid-espacios-trabajo {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.card-espacio {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    transition: border-color 0.3s ease;
+}
+
+.card-espacio.principal {
+    border-color: rgba(74, 255, 122, 0.3);
+    background: rgba(74, 255, 122, 0.02);
+}
+
+.header-espacio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.icono-espacio {
+    font-size: 1.6rem;
+}
+
+.tit-espacio h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 600;
+}
+
+.cifra-espacio {
+    font-size: 0.82rem;
+    color: #4AFF7A;
+    font-weight: 700;
+}
+
+/* Barras de Progreso */
+.bar-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.bar-fill.color-neon {
+    background-color: #4AFF7A;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.bar-fill.color-gris {
+    background-color: #888888;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Sub-desglose para el Home Office */
+.subdesglose-espacio {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.sub-item {
+    display: flex;
+    align-items: flex-start; /* CAMBIO: Alínea con el inicio de la primera línea de texto */
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #cccccc;
+}
+
+/* NUEVA REGLA: Elimina el margen por defecto del <p> que empujaba el texto hacia abajo */
+.sub-item p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.sub-item strong {
+    color: #ffffff;
+}
+
+.dot-sub {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-top: 5px; /* CAMBIO: Ajusta el punto exacto a la altura del texto */
+}
+
+.dot-sub.color-neon { background-color: #4AFF7A; }
+.dot-sub.color-blanco { background-color: #ffffff; }
+
+.detalle-espacio {
+    font-size: 0.82rem;
+    color: #aaaaaa;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.icono-espacio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #4AFF7A; /* Color neón uniforme para los tres íconos */
+    background: rgba(74, 255, 122, 0.08);
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(74, 255, 122, 0.2);
+}
+
+.icono-espacio svg {
+    display: block;
 }
