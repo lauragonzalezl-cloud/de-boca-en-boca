@@ -250,10 +250,10 @@ const datasetDisenadoras = [
         universidad: "Del Desarrollo",
         egreso: "2021", 
         residencia: "Santiago, Chile",
-        areas: ["Diseño Gráfico", "Docencia Universitaria"],
+        areas: ["Diseño Gráfico", "Docencia Universitaria", "Branding"],
         recomiendaA: [], 
         frase: "«Escribe aquí la frase de la entrevista de Alejandra...»",
-        bio: "Biografía de Alejandra Beckdorf...",
+        bio: "Diseñadora gráfica de profesión, ha construido un camino impulsado por la curiosidad creativa, la ilustración y el amor por la estética. Desde sus inicios en 2016 y tras complementar sus estudios en México, Italia y España, ha profundizado en áreas como el branding, la moda y el marketing. Su trayectoria laboral abarca colaboraciones en la industria gráfica y papelera, pymes, fundaciones y educación superior, donde equilibra el trabajo en equipo con el pensamiento estratégico. Su propuesta busca generar sellos únicos mediante la tipografía, la imagen y el soporte, concibiendo el diseño como una práctica ética, consciente y respetuosa con el mensaje.",
         fotoFondo: "imagenes/alebeckdorf.jpg", 
         descFotoPrincipal: "Alejandra Beckdorf — Registro de espacio de trabajo. Envío digital, 5 de agosto de 2026.",
         videos: {
@@ -282,7 +282,7 @@ const datasetDisenadoras = [
         universidad: "Católica",
         egreso: "2016", 
         residencia: "Santiago, Chile",
-        areas: ["Docencia Universitaria", "Diseño Editorial", "Identidad Gráfica", "Diseño de Información", "Ilustración"],
+        areas: ["Docencia Universitaria", "Diseño Editorial", "Branding", "Diseño de Información", "Ilustración"],
         recomiendaA: ["Piedad Rivadeneira", "Constanza Gaggero", "Francisca Alcalde", "Paulina Astudillo", "Antonieta Lopez", "Gracia Fernández"], 
         frase: "«Escribe aquí la frase de la entrevista de Ari...»",
         bio: "Diseñadora gráfica y docente, con un interés profundo en la identidad y el diseño editorial como lenguaje. Su trayectoria transita entre la práctica independiente, la colaboración en estudios como Otros Pérez y la dirección gráfica del Festival Internacional de Fotografía de Valparaíso (FIFV), entrelazándose orgánicamente con la docencia universitaria en el Instituto Arcos, la Universidad Andrés Bello y la Universidad Diego Portales. En 2014 cofunda la editorial Buen Lugar junto a los fotógrafos Alejandro y Cristóbal Olivares, un espacio que consolida su cruce constante con la imagen y el libro como contenedor de memoria. Su trabajo —reconocido en certámenes como Premios Chile Diseño, FELIFA, Latin American Design Awards, POY LATAM y PhotoEspaña— se despliega desde el cuidado por el detalle y la sensibilidad visual, entendiendo las publicaciones y la gráfica no solo como soportes estéticos, sino como objetos capaces de conectar miradas, construir relatos y perdurar en el tiempo.",
@@ -318,7 +318,7 @@ const datasetDisenadoras = [
         areas: ["Branding", "Diseño Editorial", "Ilustración","Diseño Gráfico"],
         recomiendaA: [], 
         frase: "«Escribe aquí la frase de la entrevista de Pía...»",
-        bio: "Biografía de Pía Pulgar...",
+        bio: "Diseñadora de productos de profesión y gráfica de corazón, Pía Pulgar desarrolla su práctica de manera independiente desde Talca. Su quehacer se despliega en el diseño de marcas, el mundo editorial y la ilustración, colaborando de cerca con microempresas, instituciones y proyectos del ámbito académico. En 2017 cofundó el estudio Vagabunda —que más tarde daría paso a estudio hacerhacer—, espacio desde el cual nació la guía iconográfica Talca Icónica (2020). Su trayectoria combina la gestión de proyectos locales con la exploración artística del bordado y la risografía, entrelazando el oficio, la identidad territorial y las artes gráficas desde una mirada íntima y expresiva.",
         fotoFondo: "imagenes/piapulgar.jpg", 
         descFotoPrincipal: "Pía Pulgar — Registro de espacio de trabajo. Envío digital, 11 de agosto de 2026.",
         videos: {
@@ -327,10 +327,13 @@ const datasetDisenadoras = [
             eje3: "videos/entrevistapiapulgar-eje3.mp4",
             eje4: "videos/entrevistapiapulgar-eje4.mp4"
         },
-        obras: 
-        [
-            { img: "imagenes/piapulgar1.jpg", desc: "01. Finding the She" },
-            { img: "imagenes/piapulgar2.jpg", desc: "02. Muestras Editoriales" }
+        obras: [
+            { img: ["imagenes/pia1.jpg", "imagenes/pia1.1.jpg", "imagenes/pia1.2.jpg"], desc: "01. La Noche de San Juan: Ilustración y diseño editorial, a partir de la investigación de rituales tradiciones campesinos se realizó una compilación inspirado en la Lira Popular." },
+            { img: ["imagenes/pia2.jpg", "imagenes/pia2.1.jpg", "imagenes/pia2.2.jpg"], desc: "02. Cuaderno de Ideas Geniales: Libro de ejercicios creativos para niños y niñas sobre escritura y dibujo - Club de pequeños escritores y artistas -" },
+            { img: ["imagenes/pia3.jpg", "imagenes/pia3.1.png", "imagenes/pia3.2.png"], desc: "03. Cancionero Nolfa Marín: Diseño editorial e ilustraciones para cancionero popular de Nolfa Marín, oriunda de Chillán." },
+            { img: ["imagenes/pia4.jpg", "imagenes/pia4.1.jpg", "imagenes/pia4.2.jpg"], desc: "04. Packaging Plantae Foods: Diseño de packaging para fermented ch**se de la marca Plantae Foods, nuevo producto en base a la fermentación de trigo burgol." },
+            { img: ["imagenes/pia5.jpg", "imagenes/pia5.1.jpg", "imagenes/pia5.2.jpg"], desc: "05. Talca Icónica: Libro de bolsillo que funciona como una guía iconográfica que facilita el recorrido y permite visitar lugares de la ciudad,  busca documentar la ciudad de Talca del año 2019." },
+            { img: ["imagenes/pia6.jpeg", "imagenes/pia6.1.png", "imagenes/pia6.2.png"], desc: "06. Etiquetas Primates Tostadores: Diseño e ilustraciones para etiquetas de café de diferentes orígenes de la tostaduria y cafetería talquina" },
         ]
     },
     
