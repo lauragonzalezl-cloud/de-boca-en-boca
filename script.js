@@ -284,15 +284,27 @@ const datasetDisenadoras = [
         residencia: "Santiago, Chile",
         areas: ["Docencia Universitaria", "Diseño Editorial", "Branding", "Diseño de Información", "Ilustración"],
         recomiendaA: ["Piedad Rivadeneira", "Constanza Gaggero", "Francisca Alcalde", "Paulina Astudillo", "Antonieta Lopez", "Gracia Fernández"], 
-        frase: "«Escribe aquí la frase de la entrevista de Ari...»",
+        frases: {
+            eje1: "«Más que las cosas funcionen perfectas y queden hermosas e increíbles, hay que hacer que funcionen nomás... porque hay que cumplir con las fechas.»",
+            eje2: "«He estado en equipos muy femeninos; incluso en Sodimac la gerenta era mujer.»",
+            eje3: "«Me gusta ordenadito: cada uno con su espacio, cada uno con su escritorio.»",
+            eje4: "«Tiene que haber una obsesión, una pequeña obsesión... No sé, son tonteras, pero yo voy a librerías y lo primero que hago es buscar algo que me parezca atractivo, y lo primero que miro es el diseñador.»"
+        },     
         bio: "Diseñadora gráfica y docente, con un interés profundo en la identidad y el diseño editorial como lenguaje. Su trayectoria transita entre la práctica independiente, la colaboración en estudios como Otros Pérez y la dirección gráfica del Festival Internacional de Fotografía de Valparaíso (FIFV), entrelazándose orgánicamente con la docencia universitaria en el Instituto Arcos, la Universidad Andrés Bello y la Universidad Diego Portales. En 2014 cofunda la editorial Buen Lugar junto a los fotógrafos Alejandro y Cristóbal Olivares, un espacio que consolida su cruce constante con la imagen y el libro como contenedor de memoria. Su trabajo —reconocido en certámenes como Premios Chile Diseño, FELIFA, Latin American Design Awards, POY LATAM y PhotoEspaña— se despliega desde el cuidado por el detalle y la sensibilidad visual, entendiendo las publicaciones y la gráfica no solo como soportes estéticos, sino como objetos capaces de conectar miradas, construir relatos y perdurar en el tiempo.",
         fotoFondo: "imagenes/aribelgonzalez.jpg", 
         descFotoPrincipal: "Aribel González — Registro de espacio de trabajo. Envío digital, 24 de julio de 2026.",
         videos: {
-            eje1: "videos/entrevistaariGonzález-eje1.mp4",
-            eje2: "videos/entrevistaariGonzález-eje2.mp4",
-            eje3: "videos/entrevistaariGonzález-eje3.mp4",
-            eje4: "videos/entrevistaariGonzález-eje4.mp4"
+            eje1: "https://www.youtube.com/embed/OOWx_ri2iU0?si=lbGGYu3hFQDl2Sfd",
+            eje2: "https://www.youtube.com/embed/G1TdY__Zd-k?si=4dz2p5uIz4ZAiUVq",
+            eje3: "https://www.youtube.com/embed/DNOZES2B72o?si=012xsybpwfdIBTf2",
+            eje4: "https://www.youtube.com/embed/n_r5qCEShdA?si=z_hfiiykRRIuLmCc"
+        }, 
+        // Tiempos correspondientes a cada eje
+        duraciones: {
+            eje1: "23:14 min",
+            eje2: "17:12 min",
+            eje3: "11:10 min",
+            eje4: "7:13 min"
         },
         obras: [
             { img: ["imagenes/ari1.jpg", "imagenes/ari1.1.jpg", "imagenes/ari1.2.jpg"], desc: "01. Atlas de la historia abstracta y subjetiva de Chile, Alejandro Olivares. Editorial Buen Lugar, 2025." },
