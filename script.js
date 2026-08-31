@@ -376,8 +376,8 @@ const datasetDisenadoras = [
             eje4: "6:32 min"
         },
         obras: [
-            { img: ["imagenes/pia1.jpg", "imagenes/pia1.1.jpg", "imagenes/pia1.2.jpg"], desc: "01. La Noche de San Juan: Ilustración y diseño editorial, a partir de la investigación de rituales tradiciones campesinos se realizó una compilación inspirado en la Lira Popular." },
-            { img: ["imagenes/pia2.jpg", "imagenes/pia2.1.jpg", "imagenes/pia2.2.jpg"], desc: "02. Cuaderno de Ideas Geniales: Libro de ejercicios creativos para niños y niñas sobre escritura y dibujo - Club de pequeños escritores y artistas -" },
+            { img: ["imagenes/pia1.jpg", "imagenes/pia1.1.jpg", "imagenes/pia1.2.JPG"], desc: "01. La Noche de San Juan: Ilustración y diseño editorial, a partir de la investigación de rituales tradiciones campesinos se realizó una compilación inspirado en la Lira Popular." },
+            { img: ["imagenes/pia2.jpg", "imagenes/pia2.1.JPG", "imagenes/pia2.2.JPG"], desc: "02. Cuaderno de Ideas Geniales: Libro de ejercicios creativos para niños y niñas sobre escritura y dibujo - Club de pequeños escritores y artistas -" },
             { img: ["imagenes/pia3.jpg", "imagenes/pia3.1.png", "imagenes/pia3.2.png"], desc: "03. Cancionero Nolfa Marín: Diseño editorial e ilustraciones para cancionero popular de Nolfa Marín, oriunda de Chillán." },
             { img: ["imagenes/pia4.jpg", "imagenes/pia4.1.jpg", "imagenes/pia4.2.jpg"], desc: "04. Packaging Plantae Foods: Diseño de packaging para fermented ch**se de la marca Plantae Foods, nuevo producto en base a la fermentación de trigo burgol." },
             { img: ["imagenes/pia5.jpg", "imagenes/pia5.1.jpg", "imagenes/pia5.2.jpg"], desc: "05. Talca Icónica: Libro de bolsillo que funciona como una guía iconográfica que facilita el recorrido y permite visitar lugares de la ciudad,  busca documentar la ciudad de Talca del año 2019." },
