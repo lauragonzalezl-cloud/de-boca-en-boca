@@ -43,7 +43,7 @@ const datasetDisenadoras = [
         universidad: "Diego Portales",
         egreso: "2008",
         residencia: "Madrid,España",
-        areas: ["Diseño Gráfico", "Diseño Editorial", "Ilustración", "Docencia Universitaria"],
+        areas: ["Diseño Gráfico", "Diseño Editorial", "Ilustración", "Docencia Universitaria", "Investigación"],
         recomiendaA: ["Piedad Rivadeneira", "Julie Carles", "Alejandra Beckdorf", "Catalina Cumsille"],
         frases: {
             eje1: "«En mi familia el tema del arte siempre ha estado muy presente. Mi papá y mi mamá son bastante amantes del arte y eso me lo inculcaron mucho tiempo, y yo creo que eso también es como parte de mis motivaciones con respecto al arte y al diseño.»",
@@ -219,16 +219,28 @@ const datasetDisenadoras = [
         egreso: "2017", 
         residencia: "Londres, Inglaterra",
         areas: ["Investigación", "Historia del Diseño", "Diseño Editorial"],
-        recomiendaA: [], 
-        frase: "«Escribe aquí la frase de la entrevista...»",
+        recomiendaA: ["Magdalena Cattan", "Nicole Cristi", "Rita Torres", "Liz Bravo", "Dai Liv", "Gracia Fernández", "Camila Ortega" ], 
+        frases: {
+            eje1: "«Ahora a lo que me dedico es a escribir, pero sí creo que mi práctica es una práctica de diseño igual, porque tengo que diseñar mi investigación.»",
+            eje2: "«Yo siempre sentí que estaba como trabajando en los márgenes, como que siempre me preguntaba: “A ver, ¿pero esto es diseño?”.»",
+            eje3: "«Yo creo que hablar del espacio también tiene que ver mucho con los tiempos, porque creo que también es una idea muy falsa pensar que la investigación y la escritura se hace como 8 horas al día.»",
+            eje4: "«Me ha servido mucho desarrollar el pensamiento crítico, que es algo que a mí no me lo enseñaron mucho en el colegio, tampoco en diseño, pero sí lo aprendí como más de grande.»"
+        },      
         bio: "Investigadora, escritora y diseñadora de formación, con estudios de maestría y un doctorado en curso en Estudios Culturales en King’s College London. Su trayectoria se sitúa en la intersección entre la teoría del diseño, la cultura material y la escritura creativa como método para narrar historias. Desde 2017 investiga las prácticas textiles lideradas por mujeres en Chile, entendiendo sus formas de hacer como lecciones vivas de cuidado, resiliencia y pertenencia a la naturaleza. Autora de libros como Encontrar el ella (2022) y Biografías de artesanías (2025), su trabajo se despliega como un acto de atención hacia estas corporalidades y saberes, con la convicción profunda de que habitar y sostener estas prácticas es ya el comienzo de una transformación en las narrativas bajo las cuales vivimos.",
         fotoFondo: "imagenes/josefinavidal.jpg", 
         descFotoPrincipal: "Josefina Vidal — Registro de espacio de trabajo. Envío digital, 27 de julio de 2026.",
         videos: {
-            eje1: "videos/josefina-eje1.mp4",
-            eje2: "videos/josefina-eje2.mp4",
-            eje3: "videos/josefina-eje3.mp4",
-            eje4: "videos/josefina-eje4.mp4"
+            eje1: "https://www.youtube.com/embed/nGXBehHFNvE?si=9SB1Yk6k8kn4Tnjp",
+            eje2: "https://www.youtube.com/embed/dhF6YYdPy0w?si=3Li2xVvSaggUwx9L",
+            eje3: "https://www.youtube.com/embed/snZvH15KELo?si=7G03JTRJwNn5RDXj",
+            eje4: "https://www.youtube.com/embed/6DSusPRIYrI?si=dYRx_R_16SJxd4PW"
+        }, 
+        // Tiempos correspondientes a cada eje
+        duraciones: {
+            eje1: "50:07 min",
+            eje2: "19:18 min",
+            eje3: "18:54 min",
+            eje4: "7:18 min"
         },
         obras: [
             { img: ["imagenes/jose1.jpg", "imagenes/jose1.1.jpg", "imagenes/jose1.2.jpg"], desc: "01. Biografías de artesanías: mujeres creando en prisión y exilio 1973-1990" },
@@ -251,16 +263,28 @@ const datasetDisenadoras = [
         egreso: "2021", 
         residencia: "Santiago, Chile",
         areas: ["Diseño Gráfico", "Docencia Universitaria", "Branding"],
-        recomiendaA: [], 
-        frase: "«Escribe aquí la frase de la entrevista de Alejandra...»",
+        recomiendaA: ["Julie Carles", "Piedad Rivadeneira", "Constanza Gaggero", "Catalina Pérez", "Macarena Torres", "Alejandra Peralta"], 
+        frases: {
+            eje1: "«Mi plan original era estudiar ingeniería. Siempre igual fui súper conectada a lo estético, a las artes... Entonces dije: “Ya, voy a estudiar diseño y después me cambio”. Y al final me fui encariñando también con la disciplina... me ayudó a abrir también la cabeza, entonces al final me quedé.»",
+            eje2: "«Yo hoy día estoy, como en realidad, desde el diseño en un área bien comercial, más desde el branding, desde la identidad, desde cómo se aplica esta identidad a lo digital.»",
+            eje3: "«Tengo una facilidad hoy día de ser bien iterante en los puntos en los cuales me voy moviendo en el día a día, y para una mente creativa inquieta creo que eso igual es interesante, porque te permite estar en movimiento.»",
+            eje4: "«Perderle un poco el pudor a las cosas y aprender diseñando, creo que eso también es de nuevo como lo más bonito que tiene esta disciplina.»"
+        },           
         bio: "Diseñadora gráfica de profesión, ha construido un camino impulsado por la curiosidad creativa, la ilustración y el amor por la estética. Desde sus inicios en 2016 y tras complementar sus estudios en México, Italia y España, ha profundizado en áreas como el branding, la moda y el marketing. Su trayectoria laboral abarca colaboraciones en la industria gráfica y papelera, pymes, fundaciones y educación superior, donde equilibra el trabajo en equipo con el pensamiento estratégico. Su propuesta busca generar sellos únicos mediante la tipografía, la imagen y el soporte, concibiendo el diseño como una práctica ética, consciente y respetuosa con el mensaje.",
         fotoFondo: "imagenes/alebeckdorf.jpg", 
         descFotoPrincipal: "Alejandra Beckdorf — Registro de espacio de trabajo. Envío digital, 5 de agosto de 2026.",
         videos: {
-            eje1: "videos/entrevistaalejandrabekkdorf-eje1.mp4",
-            eje2: "videos/entrevistaalejandrabekkdorf-eje2.mp4",
-            eje3: "videos/entrevistaalejandrabekkdorf-eje3.mp4",
-            eje4: "videos/entrevistaalejandrabekkdorf-eje4.mp4"
+            eje1: "https://www.youtube.com/embed/hm6C6gsVuQ4?si=XLoiQvM8lb_TGW7Y",
+            eje2: "https://www.youtube.com/embed/G_MiAtBl-iQ?si=6UkB_2w3PdLclHzb",
+            eje3: "https://www.youtube.com/embed/jkyk60yCVnQ?si=IOgm4kwLfWCyGwiJ",
+            eje4: "https://www.youtube.com/embed/9oeakMZaY8c?si=w5UFWXffMR-92kB6"
+        }, 
+        // Tiempos correspondientes a cada eje
+        duraciones: {
+            eje1: "10:02 min",
+            eje2: "16:33 min",
+            eje3: "17:02 min",
+            eje4: "8:41 min"
         },
         obras: [
             { img: ["imagenes/ale1.jpg", "imagenes/ale1.1.jpg", "imagenes/ale1.2.jpg"], desc: "01. Rebranding para uno de los principales medios digitales de Chile. Una identidad más sólida y dinámica, construida desde la “D” como eje del sistema, que conecta su trayectoria periodística con una experiencia contemporánea, análoga y digital." },
@@ -328,16 +352,28 @@ const datasetDisenadoras = [
         egreso: "2013", 
         residencia: "Talca, Chile",
         areas: ["Branding", "Diseño Editorial", "Ilustración","Diseño Gráfico"],
-        recomiendaA: [], 
-        frase: "«Escribe aquí la frase de la entrevista de Pía...»",
+        recomiendaA: ["María de los Angeles Renard", "Micaela Cabrera", "Anastasia Cabrera"], 
+        frases: {
+            eje1: "«Yo tuve un profe en la media que era un profe de artes que era muy buen profe; le tengo mucho cariño y él nos enseñó cosas de diseño.»",
+            eje2: "«En el fondo todas las opciones de pega eran en Santiago; como que acá era muy nada la oferta laboral y muy complicado trabajar de diseñador como tal en Talca.»",
+            eje3: "«Yo digo que tengo como un desorden controlado, como que soy bien ordenada, pero también desordenada en algunos aspectos.»",
+            eje4: "«Una cosa bien importante es la disciplina y la perseverancia: estar ahí, continuar, trabajar mucho por ese fin.»"
+        },           
         bio: "Diseñadora de productos de profesión y gráfica de corazón, Pía Pulgar desarrolla su práctica de manera independiente desde Talca. Su quehacer se despliega en el diseño de marcas, el mundo editorial y la ilustración, colaborando de cerca con microempresas, instituciones y proyectos del ámbito académico. En 2017 cofundó el estudio Vagabunda —que más tarde daría paso a estudio hacerhacer—, espacio desde el cual nació la guía iconográfica Talca Icónica (2020). Su trayectoria combina la gestión de proyectos locales con la exploración artística del bordado y la risografía, entrelazando el oficio, la identidad territorial y las artes gráficas desde una mirada íntima y expresiva.",
         fotoFondo: "imagenes/piapulgar.jpg", 
         descFotoPrincipal: "Pía Pulgar — Registro de espacio de trabajo. Envío digital, 11 de agosto de 2026.",
         videos: {
-            eje1: "videos/entrevistapiapulgar-eje1.mp4",
-            eje2: "videos/entrevistapiapulgar-eje2.mp4",
-            eje3: "videos/entrevistapiapulgar-eje3.mp4",
-            eje4: "videos/entrevistapiapulgar-eje4.mp4"
+            eje1: "https://www.youtube.com/embed/8uTTMTt3eSg?si=6Y_nxl0c2ktO8qwX",
+            eje2: "https://www.youtube.com/embed/59-AJspOxv0?si=5ri5yrZ18qGNAywA",
+            eje3: "https://www.youtube.com/embed/w0ptXnnzmUU?si=F22jV1y0zdNUq1iX",
+            eje4: "https://www.youtube.com/embed/g72AoLuY5uk?si=cC9ePFoUP-cZfNvU"
+        }, 
+        // Tiempos correspondientes a cada eje
+        duraciones: {
+            eje1: "15:45 min",
+            eje2: "17:47 min",
+            eje3: "7:56 min",
+            eje4: "6:32 min"
         },
         obras: [
             { img: ["imagenes/pia1.jpg", "imagenes/pia1.1.jpg", "imagenes/pia1.2.jpg"], desc: "01. La Noche de San Juan: Ilustración y diseño editorial, a partir de la investigación de rituales tradiciones campesinos se realizó una compilación inspirado en la Lira Popular." },
@@ -355,7 +391,8 @@ const datasetDisenadoras = [
     { id: "Ana Villagrán", name: "Ana Villagrán", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Andrea Estefanía", name: "Andrea Estefanía", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Ángeles Briones", name: "Ángeles Briones", edicion: 2, puente: false, hasEntrevista: false }, 
-    { id: "Antonieta Lopez", name: "Antonieta Lopez", edicion: 2, puente: false, hasEntrevista: false },
+    { id: "Antonieta Lopez", name: "Antonieta Lopez", edicion: 2, puente: false, hasEntrevista: false, recomiendaA: 
+        ["Jenny Abud"] },
     { id: "Bernardita Brancoli", name: "Bernardita Brancoli", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Bernardita Espinoza", name: "Bernardita Espinoza", edicion: 2, puente: false, hasEntrevista: false },
     { id: "Bianca Sartori", name: "Bianca Sartori", edicion: 2, puente: false, hasEntrevista: false },
@@ -429,6 +466,13 @@ const datasetDisenadoras = [
     { id: "Francisca Alcalde", name: "Francisca Alcalde", edicion: 'verde', recomendadaPor: "Aribel González" },
     { id: "Gracia Fernández", name: "Gracia Fernández", edicion: 'verde', recomendadaPor: "Aribel González" },
     { id: "Consuelo Yávar", name: "Consuelo Yávar", edicion: 'verde', recomendadaPor: "Alejandra Amenábar" },
+    { id: "Dai Liv", name: "Dai Liv", edicion: 'verde', recomendadaPor: "Josefina Vidal" },
+    { id: "Camila Ortega", name: "Camila Ortega", edicion: 'verde', recomendadaPor: "Josefina Vidal" },
+    { id: "Macarena Torres", name: "Macarena Torres", edicion: 'verde', recomendadaPor: "Alejandra Beckdorf" },
+    { id: "Alejandra Peralta", name: "Alejandra Peralta", edicion: 'verde', recomendadaPor: "Alejandra Beckdorf" },
+    { id: "María de los Angeles Renard", name: "María de los Angeles Renard", edicion: 'verde', recomendadaPor: "Pía Pulgar" },
+    { id: "Micaela Cabrera", name: "Micaela Cabrera", edicion: 'verde', recomendadaPor: "Pía Pulgar" },
+    { id: "Anastasia Cabrera", name: "Anastasia Cabrera", edicion: 'verde', recomendadaPor: "Pía Pulgar" },
     { id: "Catalina Cortés", name: "Catalina Cortés", edicion: 'verde', recomendadaPor: "Alejandra Amenábar" }
 
 
